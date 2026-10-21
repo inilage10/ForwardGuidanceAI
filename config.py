@@ -115,8 +115,15 @@ ANALYSIS_END_DATE: str = "2026-10-01"
 # LLM and external service configurations
 OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "qwen2.5:0.5b")
 OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-SEC_EDGAR_EMAIL: str = os.getenv("SEC_EDGAR_EMAIL", "")
+SEC_EDGAR_EMAIL: str = os.getenv("SEC_EDGAR_EMAIL", "inilage10@gmail.com")
 GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
+if not GROQ_API_KEY:
+    try:
+        import streamlit as st
+        if hasattr(st, "secrets"):
+            GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", "")
+    except Exception:
+        pass
 
 # Guidance dimensions evaluated by LLM
 GUIDANCE_DIMENSIONS: List[str] = [

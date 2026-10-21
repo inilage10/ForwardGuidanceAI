@@ -1,0 +1,55 @@
+{
+  "ticker": "META",
+  "filing_date": "2025-09-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "GAAP requires us to make estimates and judgments in several areas, including, but not limited to, those related to loss contingencies, income taxes, valuation of long-lived assets and their associated estimated useful li"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "While we expect the error margin for our Family metrics to vary from period to period, we estimate that such margin generally will be approximately 3% of our worldwide DAP"
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "GAAP requires us to make estimates and judgments in several areas, including, but not limited to, those related to loss contingencies, income taxes, valuation of long-lived assets and their associated estimated useful li"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We rely on targeting and measurement tools that incorporate data signals from user activity on websites and services that we do not control, as well as signals generated within our products, in order to deliver relevant"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Weighted-average shares used to compute earnings per share:"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This Quarterly Report on Form 10-Q contains forward-looking statements"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Moreover, we operate in a very competitive and rapidly changing environment"
+    }
+  },
+  "overall_sentiment": -0.67,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for META (2025-09-30 10-Q): sentiment score of -0.67 with 0 expansionary signals and 2 cautious risk factors identified."
+}

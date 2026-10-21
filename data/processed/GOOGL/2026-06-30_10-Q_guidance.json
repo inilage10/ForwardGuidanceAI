@@ -1,0 +1,55 @@
+{
+  "ticker": "GOOGL",
+  "filing_date": "2026-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These include, among other things, expectations regarding the growth of our business and revenues, including factors that may impact such growth, and fluctuations in our revenues and margins; statements relating to plans"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These include, among other things, expectations regarding the growth of our business and revenues, including factors that may impact such growth, and fluctuations in our revenues and margins; statements relating to plans"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These include, among other things, expectations regarding the growth of our business and revenues, including factors that may impact such growth, and fluctuations in our revenues and margins; statements relating to plans"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "long-term supply agreements and open purchase orders"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "The increase is primarily attributed to higher pre-tax earnings from unrealized gains on equity securities that are deferred tax liabilities at the statutory tax rate."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This Quarterly Report on Form 10-Q contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995."
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.46,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for GOOGL (2026-06-30 10-Q): sentiment score of +0.46 with 9 expansionary signals and 3 cautious risk factors identified."
+}

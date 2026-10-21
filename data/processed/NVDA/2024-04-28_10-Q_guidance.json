@@ -1,0 +1,55 @@
+{
+  "ticker": "NVDA",
+  "filing_date": "2024-04-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "million in revenue in the first quarter of fiscal year 2025 from deferred revenue as of January 28, 2024."
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The net effect on our gross margin was an unfavorable impact of 1.1% and 1.2% in the first quarter of fiscal years 2025 and 2024, respectively."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our investment policy requires the purchase of highly rated fixed income securities, the diversification of investment types and credit exposures, and certain maturity limits on our portfolio."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Demand and Supply, Product Transitions, and New Products and Business Models"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Reclassification adjustments for net realized loss included in net income"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In the opinion of management, all adjustments, consisting only of normal recurring adjustments considered necessary for a fair statement of results of operations and financial position, have been included"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our competitive position has been harmed, and our competitive position and future results may be further harmed in the long term, if there are further changes in the USG’s export controls"
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NVDA (2024-04-28 10-Q): sentiment score of +0.00 with 1 expansionary signals and 1 cautious risk factors identified."
+}

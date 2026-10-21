@@ -1,0 +1,55 @@
+{
+  "ticker": "CRM",
+  "filing_date": "2024-10-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "This allowance is based upon historical loss patterns, the number of days that billings are past due, an evaluation of the potential risk of loss associated with delinquent accounts and current market conditions and reas"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company’s judgments regarding future profitability may change due to many factors, including future market conditions and the ability to successfully execute its business plans"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Concentrations of Credit Risk, Significant Customers and Investments"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on demand outlook remains in line with prior baseline."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company determines the amount of revenue to be recognized through the application of the following steps:"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The Company maintains an allowance for its doubtful accounts receivable for estimated credit losses"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Moreover, we operate in a very competitive and rapidly changing environment and new risks emerge from time to time"
+    }
+  },
+  "overall_sentiment": -0.67,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for CRM (2024-10-31 10-Q): sentiment score of -0.67 with 0 expansionary signals and 2 cautious risk factors identified."
+}

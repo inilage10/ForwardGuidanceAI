@@ -1,0 +1,55 @@
+{
+  "ticker": "UPS",
+  "filing_date": "2023-09-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The preparation of the accompanying unaudited, consolidated financial statements requires management to make estimates and judgments that affect the reported amounts of assets and liabilities and the disclosure of contin"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "These risks and uncertainties include, but are not limited to, the impact of: continued uncertainties arising from the COVID-19 pandemic; changes in general economic conditions, in the United States (\"U.S.\") or internati"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Internationally, demand continued to decline in Asia while economic conditions in Europe remained challenging."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We have taken a number of steps in furtherance of our strategy in the third quarter of 2023"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This report, our Annual Report on Form 10-K for the year ended December 31, 2022 and our other filings with the Securities and Exchange Commission contain and in the future may contain “forward-looking statements” within"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": -0.17,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UPS (2023-09-30 10-Q): sentiment score of -0.17 with 2 expansionary signals and 3 cautious risk factors identified."
+}

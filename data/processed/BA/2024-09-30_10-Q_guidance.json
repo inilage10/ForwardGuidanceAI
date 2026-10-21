@@ -1,0 +1,55 @@
+{
+  "ticker": "BA",
+  "filing_date": "2024-09-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In conjunction with our sales of Electron Dynamic Devices, Inc"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The level of profitability on the 777X program will be subject to a number of factors"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We are reducing discretionary spending as well as reducing or deferring non-essential capital expenditures"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We are also pausing the issuance of the majority of supplier purchase orders on the 737, 767, 777, and 777X programs due to IAM 751's ongoing work stoppage"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In the third quarter of 2024, we determined that earnings from our non-U.S"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "revolving credit agreement expiring in August 2028 each remain in effect"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BA (2024-09-30 10-Q): sentiment score of +0.00 with 0 expansionary signals and 0 cautious risk factors identified."
+}

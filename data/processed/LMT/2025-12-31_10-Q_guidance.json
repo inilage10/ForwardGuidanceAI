@@ -1,0 +1,55 @@
+{
+  "ticker": "LMT",
+  "filing_date": "2025-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The F-35 program is our largest program, generating 27% of our total consolidated sales, as well as 67% of Aeronautics’ sales in 2025"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "While we generally expect to compete and be well positioned as the incumbent on existing programs, we may not be successful and, even if we are successful, the replacement programs may be funded at lower levels or result"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We also will continue to evaluate our organizational structure and portfolio and will make strategic changes, acquisitions or divestitures, as appropriate, while deepening our connection to commercial industry through co"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Recent regional conflicts have demonstrated the integral role Lockheed Martin products play in protecting people, and we are rapidly transforming our business to meet increased demand"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We are a global aerospace and defense technology company that builds and sustains the solutions America and its allies need to deter conflict and advance national security and scientific exploration objectives"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We operate in a highly competitive industry and our competitors may have more extensive or more specialized engineering, technical, marketing and servicing capabilities than we do in certain areas"
+    }
+  },
+  "overall_sentiment": 0.25,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for LMT (2025-12-31 10-Q): sentiment score of +0.25 with 2 expansionary signals and 1 cautious risk factors identified."
+}

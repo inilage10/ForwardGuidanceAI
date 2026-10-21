@@ -1,0 +1,57 @@
+{
+  "ticker": "INTC",
+  "company_name": "Intel",
+  "filing_date": "2024-08-15",
+  "filing_type": "10-Q",
+  "period": "Q3 2024",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "unclear",
+      "magnitude": "low",
+      "confidence": 0.75,
+      "direct_quote": "Near-term revenue expected to remain pressured by market share losses in traditional data center."
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.82,
+      "direct_quote": "Gross margins constrained by startup costs associated with Intel 18A node transition."
+    },
+    "capex_plans": {
+      "direction": "decreasing",
+      "magnitude": "moderate",
+      "confidence": 0.85,
+      "direct_quote": "Net capital expenditures reduced as part of $10B cost reduction plan to preserve liquidity."
+    },
+    "demand_outlook": {
+      "direction": "weak",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "AI PC shipments expanding but enterprise traditional server demand remains sluggish."
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.81,
+      "direct_quote": "Losses in Intel Foundry segment expected to peak in 2024 before narrowing towards profitability."
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.8,
+      "direct_quote": "Intel 18A process node on track for high-volume manufacturing in 2025 with external customer interest."
+    },
+    "competitive_position": {
+      "direction": "weak",
+      "magnitude": "moderate",
+      "confidence": 0.77,
+      "direct_quote": "Challenged competitive position in both server compute and discrete AI accelerators."
+    }
+  },
+  "overall_sentiment": -0.271,
+  "key_risks": [
+    "Execution risks in multi-year foundry turnaround",
+    "Substantial cash burn prior to 18A high-volume customer ramp"
+  ],
+  "summary": "Intel projects cautious outlook with aggressive cost-cutting measures, focusing resources on the critical Intel 18A process roadmap."
+}

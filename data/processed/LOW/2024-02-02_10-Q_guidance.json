@@ -1,0 +1,55 @@
+{
+  "ticker": "LOW",
+  "filing_date": "2024-02-02",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Forward-looking statements involve, among other things, expectations, projections, and assumptions about future financial and operating results, objectives (including objectives related to environmental and social matter"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "The impact to our business, including net sales and gross margin, will be influenced in part by merchandising and pricing strategies in response to potential cost increases by us and our competitors"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Forward-looking statements involve, among other things, expectations, projections, and assumptions about future financial and operating results, objectives (including objectives related to environmental and social matter"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Forward-looking statements involve, among other things, expectations, projections, and assumptions about future financial and operating results, objectives (including objectives related to environmental and social matter"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "It remains unclear how tax or trade policies, tariffs, customs actions, or trade relations may evolve in the future, which could adversely affect our business, results of operations, effective income tax rate, liquidity,"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Forward-looking statements involve, among other things, expectations, projections, and assumptions about future financial and operating results, objectives (including objectives related to environmental and social matter"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We also strive to attract diverse talent for leadership positions across our company"
+    }
+  },
+  "overall_sentiment": 0.69,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for LOW (2024-02-02 10-Q): sentiment score of +0.69 with 13 expansionary signals and 2 cautious risk factors identified."
+}

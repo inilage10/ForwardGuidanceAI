@@ -1,0 +1,55 @@
+{
+  "ticker": "HD",
+  "filing_date": "2024-01-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions; net sales growth; comparable sales; the effects of competition; o"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Intense competitive pressures from one or more of our competitors, such as through aggressive promotional pricing or liquidation events, or our inability to adapt effectively and quickly to a changing competitive landsca"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions; net sales growth; comparable sales; the effects of competition; o"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions; net sales growth; comparable sales; the effects of competition; o"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions; net sales growth; comparable sales; the effects of competition; o"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Certain statements contained herein, as well as in other filings we make with the SEC and other written and oral information we release, regarding our performance or other events or developments in the future constitute"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "The combination of reinvesting in the business to drive higher sales and supporting productivity to lower costs allows us to improve our customer experience, increase our competitiveness in the market, and deliver shareh"
+    }
+  },
+  "overall_sentiment": 0.11,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HD (2024-01-28 10-Q): sentiment score of +0.11 with 15 expansionary signals and 12 cautious risk factors identified."
+}

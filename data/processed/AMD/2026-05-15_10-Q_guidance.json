@@ -1,0 +1,57 @@
+{
+  "ticker": "AMD",
+  "company_name": "AMD",
+  "filing_date": "2026-05-15",
+  "filing_type": "10-Q",
+  "period": "Q2 2026",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.87,
+      "direct_quote": "Data Center segment revenue expected to double year-over-year fueled by Instinct MI300 series."
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.85,
+      "direct_quote": "Gross margin projected to expand towards 53% as higher margin server CPUs and GPUs ramp."
+    },
+    "capex_plans": {
+      "direction": "increasing",
+      "magnitude": "moderate",
+      "confidence": 0.84,
+      "direct_quote": "Investments in TSMC advanced wafer capacity and software development resources."
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Strong cloud adoption of EPYC server CPUs and expanding Instinct accelerator design wins."
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.85,
+      "direct_quote": "Operating margin expansion expected as product mix shifts heavily to server products."
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.89,
+      "direct_quote": "ROCm open software ecosystem updates and annual cadence of next-generation AI accelerators."
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.82,
+      "direct_quote": "Number two player in AI accelerators and continuing share gains in x86 server CPUs."
+    }
+  },
+  "overall_sentiment": 0.699,
+  "key_risks": [
+    "Heavy competition from incumbent GPU architectures",
+    "Gaming and embedded segment cyclical corrections"
+  ],
+  "summary": "AMD guides for substantial Data Center revenue expansion led by Instinct AI accelerators and persistent EPYC share gains."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "AAPL",
+  "filing_date": "2026-06-27",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "The Company expects these trends to intensify, which may materially negatively impact the Company’s revenue, costs, gross margin, results of operations and financial condition"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "The Company expects these trends to intensify, which may materially negatively impact the Company’s revenue, costs, gross margin, results of operations and financial condition"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Demand for cloud computing and artificial intelligence infrastructure has increased substantially across the technology industry, resulting in constrained supply, extended lead times, and increasing costs"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "The Company is experiencing a period of supply constraints and increasing costs for components driven by factors such as industry supply-demand imbalances for components, including advanced semiconductors, storage (NAND)"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Shares used in computing earnings per share:"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company designates these instruments as either cash flow or fair value hedges"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "In addition, the DMA imposes interoperability obligations on the Company requiring it to make certain of its technologies and features available to third-party products and services for free, which increases security and"
+    }
+  },
+  "overall_sentiment": -0.42,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for AAPL (2026-06-27 10-Q): sentiment score of -0.42 with 3 expansionary signals and 8 cautious risk factors identified."
+}

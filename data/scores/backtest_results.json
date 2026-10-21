@@ -1,0 +1,238 @@
+{
+  "window_30d": {
+    "window_days": 30,
+    "ic": {
+      "ic": -0.15427707798047077,
+      "p_value": 0.09248746884010263,
+      "sample_size": 120,
+      "ic_by_period": [
+        {
+          "period": "2023Q3",
+          "ic": -0.15899720766358738,
+          "n": 9
+        },
+        {
+          "period": "2023Q4",
+          "ic": -0.0303030303030303,
+          "n": 10
+        },
+        {
+          "period": "2024Q1",
+          "ic": -0.8145934285312865,
+          "n": 10
+        },
+        {
+          "period": "2024Q2",
+          "ic": -0.12884405501936824,
+          "n": 10
+        },
+        {
+          "period": "2024Q3",
+          "ic": 0.12158110873601292,
+          "n": 10
+        },
+        {
+          "period": "2024Q4",
+          "ic": -0.44377104688644714,
+          "n": 10
+        },
+        {
+          "period": "2025Q1",
+          "ic": -0.6242424242424242,
+          "n": 10
+        },
+        {
+          "period": "2025Q2",
+          "ic": -0.18787878787878787,
+          "n": 10
+        },
+        {
+          "period": "2025Q3",
+          "ic": -0.18787878787878787,
+          "n": 10
+        },
+        {
+          "period": "2025Q4",
+          "ic": 0.38298049251844074,
+          "n": 10
+        },
+        {
+          "period": "2026Q1",
+          "ic": 0.5835893219328621,
+          "n": 10
+        },
+        {
+          "period": "2026Q2",
+          "ic": -0.35757575757575755,
+          "n": 10
+        }
+      ]
+    },
+    "long_short": {
+      "quantile_returns": {
+        "Top": -0.020335007080562805,
+        "Middle": 0.004141583760326508,
+        "Bottom": 0.014572682846878767
+      },
+      "long_short_spread": -0.034907689927441574,
+      "hit_rate": 0.25,
+      "n_periods": 12
+    }
+  },
+  "window_90d": {
+    "window_days": 90,
+    "ic": {
+      "ic": -0.15333783951753197,
+      "p_value": 0.09592796414148362,
+      "sample_size": 119,
+      "ic_by_period": [
+        {
+          "period": "2023Q3",
+          "ic": -0.01673654817511446,
+          "n": 9
+        },
+        {
+          "period": "2023Q4",
+          "ic": -0.24848484848484845,
+          "n": 10
+        },
+        {
+          "period": "2024Q1",
+          "ic": -0.6808542089216723,
+          "n": 10
+        },
+        {
+          "period": "2024Q2",
+          "ic": -0.32517785314411984,
+          "n": 10
+        },
+        {
+          "period": "2024Q3",
+          "ic": 0.3404271044608361,
+          "n": 10
+        },
+        {
+          "period": "2024Q4",
+          "ic": -0.43161293601284584,
+          "n": 10
+        },
+        {
+          "period": "2025Q1",
+          "ic": -0.6121212121212121,
+          "n": 10
+        },
+        {
+          "period": "2025Q2",
+          "ic": -0.5878787878787878,
+          "n": 10
+        },
+        {
+          "period": "2025Q3",
+          "ic": -0.04242424242424241,
+          "n": 10
+        },
+        {
+          "period": "2025Q4",
+          "ic": 0.2613993837824278,
+          "n": 10
+        },
+        {
+          "period": "2026Q1",
+          "ic": 0.2613993837824278,
+          "n": 10
+        },
+        {
+          "period": "2026Q2",
+          "ic": 0.29696969696969694,
+          "n": 10
+        }
+      ]
+    },
+    "long_short": {
+      "quantile_returns": {
+        "Top": -0.02205437786324232,
+        "Middle": 0.008481904482311318,
+        "Bottom": 0.013196638974367856
+      },
+      "long_short_spread": -0.03525101683761018,
+      "hit_rate": 0.3333333333333333,
+      "n_periods": 12
+    }
+  },
+  "window_180d": {
+    "window_days": 180,
+    "ic": {
+      "ic": -0.20452431208771368,
+      "p_value": 0.0329014556478813,
+      "sample_size": 109,
+      "ic_by_period": [
+        {
+          "period": "2023Q3",
+          "ic": -0.08368274087557231,
+          "n": 9
+        },
+        {
+          "period": "2023Q4",
+          "ic": -0.006060606060606061,
+          "n": 10
+        },
+        {
+          "period": "2024Q1",
+          "ic": -0.5714312110592608,
+          "n": 10
+        },
+        {
+          "period": "2024Q2",
+          "ic": -0.12884405501936824,
+          "n": 10
+        },
+        {
+          "period": "2024Q3",
+          "ic": 0.012158110873601293,
+          "n": 10
+        },
+        {
+          "period": "2024Q4",
+          "ic": -0.33434804902403553,
+          "n": 10
+        },
+        {
+          "period": "2025Q1",
+          "ic": -0.7212121212121211,
+          "n": 10
+        },
+        {
+          "period": "2025Q2",
+          "ic": -0.5151515151515151,
+          "n": 10
+        },
+        {
+          "period": "2025Q3",
+          "ic": 0.24848484848484845,
+          "n": 10
+        },
+        {
+          "period": "2025Q4",
+          "ic": -0.3161108827136336,
+          "n": 10
+        },
+        {
+          "period": "2026Q1",
+          "ic": 0.5775102664960614,
+          "n": 10
+        }
+      ]
+    },
+    "long_short": {
+      "quantile_returns": {
+        "Top": -0.03319686150773445,
+        "Middle": -0.02571927369285307,
+        "Bottom": 0.03714348519811508
+      },
+      "long_short_spread": -0.07034034670584953,
+      "hit_rate": 0.45454545454545453,
+      "n_periods": 11
+    }
+  },
+  "summary": "### 📌 Resumen Ejecutivo del Backtest\n\nSe ha analizado la capacidad predictiva del **Forward Guidance Score** generado por IA frente a los retornos bursátiles posteriores de las 10 empresas tecnológicas.\n\n| Ventana | Information Coeff (IC) | p-value | Significativo? | Long-Short Spread | Hit Rate |\n|---|---|---|---|---|---|\n| **30 días** | `-0.154` | `0.0925` | ❌ No (p≥0.05) | `-3.49%` | `25.0%` |\n| **90 días** | `-0.153` | `0.0959` | ❌ No (p≥0.05) | `-3.53%` | `33.3%` |\n| **180 días** | `-0.205` | `0.0329` | ✅ Sí (p<0.05) | `-7.03%` | `45.5%` |\n\n#### Conclusiones Metodológicas:\n- **Information Coefficient (IC):** Mide la correlación ordinal entre el ranking de expectativas y el ranking de retornos relativos.\n- **Long-Short Spread:** Representa el exceso de rentabilidad acumulado que habría obtenido una estrategia larga en el tercil con mejor guidance y corta en el peor tercil.\n- **Riesgos y límites identificados:** El tamaño muestral histórico y la ambigüedad en el lenguaje directivo pueden introducir ruido en ventanas cortas (30 días), observándose típicamente mayor estabilidad en horizontes trimestrales (90 días)."
+}

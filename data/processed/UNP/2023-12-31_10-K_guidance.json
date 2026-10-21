@@ -1,0 +1,55 @@
+{
+  "ticker": "UNP",
+  "filing_date": "2023-12-31",
+  "filing_type": "10-K",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Line outages and other interruptions caused by these conditions has in the past and can in the future adversely affect parts or all of our entire rail network, potentially negatively affecting revenues, costs, and liabil"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "Any of the following could also affect the competitiveness of our transportation services for some or all of our commodities, which could have a material adverse effect on our results of operations, financial condition,"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Department of Transportation (DOT); the Federal Bureau of Investigation (FBI); the Department of Homeland Security (DHS), along with its Cybersecurity and Infrastructure Security Agency (CISA) and the TSA; as well as loc"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "Significant cost increases, government regulation, or changes of consumer preferences for goods or services relating to alternative sources of energy, emissions reductions, and GHG emissions could materially affect the m"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "For 2023, we reported earnings per diluted share of $10.45, a 7% decrease versus 2022, reflecting 1% lower volumes and an operating ratio increase of 220 basis points"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Union Pacific’s commitment, today and for the future, is to further improve and strengthen performance through an inclusive workforce that reflects the diverse markets and communities we serve, where everyone is treated"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Because of the proximity of our routes to major inland and Gulf Coast waterways, barges can be particularly competitive, especially for grain and bulk commodities in certain areas where we operate"
+    }
+  },
+  "overall_sentiment": -0.27,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UNP (2023-12-31 10-K): sentiment score of -0.27 with 5 expansionary signals and 9 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "SBUX",
+  "filing_date": "2024-09-29",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "where the Starbucks brand and our other brands are less well-known, we believe we must preserve, grow, and leverage the value of our brands across all sales channels"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "In addition, we incur substantial startup expenses each time we open a new store, and it takes time to ramp up the sales and profitability of a new store, during which ramp-up period costs may be higher as we train new p"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "innovations, or customer experience initiatives or investments;"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "• changes in consumer preferences, demand, consumption, or spending behavior, including due to shifts in demographic or health and wellness trends, reduction in discretionary spending and price increases, and our ability"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Core to this is taking steps to ensure that Starbucks is an inclusive, diverse, equitable, and accessible company—a place where all are welcome and where our partners know they belong."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "They often include words such as “believes,” “expects,” “anticipates,” “estimates,” “intends,” “plans,” “seeks,” or words of similar meaning, or future or conditional verbs, such as “will,” “should,” “could,” “may,” “aim"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Under the leadership of our senior vice president of Talent and Inclusion and our executive leadership team, we remain committed to accountability at every level of the Company"
+    }
+  },
+  "overall_sentiment": 0.17,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for SBUX (2024-09-29 10-Q): sentiment score of +0.17 with 3 expansionary signals and 2 cautious risk factors identified."
+}

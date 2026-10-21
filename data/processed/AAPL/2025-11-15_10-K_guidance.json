@@ -1,0 +1,57 @@
+{
+  "ticker": "AAPL",
+  "company_name": "Apple",
+  "filing_date": "2025-11-15",
+  "filing_type": "10-K",
+  "period": "FY 2025",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "low",
+      "confidence": 0.85,
+      "direct_quote": "We expect total company revenue to grow low to mid single digits year-over-year."
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "low",
+      "confidence": 0.84,
+      "direct_quote": "Gross margin is guided between 45.5% and 46.5% supported by Services mix."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.8,
+      "direct_quote": "Capital expenditures are planned in line with historical levels targeting private cloud compute."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.82,
+      "direct_quote": "iPhone installed base reached all-time highs with steady replacement cycles in mature markets."
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "low",
+      "confidence": 0.85,
+      "direct_quote": "Diluted earnings per share anticipated to outpace revenue growth supported by share repurchases."
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Rolling rollout of Apple Intelligence features across iPhone, iPad, and Mac platforms."
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.92,
+      "direct_quote": "High customer retention, brand loyalty, and growing ecosystem active installed base."
+    }
+  },
+  "overall_sentiment": 0.504,
+  "key_risks": [
+    "Greater China consumer smartphone competition",
+    "European regulatory scrutiny under DMA compliance"
+  ],
+  "summary": "Apple forecasts modest revenue expansion underpinned by record Services performance and Apple Intelligence adoption cycles."
+}

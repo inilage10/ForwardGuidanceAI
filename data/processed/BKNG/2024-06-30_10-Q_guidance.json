@@ -1,0 +1,55 @@
+{
+  "ticker": "BKNG",
+  "filing_date": "2024-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Cash payments received from travelers in advance of the Company completing its performance obligations are included in \"Deferred merchant bookings\" in the Company's Consolidated Balance Sheets and are comprised principal"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Cash payments received from travelers in advance of the Company completing its performance obligations are included in \"Deferred merchant bookings\" in the Company's Consolidated Balance Sheets and are comprised principal"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company's investments measured using Level 3 inputs primarily consist of investments in privately-held entities"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Our total marketing expenses, which are comprised of performance and brand marketing expenses that are substantially variable in nature, were $1.9 billion in the second quarter of 2024, up 8% versus the second quarter of"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company considers many factors when assessing the likelihood of future realization of the deferred tax assets, including its recent cumulative earnings experience by taxing jurisdiction, expectations of future income"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Fair values of these securities are estimated using a variety of valuation methodologies, including both the market and income approaches."
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "For example, the Company is involved in investigations related to whether Booking.com's contractual parity arrangements with accommodation providers are anti-competitive because they require partners to provide Booking.c"
+    }
+  },
+  "overall_sentiment": 0.8,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BKNG (2024-06-30 10-Q): sentiment score of +0.80 with 4 expansionary signals and 0 cautious risk factors identified."
+}

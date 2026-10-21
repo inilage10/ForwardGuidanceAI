@@ -1,0 +1,55 @@
+{
+  "ticker": "MSFT",
+  "filing_date": "2026-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Revenue allocated to remaining performance obligations, which includes unearned revenue and amounts expected to be invoiced and recognized as revenue in future periods, was $"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "Efforts to compete with competitors’ content and application marketplaces may increase our cost of revenue and lower our operating margins"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Debt investments are classified as available-for-sale and realized gains and losses are recorded using the specific identification method"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on demand outlook remains in line with prior baseline."
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The following table sets forth the potential loss in future earnings or fair values, including associated derivatives, resulting from hypothetical changes in relevant market rates or prices:"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Debt investments are classified as available-for-sale and realized gains and losses are recorded using the specific identification method"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Cyber incidents and attacks, individually or in the aggregate, could adversely affect our financial condition, results of operations, competitive position, and"
+    }
+  },
+  "overall_sentiment": -0.08,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for MSFT (2026-03-31 10-Q): sentiment score of -0.08 with 5 expansionary signals and 6 cautious risk factors identified."
+}

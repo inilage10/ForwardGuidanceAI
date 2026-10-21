@@ -1,0 +1,55 @@
+{
+  "ticker": "CRM",
+  "filing_date": "2026-01-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We sell to businesses worldwide, primarily on a subscription basis, through our direct sales efforts and also indirectly through partners"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "In evaluating our business, you should carefully consider the following discussion of material risks, events and uncertainties that make an investment in us speculative or risky in addition to the other information inclu"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Defects or disruptions in our services could diminish demand for our services and subject us to substantial liability."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This Annual Report on Form 10-K contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Moreover, we operate in a very competitive and rapidly changing environment and new risks emerge from time to time"
+    }
+  },
+  "overall_sentiment": -0.5,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for CRM (2026-01-31 10-Q): sentiment score of -0.50 with 0 expansionary signals and 1 cautious risk factors identified."
+}

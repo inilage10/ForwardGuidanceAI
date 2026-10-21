@@ -1,0 +1,57 @@
+{
+  "ticker": "CRM",
+  "company_name": "Salesforce",
+  "filing_date": "2024-11-15",
+  "filing_type": "10-K",
+  "period": "FY 2024",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "low",
+      "confidence": 0.84,
+      "direct_quote": "Full-year revenue projected to grow 8% to 9% as clients evaluate enterprise agent adoption."
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.88,
+      "direct_quote": "Non-GAAP operating margin guidance raised to 32.5% reflecting strong operational restructuring."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.8,
+      "direct_quote": "Capital expenditures remain disciplined at approximately 2% of annual revenues."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.81,
+      "direct_quote": "Customer data platform and Data Cloud experiencing strong early enterprise uptake."
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Cash flow from operations expected to increase 23% to 25% year-over-year."
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.85,
+      "direct_quote": "Agentforce autonomous enterprise agents launching across Sales, Service, and Marketing."
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Extensive customer base and mission-critical system of record for corporate CRM."
+    }
+  },
+  "overall_sentiment": 0.533,
+  "key_risks": [
+    "Lengthening enterprise software sales cycles and budget approval tiers",
+    "Macro headwinds in professional services bookings"
+  ],
+  "summary": "Salesforce emphasizes margin expansion and cash generation while positioning Agentforce as the next enterprise growth driver."
+}

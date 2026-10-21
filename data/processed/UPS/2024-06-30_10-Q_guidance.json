@@ -1,0 +1,55 @@
+{
+  "ticker": "UPS",
+  "filing_date": "2024-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The preparation of the accompanying unaudited, consolidated financial statements requires management to make estimates and judgments that affect the reported amounts of assets and liabilities and the disclosure of contin"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "These risks and uncertainties include, but are not limited to: changes in general economic conditions in the United States (\"U.S.\") or internationally; significant competition on a local, regional, national and internati"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our digital businesses leverage technology to enable a range of on-demand services such as same-day delivery, end-to-end return services and integrated supply chain and high-value shipment insurance solutions."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "It will also require a breakdown of income taxes paid by jurisdiction exceeding 5% of total taxes and remove certain disclosure requirements for unremitted foreign earnings and uncertain tax positions"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This report, our Annual Report on Form 10-K for the year ended December 31, 2023 and our other filings with the Securities and Exchange Commission contain and in the future may contain \"forward-looking statements\" within"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UPS (2024-06-30 10-Q): sentiment score of +0.00 with 3 expansionary signals and 3 cautious risk factors identified."
+}

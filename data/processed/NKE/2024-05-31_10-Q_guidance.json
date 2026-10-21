@@ -1,0 +1,55 @@
+{
+  "ticker": "NKE",
+  "filing_date": "2024-05-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "Notwithstanding our efforts, protectionist measures have resulted in increases in the cost of our products, and additional measures, if implemented, could adversely affect sales and/or profitability for NIKE, as well as"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "Notwithstanding our efforts, protectionist measures have resulted in increases in the cost of our products, and additional measures, if implemented, could adversely affect sales and/or profitability for NIKE, as well as"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The focus of this investment continues to be inspiring youth to be active through play and sport as well as uniting and inspiring communities to create a better and more equitable future for all"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The risks and uncertainties are detailed from time to time in reports filed by NIKE with the SEC, including reports filed on Forms 8-K, 10-Q and 10-K, and include, among others, the following: risks relating to our multi"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Dollar value of the Company's foreign currency-denominated sales and earnings"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our international operations and sources of supply are subject to the usual risks of doing business abroad, such as the implementation of, or potential changes in, foreign and domestic trade policies, increases in import"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Moreover, NIKE operates in a very competitive and rapidly changing environment"
+    }
+  },
+  "overall_sentiment": -0.06,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NKE (2024-05-31 10-Q): sentiment score of -0.06 with 8 expansionary signals and 9 cautious risk factors identified."
+}

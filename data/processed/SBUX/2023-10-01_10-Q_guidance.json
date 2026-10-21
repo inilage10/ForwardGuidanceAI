@@ -1,0 +1,55 @@
+{
+  "ticker": "SBUX",
+  "filing_date": "2023-10-01",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "where the Starbucks brand and our other brands are less well-known, we believe we must preserve, grow and leverage the value of our brands across all sales channels"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Our future growth increasingly depends on the growth and sustained profitability of certain international markets"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "• our anticipated operating expenses, including our anticipated total capital expenditures;"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We also utilize forward contracts, futures contracts and collars to hedge “C” price exposure under our price-to-be-fixed green coffee contracts and our long-term forecasted coffee demand where underlying fixed-price and"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Some or all of our international market business units (“MBUs”), which we generally define by the countries in which they operate, may not be successful in their operations or in achieving expected growth, which ultimate"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "They often include words such as “believes,” “expects,” “anticipates,” “estimates,” “intends,” “plans,” “seeks” or words of similar meaning, or future or conditional verbs, such as “will,” “should,” “could,” “may,” “aims"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "• the impact of substantial competition from new entrants, consolidations by competitors, and other competitive activities, such as pricing actions (including price reductions, promotions, discounting, couponing, or free"
+    }
+  },
+  "overall_sentiment": 0.38,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for SBUX (2023-10-01 10-Q): sentiment score of +0.38 with 5 expansionary signals and 2 cautious risk factors identified."
+}

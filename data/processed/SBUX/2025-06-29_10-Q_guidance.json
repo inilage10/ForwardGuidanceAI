@@ -1,0 +1,55 @@
+{
+  "ticker": "SBUX",
+  "filing_date": "2025-06-29",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "During the third quarter of fiscal 2025, consolidated net revenues increased 4% to $9.5 billion compared to $9.1 billion in the third quarter of fiscal 2024, primarily driven by incremental revenues from net new company-"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Consolidated operating margin contracted 680 basis points from the prior year to 9.9%, primarily driven by deleverage, investments in support of “Back to Starbucks,” including additional labor and the Leadership Experien"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Additionally, certain disclosures related to unrecognized tax benefits and indefinite reinvestment assertions were removed"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Inventories, or our longer-dated forecasted coffee demand where underlying fixed price and price-to-be-fixed contracts are not yet available"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The resulting gains and losses are recorded in AOCI and are subsequently reclassified to product and distribution costs when the hedged exposure affects net earnings."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The amendments require enhanced disclosure for certain segment items and disclosure on how management uses reported measures to assess segment performance"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Starbucks results for the third quarter of fiscal 2025 showed continued progress on key “Back to Starbucks” initiatives, specifically investments in coffeehouse partners, including the Leadership Experience 2025, a confe"
+    }
+  },
+  "overall_sentiment": 0.3,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for SBUX (2025-06-29 10-Q): sentiment score of +0.30 with 6 expansionary signals and 3 cautious risk factors identified."
+}

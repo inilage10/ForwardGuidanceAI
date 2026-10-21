@@ -1,0 +1,55 @@
+{
+  "ticker": "BKNG",
+  "filing_date": "2025-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Cash payments received from travelers in advance of the Company completing its performance obligations are included in \"Deferred merchant bookings\" in the Company's Consolidated Balance Sheets and are comprised principal"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Cash payments received from travelers in advance of the Company completing its performance obligations are included in \"Deferred merchant bookings\" in the Company's Consolidated Balance Sheets and are comprised principal"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The Company currently expects that restructuring costs and accelerated investments related to the Transformation Program will be incurred in the next"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "We have observed a longer-term trend of an increasing mix of room nights booked for alternative accommodation properties as consumer demand for these types of properties has grown, and as we have increased the number and"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company considers many factors when assessing the likelihood of future realization of the deferred tax assets, including its recent cumulative earnings experience by taxing jurisdiction, expectations of future income"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "million primarily included in \"Prepaid expenses, net\" in the Consolidated Balance Sheets at June 30, 2025 and December 31, 2024, respectively."
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "If the Company were to be found liable, it could result in, among other things, payment of damages, commitments to change certain business practices, or reputational damage, any of which could harm the Company's business"
+    }
+  },
+  "overall_sentiment": 0.38,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BKNG (2025-06-30 10-Q): sentiment score of +0.38 with 5 expansionary signals and 2 cautious risk factors identified."
+}

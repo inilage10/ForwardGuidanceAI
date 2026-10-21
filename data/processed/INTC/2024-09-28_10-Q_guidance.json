@@ -1,0 +1,55 @@
+{
+  "ticker": "INTC",
+  "filing_date": "2024-09-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "projections of our future financial performance, including future revenue, gross margins, capital expenditures, and cash flows;"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "projections of our future financial performance, including future revenue, gross margins, capital expenditures, and cash flows;"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "projections of our future financial performance, including future revenue, gross margins, capital expenditures, and cash flows;"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We invest in and deploy manufacturing assets in response to manufacturing capacity requirements based upon short- and long-term demand forecasts and economic returns relative to capital outlays"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our non-GAAP financial measures reflect adjustments based on one or more of the following items, as well as the related effects to income taxes and net income (loss) attributable to non-controlling interests effects"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "This Form 10-Q contains forward-looking statements that involve a number of risks and uncertainties"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "future products, services, and technologies, and the expected goals, timeline, ramps, progress, availability, production, regulation, and benefits of such products, services, and technologies, including future process no"
+    }
+  },
+  "overall_sentiment": -0.67,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for INTC (2024-09-28 10-Q): sentiment score of -0.67 with 0 expansionary signals and 2 cautious risk factors identified."
+}

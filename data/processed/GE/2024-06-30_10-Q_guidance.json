@@ -1,0 +1,55 @@
+{
+  "ticker": "GE",
+  "filing_date": "2024-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These forward-looking statements often address our expected future business and financial performance and financial condition, and often contain words such as \"expect,\" \"anticipate,\" \"intend,\" \"plan,\" \"believe,\" \"seek,\""
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These forward-looking statements often address our expected future business and financial performance and financial condition, and often contain words such as \"expect,\" \"anticipate,\" \"intend,\" \"plan,\" \"believe,\" \"seek,\""
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Total engineering investments, both company and partner-funded, increased compared to the prior year"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our results in the second quarter of 2024 reflect robust demand for commercial air travel"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These forward-looking statements often address our expected future business and financial performance and financial condition, and often contain words such as \"expect,\" \"anticipate,\" \"intend,\" \"plan,\" \"believe,\" \"seek,\""
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our public communications and SEC filings may contain statements related to future, not past, events"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "downgrades of our credit ratings or ratings outlooks, or changes in rating application or methodology, and the related impact on our funding profile, costs, liquidity and competitive position;"
+    }
+  },
+  "overall_sentiment": -0.5,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for GE (2024-06-30 10-Q): sentiment score of -0.50 with 3 expansionary signals and 10 cautious risk factors identified."
+}

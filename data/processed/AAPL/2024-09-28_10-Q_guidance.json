@@ -1,0 +1,55 @@
+{
+  "ticker": "AAPL",
+  "filing_date": "2024-09-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company has a large, global business with sales outside the U.S"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Competition has been particularly intense as competitors have aggressively cut prices and lowered product margins"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on capex plans remains in line with prior baseline."
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Such events can make it difficult or impossible for the Company to manufacture and deliver products to its customers, create delays and inefficiencies in the Company’s supply and manufacturing chain, result in slowdowns"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "This Annual Report on Form 10-K (“Form 10-K”) contains forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company believes that compensation should be competitive and equitable, and should enable employees to share in the Company’s success"
+    }
+  },
+  "overall_sentiment": -0.57,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for AAPL (2024-09-28 10-Q): sentiment score of -0.57 with 1 expansionary signals and 5 cautious risk factors identified."
+}

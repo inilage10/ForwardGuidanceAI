@@ -1,0 +1,55 @@
+{
+  "ticker": "CRM",
+  "filing_date": "2024-01-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements are based on current expectations, estimates and forecasts, as well as the beliefs and assumptions of our management, and are subject to risks and uncertainties that are difficult to pred"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "Words such as “expects,” “anticipates,” “aims,” “projects,” “intends,” “plans,” “believes,” “estimates,” “seeks,” “assumes,” “may,” “should,” “could,” “would,” “foresees,” “forecasts,” “predicts,” “targets” and “commitme"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements are based on current expectations, estimates and forecasts, as well as the beliefs and assumptions of our management, and are subject to risks and uncertainties that are difficult to pred"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "Words such as “expects,” “anticipates,” “aims,” “projects,” “intends,” “plans,” “believes,” “estimates,” “seeks,” “assumes,” “may,” “should,” “could,” “would,” “foresees,” “forecasts,” “predicts,” “targets” and “commitme"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This Annual Report on Form 10-K contains forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, as amended (“Securities Act”), and Section 21E of the Securities Exchange Act of 1934,"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We are committed to ambitious climate leadership solutions, and we're bringing the full power of Salesforce to help organizations achieve net zero emissions."
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for CRM (2024-01-31 10-Q): sentiment score of +0.00 with 12 expansionary signals and 12 cautious risk factors identified."
+}

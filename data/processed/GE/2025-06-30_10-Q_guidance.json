@@ -1,0 +1,55 @@
+{
+  "ticker": "GE",
+  "filing_date": "2025-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Forward-looking statements by their nature address matters that are, to different degrees, uncertain, such as statements about the impacts of macroeconomic and market conditions and volatility on our business operations,"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Forward-looking statements by their nature address matters that are, to different degrees, uncertain, such as statements about the impacts of macroeconomic and market conditions and volatility on our business operations,"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Total engineering investments, both company and partner-funded, increased compared to prior year"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Demand for our equipment and services is demonstrated by our backlog of engine orders and services and growth in our installed base, and tends to follow commercial air travel and freight demand and government funding for"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Forward-looking statements by their nature address matters that are, to different degrees, uncertain, such as statements about the impacts of macroeconomic and market conditions and volatility on our business operations,"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Securities and Exchange Commission (SEC) may contain statements related to future, not past, events"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "downgrades of our credit ratings or ratings outlooks, or changes in rating application or methodology, and the related impact on our funding profile, costs, liquidity and competitive position;"
+    }
+  },
+  "overall_sentiment": -0.4,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for GE (2025-06-30 10-Q): sentiment score of -0.40 with 4 expansionary signals and 10 cautious risk factors identified."
+}

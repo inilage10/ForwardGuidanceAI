@@ -1,0 +1,55 @@
+{
+  "ticker": "HON",
+  "filing_date": "2026-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Such discussions contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act), including statements related to the planned sales of the Produc"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Segment profit decreased $15 million and segment margin percentage decreased 180 basis points to 22.1% compared to 23.9% for the same period of 2025."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "If necessary, our available cash, committed credit lines, and access to the public debt and equity markets provide additional sources of short-term and long-term liquidity to fund current operations, debt maturities, and"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Our backlog of orders increased 12% to $38.0 billion as of June 30, 2026, compared to June 30, 2025"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Net income from continuing operations"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Such discussions contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act), including statements related to the planned sales of the Produc"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "—Operating results may be adversely impacted by downturns in the level of global buildings and infrastructure construction activity (including retrofits and upgrades), lower capital spending and operating expenditures on"
+    }
+  },
+  "overall_sentiment": -0.29,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HON (2026-06-30 10-Q): sentiment score of -0.29 with 2 expansionary signals and 4 cautious risk factors identified."
+}

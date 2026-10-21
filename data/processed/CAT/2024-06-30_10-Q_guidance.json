@@ -1,0 +1,55 @@
+{
+  "ticker": "CAT",
+  "filing_date": "2024-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "dollar value of sales made and costs incurred in foreign currencies"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Government-related infrastructure projects are expected to remain healthy"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The guidance on fair value measurements defines fair value as the exchange price that would be received for an asset or paid to transfer a liability (an exit price) in the principal or most advantageous market for the as"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In managing foreign currency risk for our Financial Products operations, our objective is to minimize earnings volatility resulting from conversion and the remeasurement of net foreign currency balance sheet positions an"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "(ASU 2023-09) — In December 2023, the FASB issued accounting guidance to expand the annual disclosure requirements for income taxes, primarily related to the rate reconciliation and income taxes paid."
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Movements in foreign currency rates also affect our competitive position as these changes may affect business practices and/or pricing strategies of non-U.S.-based competitors"
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for CAT (2024-06-30 10-Q): sentiment score of +0.00 with 1 expansionary signals and 1 cautious risk factors identified."
+}

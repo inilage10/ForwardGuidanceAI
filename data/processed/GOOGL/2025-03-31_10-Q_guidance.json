@@ -1,0 +1,55 @@
+{
+  "ticker": "GOOGL",
+  "filing_date": "2025-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "the amount and timing of revenue recognition from customer contracts with commitments for performance obligations, including our estimate of the remaining amount of commitments and when we expect to recognize revenue;"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "fluctuations in our revenues and margins and various factors contributing to such fluctuations;"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "our plans to continue to invest in new businesses, products, services and technologies, and systems, as well as to continue to invest in acquisitions and strategic investments;"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on demand outlook remains in line with prior baseline."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Basic net income per share (Note 12)"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This Quarterly Report on Form 10-Q contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "our pace of hiring and our plans to provide competitive compensation programs;"
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for GOOGL (2025-03-31 10-Q): sentiment score of +0.00 with 0 expansionary signals and 0 cautious risk factors identified."
+}

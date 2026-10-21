@@ -1,0 +1,55 @@
+{
+  "ticker": "RTX",
+  "filing_date": "2025-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Collins’ largest commercial customers are Boeing and Airbus with combined sales, prior to discounts and incentives, of 16%, 16%, and 19% of total Collins segment sales in 2025, 2024, and 2023, respectively."
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our profitability could be negatively affected based on the mix of our U.S"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Navy’s solution for engineering design and manufacturing of the Very Low Frequency communication subsystem, as well as mission command, control, and communications infrastructure, Advanced Extremely High Frequency and vo"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "In 2025, Raytheon also continued to experience increased global demand for the combat-proven Coyote system, a low-cost, expendable, unmanned aircraft system with the capability of operating in autonomous swarms."
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Forward-looking statements may include, among other things, statements relating to future sales, earnings, cash flow, results of operations, uses of cash, share repurchases, tax payments and rates, research and developme"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Collins sells aerospace and defense products and services to aircraft manufacturers, airlines, airports and other aircraft operators, the U.S"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "In addition, the competitive landscape in the defense industry continues to evolve with trends such as the continued increase in commercial competitors, new entrants with different technology approaches and business mode"
+    }
+  },
+  "overall_sentiment": 0.18,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for RTX (2025-12-31 10-Q): sentiment score of +0.18 with 6 expansionary signals and 4 cautious risk factors identified."
+}

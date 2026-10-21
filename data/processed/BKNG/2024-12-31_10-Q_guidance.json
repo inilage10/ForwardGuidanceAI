@@ -1,0 +1,55 @@
+{
+  "ticker": "BKNG",
+  "filing_date": "2024-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "For example, our operating margins are typically negatively impacted in the near term from gross bookings and related variable marketing expense growth acceleration, as revenue growth is typically less impacted by accele"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "For example, our operating margins are typically negatively impacted in the near term from gross bookings and related variable marketing expense growth acceleration, as revenue growth is typically less impacted by accele"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "seeking to more effectively manage operating expenses to increase organizational agility and create more capacity for reinvestment, with plans to continue expense reduction in 2025;"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We believe they benefit from participating in our services by increasing their distribution channels, demand, profile and reputation, and inventory utilization in an efficient and cost-effective manner"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This Annual Report on Form 10-K, including \"Management's Discussion and Analysis of Financial Condition and Results of Operation\" in Part II, Item 7, and the documents incorporated by reference contain forward-looking st"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The markets for the services we offer are intensely competitive and constantly evolving"
+    }
+  },
+  "overall_sentiment": 0.1,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BKNG (2024-12-31 10-Q): sentiment score of +0.10 with 5 expansionary signals and 4 cautious risk factors identified."
+}

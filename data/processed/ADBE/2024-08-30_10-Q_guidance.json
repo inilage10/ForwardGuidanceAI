@@ -1,0 +1,55 @@
+{
+  "ticker": "ADBE",
+  "filing_date": "2024-08-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "billion of revenue, respectively, was recognized that was included in the balance of deferred revenue as of December 1, 2023."
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "These costs could adversely impact our margins as we continue to add AI capabilities to our offerings and scale our AI offerings"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "In addition to historical information, this Quarterly Report on Form 10-Q contains forward-looking statements, including statements regarding product plans, future growth, market opportunities, fluctuations in foreign cu"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Many factors affect more than one category and the factors are not in order of significance or probability of occurrence because they have been grouped by categories."
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "While our revenue and earnings are relatively predictable as a result of our subscription-based business model, the broader implications of these macroeconomic events on our business, results of operations and overall fi"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We maintain an allowance for doubtful accounts which reflects our best estimate of potentially uncollectible trade receivables and is based on both specific and general reserves"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "In addition to historical information, this Quarterly Report on Form 10-Q contains forward-looking statements, including statements regarding product plans, future growth, market opportunities, fluctuations in foreign cu"
+    }
+  },
+  "overall_sentiment": 0.12,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for ADBE (2024-08-30 10-Q): sentiment score of +0.12 with 4 expansionary signals and 3 cautious risk factors identified."
+}

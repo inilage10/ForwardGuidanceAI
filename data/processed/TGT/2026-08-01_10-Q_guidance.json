@@ -1,0 +1,55 @@
+{
+  "ticker": "TGT",
+  "filing_date": "2026-08-01",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We record almost all retail store revenues at the point of sale"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Adjusted SG&A expenses, Adjusted SG&A expense rate, Adjusted operating income, and Adjusted operating income margin rate, which are non-GAAP measures, exclude the impact of certain items"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our Chief Operating Decision Maker (CODM)—our Chief Executive Officer—monitors our consolidated net earnings and operating income to evaluate performance and make operating decisions including whether to invest profits i"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our stores fulfill the majority of digitally originated sales, including shipment from stores to guests, store Order Pickup or Drive Up, and Same Day Delivery"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our Chief Operating Decision Maker (CODM)—our Chief Executive Officer—monitors our consolidated net earnings and operating income to evaluate performance and make operating decisions including whether to invest profits i"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We record almost all retail store revenues at the point of sale"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.67,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for TGT (2026-08-01 10-Q): sentiment score of +0.67 with 2 expansionary signals and 0 cautious risk factors identified."
+}

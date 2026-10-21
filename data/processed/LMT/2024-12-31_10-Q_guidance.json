@@ -1,0 +1,55 @@
+{
+  "ticker": "LMT",
+  "filing_date": "2024-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Statements and assumptions with respect to future sales, income and cash flows, growth, program performance, the outcome of litigation, anticipated pension costs and funding, environmental remediation cost estimates, pla"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "While we would expect to compete and be well positioned as the incumbent on existing programs, we may not be successful and, even if we are successful, the replacement programs may be funded at lower levels or result in"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "21st Century Security guides our strategy and investments"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Innovations in these areas will expand capability, improve interoperability, increase demand for our multi-domain solutions and drive efficient conversion of backlog into growth across our portfolio"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "vision is to accelerate the adoption of advanced networking and other leading-edge technologies into the American defense enterprise, while enhancing the performance and value of our platforms and products for our custom"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We also are involved in numerous network-enabled activities that allow separate systems to work together to increase effectiveness and we continue to invest in new technologies to maintain and enhance competitiveness in"
+    }
+  },
+  "overall_sentiment": 0.58,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for LMT (2024-12-31 10-Q): sentiment score of +0.58 with 9 expansionary signals and 2 cautious risk factors identified."
+}

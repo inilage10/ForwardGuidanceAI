@@ -1,0 +1,55 @@
+{
+  "ticker": "ADBE",
+  "filing_date": "2026-02-27",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "billion of revenue was recognized that was included in the balance of deferred revenue as of November 28, 2025."
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "New industry standards, evolving distribution and sales models, limited barriers to entry, short product life cycles, customer price sensitivity, global economic conditions and the frequent entry of new solutions or comp"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "In addition to historical information, this Quarterly Report on Form 10-Q contains forward-looking statements, including statements regarding product plans, future growth, market opportunities, including artificial intel"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Many factors affect more than one category and the factors are not in order of significance or probability of occurrence because they have been grouped by categories"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our Chief Executive Officer, the Company’s chief operating decision maker, reviews consolidated results, including net income, to assess segment performance and allocate resources"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We maintain an allowance for doubtful accounts which reflects our best estimate of potentially uncollectible trade receivables and is based on both specific and general reserves"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "In addition to historical information, this Quarterly Report on Form 10-Q contains forward-looking statements, including statements regarding product plans, future growth, market opportunities, including artificial intel"
+    }
+  },
+  "overall_sentiment": 0.38,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for ADBE (2026-02-27 10-Q): sentiment score of +0.38 with 5 expansionary signals and 2 cautious risk factors identified."
+}

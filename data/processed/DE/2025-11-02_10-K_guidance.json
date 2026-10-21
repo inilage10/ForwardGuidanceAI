@@ -1,0 +1,55 @@
+{
+  "ticker": "DE",
+  "filing_date": "2025-11-02",
+  "filing_type": "10-K",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "A large proportion of the equipment operations’ total agricultural equipment sales in the U.S"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We face risks associated with international, national, and regional trade laws, regulations, and policies that could materially impair our profitability."
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "The demand for our products and services depends on the fundamentals in the markets in which we operate and can be significantly reduced in an economic environment characterized by high unemployment, high interest rates,"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Agricultural trends, including the production of and demand for renewable fuels, including biofuels, can also impact sales"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Production systems refer to the series of steps our customers take to execute different tasks, operations, and projects to grow an agricultural product or execute a project."
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "This Annual Report on Form 10-K contains forward-looking statements that are subject to risks and uncertainties"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We offer our employees upskill training, career planning, and leadership development to better prepare our employees for future career opportunities at Deere"
+    }
+  },
+  "overall_sentiment": -0.4,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for DE (2025-11-02 10-K): sentiment score of -0.40 with 1 expansionary signals and 3 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "NKE",
+  "filing_date": "2026-02-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Department of Treasury published final regulations related to Internal Revenue Code Section 987 foreign currency gains and losses derived from translation of the operations, assets and liabilities of non-U.S"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "These factors, and any changes to these factors, among others, could have a material adverse impact on consumer behavior and on our future Revenues and overall profitability"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Dollars for consolidated reporting, certain foreign subsidiaries use excess cash to purchase U.S. Dollar denominated available-for-sale investments"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The risks and uncertainties are detailed from time to time in reports filed by NIKE with the SEC, including reports filed on Forms 8-K, 10-Q and 10-K, and include, among others, the following: risks relating to our busin"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The combination of these foreign currency exposures and the related hedging instruments has the effect of partially offsetting the year-over-year foreign currency translation impact on net earnings"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Department of Treasury published final regulations related to Internal Revenue Code Section 987 foreign currency gains and losses derived from translation of the operations, assets and liabilities of non-U.S"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NKE (2026-02-28 10-Q): sentiment score of +0.00 with 7 expansionary signals and 7 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "RTX",
+  "filing_date": "2023-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Of the total RPO as of December 31, 2023, we expect approximately 25% will be recognized as sales over the next 12 months."
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our operating profits and margins under our contracts could be adversely affected by these factors"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Changes in environmental and climate-related laws or regulations, including regulations on greenhouse gas emissions, carbon pricing, energy taxes, product efficiency standards, and mandatory disclosure obligations could"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "excludes unexercised contract options and potential orders under ordering-type contracts (e.g., indefinite-delivery, indefinite-quantity (IDIQ) type contracts)."
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Forward-looking statements may include, among other things, statements relating to future sales, earnings, cash flow, results of operations, uses of cash, share repurchases (including the accelerated share repurchase pro"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In 2023, Raytheon achieved key advancements in, or received contract awards for, the following programs: Naval Strike Missile (NSM), the StormBreaker smart weapon, AIM-9X and the AMRAAM program, and certain advanced tech"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "In addition, the competitive landscape in the defense industry continues to evolve with trends such as the continued increase in commercial competitors and increased government, particularly foreign, sponsorship of compe"
+    }
+  },
+  "overall_sentiment": 0.3,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for RTX (2023-12-31 10-Q): sentiment score of +0.30 with 6 expansionary signals and 3 cautious risk factors identified."
+}

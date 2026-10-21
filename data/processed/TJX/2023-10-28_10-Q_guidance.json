@@ -1,0 +1,55 @@
+{
+  "ticker": "TJX",
+  "filing_date": "2023-10-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "% of the applicable pension liability (the Funding Target pursuant to the Internal Revenue Code section 430) or such other amount as is sufficient to avoid restrictions with respect to the funding of nonqualified plans u"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "If we use our operating cash flow and/or cash on hand to repay our debt, it will reduce the amount of cash available for additional capital expenditures."
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Applicable risks and uncertainties include, among others, execution of buying strategy and inventory management; customer trends and preferences; competition; various marketing efforts; operational and business expansion"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Approximately $1.3 billion of our cash was held by our foreign subsidiaries with $623 million held in countries where we intend to indefinitely reinvest any undistributed earnings"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We believe our existing cash and cash equivalents, internally generated funds and our credit facilities, under which facilities we have $1.5 billion available as of the period ended October 28, 2023, as described in Note"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Applicable risks and uncertainties include, among others, execution of buying strategy and inventory management; customer trends and preferences; competition; various marketing efforts; operational and business expansion"
+    }
+  },
+  "overall_sentiment": -0.55,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for TJX (2023-10-28 10-Q): sentiment score of -0.55 with 2 expansionary signals and 8 cautious risk factors identified."
+}

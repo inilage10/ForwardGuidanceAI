@@ -1,0 +1,55 @@
+{
+  "ticker": "TGT",
+  "filing_date": "2024-02-03",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "If we do not predict and quickly respond to changing consumer preferences and spending patterns, we may experience lower sales, spoilage, and increased inventory markdowns, which could adversely affect our results of ope"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Sales growth – from both comparable sales and new stores – represents an important driver of our long-term profitability"
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "If our capital investments do not achieve appropriate returns or our efficiency efforts are not successful, our competitive position, results of operations, and financial condition could be adversely affected."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our stores fulfill the majority of digitally originated sales, including shipment from stores to guests, store Order Pickup or Drive Up, and delivery via Shipt"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Adjusted diluted earnings per share (Adjusted EPS), a non-GAAP metric, excludes the impact of certain items"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In March 2024, we announced changes to Target Circle, including the integration of Target Circle Card™ (formerly RedCard) and the addition of a Target Circle 360™ paid membership option"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our ability to predict and adapt to changing consumer preferences depends on many factors, including obtaining accurate and relevant data on guest preferences, successfully implementing new technologies and capabilities"
+    }
+  },
+  "overall_sentiment": 0.12,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for TGT (2024-02-03 10-Q): sentiment score of +0.12 with 4 expansionary signals and 3 cautious risk factors identified."
+}

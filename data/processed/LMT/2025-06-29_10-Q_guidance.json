@@ -1,0 +1,55 @@
+{
+  "ticker": "LMT",
+  "filing_date": "2025-06-29",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Estimates inherent in the preparation of our consolidated financial statements include, but are not limited to, accounting for sales and cost recognition; postretirement benefit plans; environmental liabilities and asset"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Cumulative profit booking rate adjustments represent the cumulative effect of the changes on current and prior periods; sales and operating margins in future periods are recognized as if the revised estimates had been us"
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Estimates inherent in the preparation of our consolidated financial statements include, but are not limited to, accounting for sales and cost recognition; postretirement benefit plans; environmental liabilities and asset"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Government, and are conducting remediation activities under various consent decrees, orders, and agreements relating to soil, groundwater, sediment, or surface water contamination at certain sites of former or current op"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Unless otherwise noted, we present all per share amounts cited in these consolidated financial statements on a “per diluted share” basis"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In the opinion of management, these consolidated financial statements reflect all adjustments that are of a normal recurring nature necessary for a fair presentation of our results of operations, financial condition, and"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our MFC business segment has been performing under a competitively bid classified contract, which includes a cost-reimbursable base contract for the initial phase of the program and multiple fixed-price options for addit"
+    }
+  },
+  "overall_sentiment": -0.75,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for LMT (2025-06-29 10-Q): sentiment score of -0.75 with 0 expansionary signals and 3 cautious risk factors identified."
+}

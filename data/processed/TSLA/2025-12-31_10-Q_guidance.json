@@ -1,0 +1,55 @@
+{
+  "ticker": "TSLA",
+  "filing_date": "2025-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements include, but are not limited to, statements concerning supply chain constraints, our strategy, competition, future operations and production capacity, future financial position, future re"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements include, but are not limited to, statements concerning supply chain constraints, our strategy, competition, future operations and production capacity, future financial position, future re"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "To support our businesses in clean energy and transport and autonomous robots, we are investing in and developing the necessary supporting infrastructure"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements include, but are not limited to, statements concerning supply chain constraints, our strategy, competition, future operations and production capacity, future financial position, future re"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Federal Energy Regulatory Commission (“FERC”) has also taken steps to enable the participation of energy storage in wholesale energy markets"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The discussions in this Annual Report on Form 10-K contain forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The worldwide automotive market is highly competitive and we expect it will become even more competitive in the future as a significant and growing number of established and new automobile manufacturers, as well as other"
+    }
+  },
+  "overall_sentiment": -0.12,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for TSLA (2025-12-31 10-Q): sentiment score of -0.12 with 7 expansionary signals and 9 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "DE",
+  "filing_date": "2024-10-27",
+  "filing_type": "10-K",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Current financial and sustainability goals for the Leap Ambitions relate to workforce safety, agriculture customer outcomes, product circularity, environmental footprint, Solutions as a Service, and equipment operations"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The latter have the potential to significantly increase production and logistics costs and have a material negative effect on the profitability of the business, particularly if we are unable to recover the increased cost"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The Leap Ambitions framework has three components: (i) size the incremental market opportunity, quantifying the value that can be created; (ii) identify the key actions required to guide investment in digitalization, aut"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Sales also are influenced by general economic conditions, farmland prices, farmers’ debt levels and access to financing, interest and exchange rates, agricultural trends, including the production of and demand for renewa"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Production systems refer to the series of steps our customers take to execute different tasks, operations, and projects to grow an agricultural product or execute a project."
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "This Annual Report on Form 10-K contains forward-looking statements that are subject to risks and uncertainties"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our total rewards are intended to be competitive, meet the varied needs of our global workforce, and reinforce our values"
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for DE (2024-10-27 10-K): sentiment score of +0.00 with 4 expansionary signals and 4 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "AAPL",
+  "filing_date": "2026-03-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "The Company expects these trends to intensify, which, together with actions that may be taken by the Company in response to such trends, may materially adversely affect demand for the Company’s products and negatively im"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "The Company expects these trends to intensify, which, together with actions that may be taken by the Company in response to such trends, may materially adversely affect demand for the Company’s products and negatively im"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The following tables show the Company’s cash, cash equivalents and marketable securities by significant investment category as of March 28, 2026 and September 27, 2025 (in millions):"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "The Company is experiencing a period of supply constraints and increasing costs for components driven by factors such as industry supply-demand imbalances for components, including advanced semiconductors, storage (NAND)"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Shares used in computing earnings per share:"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company designates these instruments as either cash flow or fair value hedges"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Such changes in business practices can also otherwise adversely affect the experience for users of the Company’s products and services, and result in harm to the Company’s reputation, loss of competitive advantage, poor"
+    }
+  },
+  "overall_sentiment": -0.92,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for AAPL (2026-03-28 10-Q): sentiment score of -0.92 with 0 expansionary signals and 11 cautious risk factors identified."
+}

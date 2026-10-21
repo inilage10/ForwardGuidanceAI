@@ -1,0 +1,55 @@
+{
+  "ticker": "ETN",
+  "filing_date": "2024-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "With revenues of nearly $25 billion in 2024, the Company serves customers in more than 160 countries."
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Eaton's segment revenues, operating results, and profitability have varied in the past and may vary from quarter to quarter in the future"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "The reindustrialization of and growth of megaprojects in North America and increased global infrastructure spending focused on clean energy programs are expanding our end markets and positioning Eaton for growth for year"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Eaton continues to modify processes on an ongoing, regular basis in order to reduce the impact on the environment, including the reduction or elimination of certain chemicals used in, and wastes generated from, operation"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Compliance with laws that have been enacted or adopted regulating the discharge of materials into the environment, or otherwise relating to the protection of the environment, are not expected to have a material adverse e"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We make products for the data center, utility, industrial, commercial, machine building, residential, aerospace and mobility markets"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Compliance with laws that have been enacted or adopted regulating the discharge of materials into the environment, or otherwise relating to the protection of the environment, are not expected to have a material adverse e"
+    }
+  },
+  "overall_sentiment": 0.57,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for ETN (2024-12-31 10-Q): sentiment score of +0.57 with 5 expansionary signals and 1 cautious risk factors identified."
+}

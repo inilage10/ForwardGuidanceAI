@@ -1,0 +1,55 @@
+{
+  "ticker": "UNP",
+  "filing_date": "2025-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Line outages and other interruptions caused by these conditions have in the past and could in the future adversely affect parts or all of our rail network, potentially negatively affecting revenues, costs, and liabilitie"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "Any of the following could also affect the competitiveness of our transportation services for some or all of our commodities, which could have a material adverse effect on our results of operations, financial condition,"
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The following discussion addresses significant factors, events, and uncertainties that make an investment in our securities risky and provides important information for the understanding of our “forward-looking statement"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Total volume increased 1% versus 2024, driven by coal, industrial chemicals and plastics, grain and grain products, and rock shipments, partially offset by weaker demand for automotive and energy and specialized markets"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "In 2025, we reported an 8% increase in earnings per share versus 2024"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Total volume increased 1% versus 2024, driven by coal, industrial chemicals and plastics, grain and grain products, and rock shipments, partially offset by weaker demand for automotive and energy and specialized markets"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Because of the proximity of our routes to major inland and Gulf Coast waterways, barges can be particularly competitive, especially for grain and bulk commodities in certain areas where we operate"
+    }
+  },
+  "overall_sentiment": -0.06,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UNP (2025-12-31 10-Q): sentiment score of -0.06 with 7 expansionary signals and 8 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "ADBE",
+  "filing_date": "2023-12-01",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "In addition to historical information, this Annual Report on Form 10-K contains “forward-looking statements,” within the meaning of applicable securities laws, including statements related to product development plans an"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "In addition to historical information, this Annual Report on Form 10-K contains “forward-looking statements,” within the meaning of applicable securities laws, including statements related to product development plans an"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "In addition to historical information, this Annual Report on Form 10-K contains “forward-looking statements,” within the meaning of applicable securities laws, including statements related to product development plans an"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "In our Creative Cloud business, we employ our product-led growth strategy to minimize the friction of customer interactions and drive positive product experiences, which results in increasing customer adoption, usage, co"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "In addition to historical information, this Annual Report on Form 10-K contains “forward-looking statements,” within the meaning of applicable securities laws, including statements related to product development plans an"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "In addition to historical information, this Annual Report on Form 10-K contains “forward-looking statements,” within the meaning of applicable securities laws, including statements related to product development plans an"
+    }
+  },
+  "overall_sentiment": 0.96,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for ADBE (2023-12-01 10-Q): sentiment score of +0.96 with 23 expansionary signals and 0 cautious risk factors identified."
+}

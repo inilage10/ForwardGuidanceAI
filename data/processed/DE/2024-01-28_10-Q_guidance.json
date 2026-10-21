@@ -1,0 +1,55 @@
+{
+  "ticker": "DE",
+  "filing_date": "2024-01-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We invoice in advance of recognizing the sale of certain products and the revenue for certain services"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "– Customers seek to improve profitability, productivity, and sustainability through technology"
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "The investments in these technologies and in establishing a Solutions as a Service business model might increase our operating costs and may decrease operating margins during the transition period"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Production volumes are expected to decline in 2024 as demand moderates to more normal levels."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Net income attributable to Deere & Company"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": ", Income Taxes (Topic 740): Improvements to Income Tax Disclosures, which expands disclosures in an entity’s income tax rate reconciliation table and cash taxes paid both in the U.S"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.12,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for DE (2024-01-28 10-Q): sentiment score of +0.12 with 4 expansionary signals and 3 cautious risk factors identified."
+}

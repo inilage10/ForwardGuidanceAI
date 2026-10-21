@@ -1,0 +1,55 @@
+{
+  "ticker": "BA",
+  "filing_date": "2024-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Internal Revenue Service is currently auditing the 2018-2020 tax years"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The level of profitability on the 777X program will be subject to a number of factors"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "of these financing commitments relate to customers we believe have less than investment-grade credit"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "is expected to be recovered from units included in the program accounting quantity that represent expected future orders."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The operational and technical complexities of fixed-price development contracts create financial risk, which could trigger additional earnings charges, termination provisions, order cancellations, or other financially si"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "At March 31, 2024 and December 31, 2023, commercial aircraft programs inventory included the following amounts related to the 777X program: $"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BA (2024-03-31 10-Q): sentiment score of +0.00 with 0 expansionary signals and 0 cautious risk factors identified."
+}

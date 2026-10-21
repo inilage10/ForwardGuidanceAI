@@ -1,0 +1,55 @@
+{
+  "ticker": "TGT",
+  "filing_date": "2025-08-02",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We record almost all retail store revenues at the point of sale"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Merchandise Sales growth—from both comparable sales and new stores—represents an important driver of our long-term profitability"
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "corporate tax provisions, including restoring immediate deductibility of certain capital expenditures, restoring full expensing of domestic research and development costs, and changes in the computations of U.S"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We are closely monitoring the evolving consumer and regulatory landscape and adjusting plans as needed, including, but not limited to, vendor negotiations, assortment changes, movements in country of production, adjustme"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Adjusted diluted earnings per share (Adjusted EPS), a non-GAAP metric, excludes the impact of certain items"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We record almost all retail store revenues at the point of sale"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.5,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for TGT (2025-08-02 10-Q): sentiment score of +0.50 with 4 expansionary signals and 1 cautious risk factors identified."
+}

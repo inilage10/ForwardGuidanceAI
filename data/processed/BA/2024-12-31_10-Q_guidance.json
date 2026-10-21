@@ -1,0 +1,55 @@
+{
+  "ticker": "BA",
+  "filing_date": "2024-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Operational challenges impacting the production system for one or more of our commercial aircraft programs could result in additional production delays and/or failure to meet customer demand for new aircraft, either of w"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We must minimize disruption caused by production changes, achieve operational stability and implement productivity improvements in order to meet customer demand and maintain our profitability."
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "An investment in our securities involves risks and uncertainties, including those described below, which can materially affect our business, financial position, results of operations and cash flows"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We must minimize disruption caused by production changes, achieve operational stability and implement productivity improvements in order to meet customer demand and maintain our profitability."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This report, as well as our annual report to shareholders, quarterly reports and other filings we make with the SEC, press and earnings releases and other written and oral communications, contain “forward-looking stateme"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "As a result of the strike, we paused production of our commercial aircraft (other than the 787 production in Charleston) and certain of our BDS products, adversely impacting our business and financial position"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our compensation program is designed to attract, reward and retain the best-qualified talent with competitive compensation and benefits, including healthcare, paid time off, parental leave, retirement benefits, tuition a"
+    }
+  },
+  "overall_sentiment": -0.29,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BA (2024-12-31 10-Q): sentiment score of -0.29 with 2 expansionary signals and 4 cautious risk factors identified."
+}

@@ -1,0 +1,57 @@
+{
+  "ticker": "ADBE",
+  "company_name": "Adobe",
+  "filing_date": "2026-02-15",
+  "filing_type": "10-Q",
+  "period": "Q1 2026",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "low",
+      "confidence": 0.82,
+      "direct_quote": "Targeting 9% to 11% constant currency revenue growth in Digital Media ARR."
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.83,
+      "direct_quote": "Operating margins guided in line with historic software profitability ranges."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.79,
+      "direct_quote": "Modest server capacity additions for Firefly generative model inference."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.8,
+      "direct_quote": "Creative Cloud subscription growth steady with expanding commercial adoption of Firefly credits."
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "low",
+      "confidence": 0.83,
+      "direct_quote": "Non-GAAP EPS forecasted to increase roughly 11% to 13% for the full fiscal year."
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.84,
+      "direct_quote": "Firefly Video model and generative features embedded natively into Premiere and Photoshop."
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.83,
+      "direct_quote": "Industry standard creative software ecosystem, facing emerging AI native challengers."
+    }
+  },
+  "overall_sentiment": 0.504,
+  "key_risks": [
+    "Competition from low-cost generative image/video standalone web applications",
+    "Monetization pace of generative AI tools"
+  ],
+  "summary": "Adobe forecasts stable high-single to low-double digit ARR growth with steady margins and ongoing integration of Firefly AI tools."
+}

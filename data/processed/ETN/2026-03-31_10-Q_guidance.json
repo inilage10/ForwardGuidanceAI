@@ -1,0 +1,55 @@
+{
+  "ticker": "ETN",
+  "filing_date": "2026-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These estimates require judgment of future revenue growth rates, future margins, and the applicable weighted-average cost of capital used to discount those estimated cash flows"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These estimates require judgment of future revenue growth rates, future margins, and the applicable weighted-average cost of capital used to discount those estimated cash flows"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "We are capitalizing on the megatrends of the electrification, digitalization, and the reindustrialization of and growth of megaprojects in North America and increased global infrastructure spending, all of which are expa"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Additionally, the Company uses the following metrics as indicators of customer demand and future revenue expectations in the Electrical Americas, Electrical Global, and Aerospace business segments"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "million, respectively were determined using either the relief-from-royalty model or the multi-period excess earnings model, which are discounted cash flow models that rely on the Company's estimates"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This accounting standard requires disaggregated income statement expense disclosures on an annual and interim basis, including inventory purchases, employee compensation, depreciation, and intangible asset amortization f"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "million of employee transaction and retention awards"
+    }
+  },
+  "overall_sentiment": 0.58,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for ETN (2026-03-31 10-Q): sentiment score of +0.58 with 9 expansionary signals and 2 cautious risk factors identified."
+}

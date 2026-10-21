@@ -1,0 +1,55 @@
+{
+  "ticker": "HON",
+  "filing_date": "2025-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "as we remain focused on increasing operating cash flows through revenue growth, margin expansion, and improved working capital turnover"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "as we remain focused on increasing operating cash flows through revenue growth, margin expansion, and improved working capital turnover"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "During the year, we deployed $10.0 billion to capital expenditures, dividends, share repurchases, and mergers and acquisitions"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "as of year-end, demonstrating continued strong demand in our end markets and positioning us well to convert for future growth"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Such discussions contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act), including statements related to the proposed separation of Hone"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We help managers develop this skill as they do any other leadership skill through training programs, interactive learning, and real-time events, including the hiring and talent review processes"
+    }
+  },
+  "overall_sentiment": 0.9,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HON (2025-12-31 10-Q): sentiment score of +0.90 with 9 expansionary signals and 0 cautious risk factors identified."
+}

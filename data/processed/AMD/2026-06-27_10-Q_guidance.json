@@ -1,0 +1,55 @@
+{
+  "ticker": "AMD",
+  "filing_date": "2026-06-27",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Revenue allocated to remaining performance obligations that are unsatisfied or partially unsatisfied include amounts received from customers and amounts that will be invoiced and recognized as revenue in future periods f"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "This partnership may result in increased competition and pricing pressure for our products or could prevent us from participating in other opportunities, which could materially adversely affect our business, financial co"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "The forward-looking statements relate to, among other things: possible impact of future accounting rules on AMD’s condensed consolidated financial statements; demand for AMD’s products; AMD’s strategy and expected benefi"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "These commitments were made under noncancellable purchase orders and contractual obligations requiring minimum commitments for which cancellation would lead to significant penalties."
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "If current or prospective customers default on or delay payments to us, our earnings and cash flow could be adversely impacted"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In the opinion of the Company’s management, the information contained herein reflects all adjustments necessary for a fair presentation of the Company’s results of operations, financial position, cash flows and stockhold"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "The forward-looking statements relate to, among other things: possible impact of future accounting rules on AMD’s condensed consolidated financial statements; demand for AMD’s products; AMD’s strategy and expected benefi"
+    }
+  },
+  "overall_sentiment": 0.31,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for AMD (2026-06-27 10-Q): sentiment score of +0.31 with 10 expansionary signals and 5 cautious risk factors identified."
+}

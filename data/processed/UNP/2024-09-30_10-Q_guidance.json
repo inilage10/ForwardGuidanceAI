@@ -1,0 +1,55 @@
+{
+  "ticker": "UNP",
+  "filing_date": "2024-09-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements and information also include any other statements or information in this report (including information incorporated herein by reference) regarding: potential impacts of public health crises, in"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "We plan to continue to make investments to support our growth strategy, harden our infrastructure, replace older assets, and improve the safety and resiliency of the network"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on demand outlook remains in line with prior baseline."
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements and information also include any other statements or information in this report (including information incorporated herein by reference) regarding: potential impacts of public health crises, in"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Because of the uncertainty surrounding the ultimate outcome of personal injury claims, it is reasonably possible that future costs to settle these claims"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We have several stock-based compensation plans where employees receive nonvested stock options, nonvested retention shares, and nonvested stock units"
+    }
+  },
+  "overall_sentiment": 0.35,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UNP (2024-09-30 10-Q): sentiment score of +0.35 with 13 expansionary signals and 6 cautious risk factors identified."
+}

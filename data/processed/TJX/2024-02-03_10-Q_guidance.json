@@ -1,0 +1,55 @@
+{
+  "ticker": "TJX",
+  "filing_date": "2024-02-03",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "If they do not make assessments accurately or otherwise cannot execute our strategy in an effective or timely way, our customer transactions and our sales, margins, and other financial results could be adversely affected"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "If they do not make assessments accurately or otherwise cannot execute our strategy in an effective or timely way, our customer transactions and our sales, margins, and other financial results could be adversely affected"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "These forward-looking statements address various matters that we intend, expect or believe may occur in the future, including, among others, some of the statements in this Form 10-K under Item 1, “Business,” Item 1A, “Ri"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "These forward-looking statements address various matters that we intend, expect or believe may occur in the future, including, among others, some of the statements in this Form 10-K under Item 1, “Business,” Item 1A, “Ri"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "In addition, if we suspend our buyback program, as we did during fiscal 2021, or if we have an active buyback program and are repurchasing shares but do not repurchase the number of shares we contemplated pursuant to our"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "us-gaap:FairValueInputsLevel12And3Member"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Applicable risks and uncertainties include, among others: execution of buying strategy and inventory management; customer trends and preferences; competition; various marketing efforts; operational and business expansion"
+    }
+  },
+  "overall_sentiment": -0.67,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for TJX (2024-02-03 10-Q): sentiment score of -0.67 with 1 expansionary signals and 7 cautious risk factors identified."
+}

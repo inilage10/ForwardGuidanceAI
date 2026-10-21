@@ -1,0 +1,55 @@
+{
+  "ticker": "DE",
+  "filing_date": "2026-05-03",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We invoice in advance of recognizing the revenue of certain products and services"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Customers seek to improve profitability, productivity, and sustainability by selecting our equipment and technology solutions"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Favorable industry fundamentals, including strong customer backlogs supported by large projects, infrastructure investment, and data center construction activity, continue to offset softness in residential construction."
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "These factors are expected to be partially offset by robust demand for commodities and tightening supply which are expected to support improvements in crop prices"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "We are forecasting operating cash flows from equipment operations in 2026 to remain flat compared with 2025 driven by an offsetting decrease in net income adjusted for non-cash provisions, and higher cash flows generated"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": ", Income Taxes (Topic 740): Improvements to Income Tax Disclosures, which expands disclosures in an entity’s income tax rate reconciliation table and cash taxes paid both in the U.S"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.55,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for DE (2026-05-03 10-Q): sentiment score of +0.55 with 8 expansionary signals and 2 cautious risk factors identified."
+}

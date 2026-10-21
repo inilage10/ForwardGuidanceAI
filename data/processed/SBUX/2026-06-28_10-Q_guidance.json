@@ -1,0 +1,55 @@
+{
+  "ticker": "SBUX",
+  "filing_date": "2026-06-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "In July 2025, the FASB issued guidance providing a practical expedient for measuring expected credit losses on current accounts receivable and current contract assets arising from revenue transactions"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "We expect that the conversion to our licensed joint venture model will continue to drive lower revenues and higher operating margin for Starbucks, as compared to the historical, company-operated model."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Additionally, certain disclosures related to unrecognized tax benefits and indefinite reinvestment assertions were removed"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Inventories, or our longer-dated forecasted coffee demand where underlying fixed price and price-to-be-fixed contracts are not yet available"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The resulting gains and losses are recorded in AOCI and are subsequently reclassified to product and distribution costs when the hedged exposure affects net earnings."
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "In the second quarter of fiscal 2026, management approved a fiscal 2026 restructuring plan to relocate certain functions of our support organization to an additional office in Nashville, Tennessee, with the intention to"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": -0.22,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for SBUX (2026-06-28 10-Q): sentiment score of -0.22 with 3 expansionary signals and 5 cautious risk factors identified."
+}

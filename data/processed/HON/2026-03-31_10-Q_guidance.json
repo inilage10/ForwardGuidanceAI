@@ -1,0 +1,55 @@
+{
+  "ticker": "HON",
+  "filing_date": "2026-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Such discussions contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act), including statements related to the proposed separation of Hone"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "We also identify businesses that do not fit into our long-term strategic plan based on their market position, relative profitability, or growth potential"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "If necessary, our available cash, committed credit lines, and access to the public debt and equity markets provide additional sources of short-term and long-term liquidity to fund current operations, debt maturities, and"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Our backlog of orders increased 15% to $38.3 billion, as of March 31, 2026, compared to March 31, 2025"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Net income from continuing operations"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Such discussions contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act), including statements related to the proposed separation of Hone"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In certain of our businesses, our contracts are typically awarded on a competitive basis"
+    }
+  },
+  "overall_sentiment": 0.8,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HON (2026-03-31 10-Q): sentiment score of +0.80 with 4 expansionary signals and 0 cautious risk factors identified."
+}

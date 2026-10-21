@@ -1,0 +1,55 @@
+{
+  "ticker": "TSLA",
+  "filing_date": "2025-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements include, but are not limited to, statements concerning supply chain constraints, our strategy, competition, future operations and production capacity, future financial position, future re"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements include, but are not limited to, statements concerning supply chain constraints, our strategy, competition, future operations and production capacity, future financial position, future re"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "While we prepare for near-term challenges to our business under current policies, we are focused on long-term growth opportunities as we continue to make prudent investments."
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements include, but are not limited to, statements concerning supply chain constraints, our strategy, competition, future operations and production capacity, future financial position, future re"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "In completing our assessment of realizability of our deferred tax assets, we consider our history of income (loss) measured at pre-tax income (loss) adjusted for permanent book-tax differences on a jurisdictional basis,"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The discussions in this Quarterly Report on Form 10-Q contain forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Changes in government and economic policies, incentives or tariffs may also impact our production, cost structure and the competitive landscape"
+    }
+  },
+  "overall_sentiment": -0.19,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for TSLA (2025-06-30 10-Q): sentiment score of -0.19 with 8 expansionary signals and 12 cautious risk factors identified."
+}

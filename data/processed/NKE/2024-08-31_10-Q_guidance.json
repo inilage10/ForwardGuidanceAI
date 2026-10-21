@@ -1,0 +1,55 @@
+{
+  "ticker": "NKE",
+  "filing_date": "2024-08-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The increase in the Company's effective tax rate was primarily due to a one-time benefit recognized in the first three months of fiscal 2024 from the impact of temporary relief provided by the Internal Revenue Service (\""
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "The operating environment could remain volatile in fiscal 2025 as the risk remains that the factors discussed below, among others, could have a material adverse impact on our future revenue growth as well as overall prof"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Dollars for consolidated reporting, certain foreign subsidiaries use excess cash to purchase U.S. Dollar denominated available-for-sale investments"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The risks and uncertainties are detailed from time to time in reports filed by NIKE with the SEC, including reports filed on Forms 8-K, 10-Q and 10-K, and include, among others, the following: risks relating to our execu"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The primary financial measure used by the Company to evaluate performance of individual operating segments is earnings before interest and taxes (\"EBIT\"), which represents Net income before Interest expense (income), net"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "On July 21, 2023, the IRS issued Notice 2023-55 which specifically delayed the application of certain U.S"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.21,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NKE (2024-08-31 10-Q): sentiment score of +0.21 with 8 expansionary signals and 5 cautious risk factors identified."
+}

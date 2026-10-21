@@ -1,0 +1,55 @@
+{
+  "ticker": "GOOGL",
+  "filing_date": "2025-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These include, among other things, expectations regarding the growth of our business and revenues, including factors that may impact such growth, and fluctuations in our revenues and margins; statements relating to plans"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These include, among other things, expectations regarding the growth of our business and revenues, including factors that may impact such growth, and fluctuations in our revenues and margins; statements relating to plans"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These include, among other things, expectations regarding the growth of our business and revenues, including factors that may impact such growth, and fluctuations in our revenues and margins; statements relating to plans"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Adverse macroeconomic conditions have affected, and may in the future affect, the demand for advertising, resulting in fluctuations in the amounts our advertisers spend on advertising, which could harm our financial cond"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Although we hedge a portion of our international currency exposure, significant fluctuations in exchange rates between the US dollar and foreign currencies have and may in the future adversely affect our revenues and ear"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This Annual Report on Form 10-K contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "There is no assurance that we will adapt effectively and competitively to meet this shift, and that such advertising formats, strategies, and offerings will be successful."
+    }
+  },
+  "overall_sentiment": 0.18,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for GOOGL (2025-12-31 10-Q): sentiment score of +0.18 with 6 expansionary signals and 4 cautious risk factors identified."
+}

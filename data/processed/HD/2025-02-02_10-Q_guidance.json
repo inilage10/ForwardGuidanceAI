@@ -1,0 +1,55 @@
+{
+  "ticker": "HD",
+  "filing_date": "2025-02-02",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and expectations; net sales grow"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "A greater concentration of online sales with direct fulfillment could also result in higher costs for delivery, potentially impacting our profit margins."
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and expectations; net sales grow"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and expectations; net sales grow"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and expectations; net sales grow"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Certain statements contained herein, as well as in other filings we make with the SEC and other written and oral information we release, including statements regarding our performance, estimates, expectations, beliefs, i"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We continued our strategic investments aimed at creating an interconnected, frictionless shopping experience that enables our customers to seamlessly blend the digital and physical worlds, growing our market share with P"
+    }
+  },
+  "overall_sentiment": 0.21,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HD (2025-02-02 10-Q): sentiment score of +0.21 with 14 expansionary signals and 9 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "GE",
+  "filing_date": "2023-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements often address our expected future business and financial performance and financial condition, and often contain words such as \"expect,\" \"anticipate,\" \"intend,\" \"plan,\" \"believe,\" \"seek,\""
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements often address our expected future business and financial performance and financial condition, and often contain words such as \"expect,\" \"anticipate,\" \"intend,\" \"plan,\" \"believe,\" \"seek,\""
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "policy uncertainty that resulted in project delays and deferral of customer investments in Onshore Wind and increased near- and longer-term demand in the U.S"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "At GE Aerospace, with a differentiated product and technology portfolio across the commercial and military sectors, we are well positioned to serve customers in expanding and upgrading their fleets amidst the demand ramp"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "These forward-looking statements often address our expected future business and financial performance and financial condition, and often contain words such as \"expect,\" \"anticipate,\" \"intend,\" \"plan,\" \"believe,\" \"seek,\""
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our public communications and SEC filings may contain statements related to future, not past, events"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "downgrades of our current short- and long-term credit ratings or ratings outlooks, or changes in rating application or methodology, and the related impact on our funding profile, costs, liquidity and competitive position"
+    }
+  },
+  "overall_sentiment": -0.1,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for GE (2023-12-31 10-Q): sentiment score of -0.10 with 9 expansionary signals and 11 cautious risk factors identified."
+}

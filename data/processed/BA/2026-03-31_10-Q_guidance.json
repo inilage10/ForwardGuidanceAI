@@ -1,0 +1,55 @@
+{
+  "ticker": "BA",
+  "filing_date": "2026-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Future estimated revenues from the amortization of off-market contract liabilities is as follows:"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This program has break-even gross margins."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "of these financing commitments relate to customers we believe have less than investment-grade credit"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "is expected to be recovered from units included in the program accounting quantity that represent expected future orders."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The risk that actual performance, technical or contractual outcomes could be different than those previously assumed creates financial risk that could trigger additional material earnings charges, termination provisions,"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "associated with the Spirit Acquisition was provisionally assigned to our Commercial Airplanes (BCA) segment as we expect the majority of synergies from the Spirit Acquisition to relate to the commercial airplane segment"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BA (2026-03-31 10-Q): sentiment score of +0.00 with 0 expansionary signals and 0 cautious risk factors identified."
+}

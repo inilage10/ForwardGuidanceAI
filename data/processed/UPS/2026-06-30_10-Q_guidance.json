@@ -1,0 +1,55 @@
+{
+  "ticker": "UPS",
+  "filing_date": "2026-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The preparation of the accompanying unaudited, consolidated financial statements requires management to make estimates and judgments that affect the reported amounts of assets and liabilities and the disclosure of contin"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "initiatives to undertake the end-to-end process redesign effort which will align our organizational processes to the network reconfiguration and enhance our business performance and profitability beyond ordinary ongoing"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "or internationally, including as a result of changes in global trade policy, new or increased tariffs, government shutdowns, or geopolitical uncertainty, tensions and/or conflicts in or arising from various countries and"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "From time to time, we act as an intermediary for cross‑border shipments and, in certain circumstances, may pay customs tariffs, duties, taxes or other governmental charges on behalf of customers"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "During the second quarter of 2026, we took several steps in furtherance of our"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This report, our Annual Report on Form 10-K for the year ended December 31, 2025 and our other filings with the Securities and Exchange Commission contain and in the future may contain \"forward-looking statements.\" State"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Various circumstances precipitated these initiatives, including identification and prioritization of certain investments, developments and changes in competitive landscapes, inflationary pressures, consumer behaviors and"
+    }
+  },
+  "overall_sentiment": -0.17,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UPS (2026-06-30 10-Q): sentiment score of -0.17 with 2 expansionary signals and 3 cautious risk factors identified."
+}

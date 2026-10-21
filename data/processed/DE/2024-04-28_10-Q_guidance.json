@@ -1,0 +1,55 @@
+{
+  "ticker": "DE",
+  "filing_date": "2024-04-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We invoice in advance of recognizing the sale of certain products and the revenue for certain services"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Customers seek to improve profitability, productivity, and sustainability through technology"
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "The investments in these technologies and establishing a Solutions as a Service business model may increase our operating costs and decrease operating margins during the transition period."
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Production volumes are expected to continue to decline during the remainder of 2024 due to demand shifts amid challenges in the global agricultural and turf sectors coupled with proactive production and inventory managem"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Net income attributable to Deere & Company"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We invoice in advance of recognizing the sale of certain products and the revenue for certain services"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": -0.29,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for DE (2024-04-28 10-Q): sentiment score of -0.29 with 2 expansionary signals and 4 cautious risk factors identified."
+}

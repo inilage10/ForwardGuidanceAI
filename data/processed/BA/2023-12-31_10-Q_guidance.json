@@ -1,0 +1,55 @@
+{
+  "ticker": "BA",
+  "filing_date": "2023-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Operational challenges impacting the production system for one or more of our commercial aircraft programs could result in additional production delays and/or failure to meet customer demand for new aircraft, either of w"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We must minimize disruption caused by production changes, achieve operational stability and implement productivity improvements in order to meet customer demand and maintain our profitability."
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "An investment in our common stock or debt securities involves risks and uncertainties, and our actual results and future trends may differ materially from our past or projected future performance"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We must minimize disruption caused by production changes, achieve operational stability and implement productivity improvements in order to meet customer demand and maintain our profitability."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This report, as well as our annual report to shareholders, quarterly reports and other filings we make with the SEC, press and earnings releases and other written and oral communications, contain “forward-looking stateme"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Safety, quality, integrity and sustainability are at the core of how Boeing operates"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We are committed to supporting our employees’ continuous development of professional, technical and leadership skills through access to digital learning resources and through partnerships with leading professional/techni"
+    }
+  },
+  "overall_sentiment": -0.17,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BA (2023-12-31 10-Q): sentiment score of -0.17 with 2 expansionary signals and 3 cautious risk factors identified."
+}

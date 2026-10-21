@@ -1,0 +1,55 @@
+{
+  "ticker": "NKE",
+  "filing_date": "2025-11-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Internal Revenue Service (\"IRS\") for fiscal years 2017 through 2023"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We are taking actions to mitigate the impact of new tariffs; however for fiscal 2026, we expect a negative impact on gross margin"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Dollars for consolidated reporting, certain foreign subsidiaries use excess cash to purchase U.S. Dollar denominated available-for-sale investments"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The risks and uncertainties are detailed from time to time in reports filed by NIKE with the SEC, including reports filed on Forms 8-K, 10-Q and 10-K, and include, among others, the following: risks relating to our busin"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The combination of these foreign currency exposures and the related hedging instruments has the effect of partially offsetting the year-over-year foreign currency translation impact on net earnings"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "federal income tax matters through fiscal year 2016, with the exception of certain transfer pricing adjustments"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": -0.08,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NKE (2025-11-30 10-Q): sentiment score of -0.08 with 5 expansionary signals and 6 cautious risk factors identified."
+}

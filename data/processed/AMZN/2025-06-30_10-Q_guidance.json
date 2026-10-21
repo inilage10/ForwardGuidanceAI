@@ -1,0 +1,55 @@
+{
+  "ticker": "AMZN",
+  "filing_date": "2025-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "billion of unearned revenue as of December 31, 2024 and June 30, 2025."
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The investment in nonvoting preferred stock was initially recorded at its estimated fair value at the time of the conversion and will be accounted for as a component of our equity investments in private companies not acc"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Actual results and outcomes could differ materially for a variety of reasons, including, among others, fluctuations in foreign exchange rates, changes in global economic conditions, tariff and trade policies, and custome"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our CODM regularly reviews consolidated net sales, consolidated operating expenses, and consolidated operating income (loss) by segment"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In December 2023, the Financial Accounting Standards Board (“FASB”) issued an Accounting Standards Update (“ASU”) amending existing income tax disclosure guidance, primarily requiring more detailed disclosure for income"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.17,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for AMZN (2025-06-30 10-Q): sentiment score of +0.17 with 3 expansionary signals and 2 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "BA",
+  "filing_date": "2025-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We expect the next cycle to cover the 2021-2023 tax years; however, the Internal Revenue Service has not confirmed a start date"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This program has break-even gross margins."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "of these financing commitments relate to customers we believe have less than investment-grade credit"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "is expected to be recovered from units included in the program accounting quantity that represent expected future orders."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The risk that actual performance, technical or contractual outcomes could be different than those previously assumed creates financial risk that could trigger additional material earnings charges, termination provisions,"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "primarily for certain domestic deferred tax assets, and certain domestic net operating losses, tax credits and interest carryforwards"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "If we are unable to deliver aircraft to customers in China consistent with our assumptions and/or obtain additional orders from China in the future, we may experience reduced deliveries and/or lower market share."
+    }
+  },
+  "overall_sentiment": -0.67,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BA (2025-03-31 10-Q): sentiment score of -0.67 with 0 expansionary signals and 2 cautious risk factors identified."
+}

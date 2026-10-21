@@ -1,0 +1,55 @@
+{
+  "ticker": "AMD",
+  "filing_date": "2023-09-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Revenue allocated to remaining performance obligations that are unsatisfied (or partially unsatisfied) include amounts received from customers and amounts that will be invoiced and recognized as revenue in future periods"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Comparison of Gross Margin, Expenses, Licensing Gain, Interest Expense, Other Income (Expense) and Income Taxes"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "The forward-looking statements relate to, among other things: possible impact of future accounting rules on AMD’s condensed consolidated financial statements; demand for AMD’s products; the growth, change and competitive"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "under noncancellable purchase orders or contractual obligations requiring minimum purchases for which cancellation would lead to significant penalties"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Any inability of our current or potential future customers to pay us for our products may adversely affect our earnings and cash flow"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In the opinion of the Company’s management, the information contained herein reflects all adjustments necessary for a fair presentation of the Company’s results of operations, financial position, cash flows and stockhold"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "The forward-looking statements relate to, among other things: possible impact of future accounting rules on AMD’s condensed consolidated financial statements; demand for AMD’s products; the growth, change and competitive"
+    }
+  },
+  "overall_sentiment": 0.46,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for AMD (2023-09-30 10-Q): sentiment score of +0.46 with 9 expansionary signals and 3 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "ETN",
+  "filing_date": "2023-09-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Sales are recognized when obligations under the terms of the contract are satisfied and control of promised goods or services have transferred to our customers"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Over the past several years, we've completed a number of transactions to add higher-growth, higher-margin businesses to our portfolio"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "The reindustrialization of North America and Europe, emerging megaprojects, and increased global infrastructure spending focused on clean energy programs, are expanding our end markets and positioning Eaton for growth fo"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Over the course of a year, cash, short-term investments, and short-term debt may fluctuate in order to manage global liquidity"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "This transformation of our portfolio of businesses, along with continued organic sales growth and operational performance, has led to 46% growth in our net income per share"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Control is transferred when the customer has the ability to direct the use of and obtain benefits from the goods or services"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "The following factors could cause actual results to differ materially from those in the forward-looking statements: global pandemics such as COVID-19; unanticipated changes in the markets for the Company’s business segme"
+    }
+  },
+  "overall_sentiment": 0.62,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for ETN (2023-09-30 10-Q): sentiment score of +0.62 with 10 expansionary signals and 2 cautious risk factors identified."
+}

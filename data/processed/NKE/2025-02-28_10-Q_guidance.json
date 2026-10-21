@@ -1,0 +1,55 @@
+{
+  "ticker": "NKE",
+  "filing_date": "2025-02-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "The increase in the Company's effective tax rate was primarily due to decreased benefits from stock-based compensation and one-time benefits recognized in the first nine months of fiscal 2024 including the impact of temp"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "These factors, and any changes to these factors, among others, could have a material adverse impact on consumer behavior and on our future Revenues and overall profitability"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Increasing investment in demand creation including brand marketing and sports marketing to support key product launches and sports moments."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Increasing investment in demand creation including brand marketing and sports marketing to support key product launches and sports moments."
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "taxation of foreign earnings under Subpart F of the Internal Revenue Code, the Company recognized a non-cash deferred income tax benefit of $"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "On July 21, 2023, the IRS issued Notice 2023-55 which specifically delayed the application of certain U.S"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": -0.25,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NKE (2025-02-28 10-Q): sentiment score of -0.25 with 1 expansionary signals and 2 cautious risk factors identified."
+}

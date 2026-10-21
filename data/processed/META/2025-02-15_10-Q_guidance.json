@@ -1,0 +1,57 @@
+{
+  "ticker": "META",
+  "company_name": "Meta Platforms",
+  "filing_date": "2025-02-15",
+  "filing_type": "10-Q",
+  "period": "Q1 2025",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.9,
+      "direct_quote": "Full-year revenue guided to grow 14% to 18% driven by AI-powered ad performance and Reels."
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.84,
+      "direct_quote": "Total expenses expected between $96B and $99B, factoring in infrastructure and legal costs."
+    },
+    "capex_plans": {
+      "direction": "increasing",
+      "magnitude": "high",
+      "confidence": 0.93,
+      "direct_quote": "CapEx raised to support generative AI roadmap, Llama training clusters, and core ranking engines."
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.88,
+      "direct_quote": "Daily active people across Family of Apps up year-over-year with strong engagement in video."
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.87,
+      "direct_quote": "Operating income anticipated to grow alongside efficiency gains in marketing and infrastructure."
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.91,
+      "direct_quote": "Open-source Llama model leadership and Meta AI virtual assistant integration."
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.89,
+      "direct_quote": "Unmatched social graph reach and highly automated advertising delivery engines."
+    }
+  },
+  "overall_sentiment": 0.69,
+  "key_risks": [
+    "Reality Labs segment operating losses continuing to increase",
+    "Regulatory challenges on teen user features"
+  ],
+  "summary": "Meta anticipates robust advertising revenue growth powered by AI targeting, while funding substantial future compute investments."
+}

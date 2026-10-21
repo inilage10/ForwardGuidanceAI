@@ -1,0 +1,55 @@
+{
+  "ticker": "UPS",
+  "filing_date": "2023-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "For example, we rely on these technologies to receive package level information in advance of the physical receipt of packages, to move and track packages through our operations, to efficiently plan deliveries, to execut"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "If we do not appropriately respond to competitive pressures, including replacing any lost volume or maintaining our profitability, we could be materially adversely affected."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "and international postal services, various motor carriers, express companies, freight forwarders, air couriers, large transportation and e-commerce companies that continue to make significant investments in their own log"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Our industry continues to rapidly evolve, including demands for faster deliveries, increased visibility into shipments and development of other services"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This report and our other filings with the Securities and Exchange Commission (\"SEC\") contain and in the future may contain \"forward-looking statements\" within the meaning of the Private Securities Litigation Reform Act"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We believe that UPS employees are among the most motivated and highest performing in the industry and provide us a competitive advantage"
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UPS (2023-12-31 10-Q): sentiment score of +0.00 with 2 expansionary signals and 2 cautious risk factors identified."
+}

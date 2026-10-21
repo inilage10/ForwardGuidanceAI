@@ -1,0 +1,57 @@
+{
+  "ticker": "AMZN",
+  "company_name": "Amazon",
+  "filing_date": "2026-05-15",
+  "filing_type": "10-Q",
+  "period": "Q2 2026",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.89,
+      "direct_quote": "Net sales expected between 10% and 13% growth driven by AWS acceleration and advertising."
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.87,
+      "direct_quote": "Operating income is anticipated to expand as fulfillment network regionalization yields cost efficiencies."
+    },
+    "capex_plans": {
+      "direction": "increasing",
+      "magnitude": "high",
+      "confidence": 0.9,
+      "direct_quote": "CapEx will increase meaningfully to support AWS generative AI capacity and custom silicon."
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.88,
+      "direct_quote": "AWS workload migrations back on track with strong enterprise commitments for Trainium and Bedrock."
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Free cash flow generation on an annualized basis expected to remain at elevated levels."
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.9,
+      "direct_quote": "Expansion in custom AI processors (Trainium/Inferentia) and automated fulfillment robotics."
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.91,
+      "direct_quote": "Leading logistics footprint and AWS hyperscale cloud position."
+    }
+  },
+  "overall_sentiment": 0.694,
+  "key_risks": [
+    "Rising electricity grid capacity constraints for new datacenter clusters",
+    "Retail margin pressure from international expansion"
+  ],
+  "summary": "Amazon projects re-accelerating AWS growth and continued operational leverage across North American retail operations."
+}

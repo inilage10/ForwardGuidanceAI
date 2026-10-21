@@ -1,0 +1,55 @@
+{
+  "ticker": "CAT",
+  "filing_date": "2025-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "With 2025 sales and revenues of $67.589 billion, Caterpillar Inc"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "On the other hand, in circumstances where demand for our products is less than we expect, we may experience excess inventories and be forced to incur additional costs and our profitability may suffer"
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "Our results of operations are materially affected by economic conditions globally and regionally and in the particular industries we serve.  The demand for our products and services tends to be cyclical and can be signif"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "We also purchase various goods and services used in production, logistics, offices and product development processes.  We maintain global strategic sourcing models to meet our global facilities’ production needs while bu"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In managing foreign currency risk for Cat Financial’s operations, the objective is to minimize earnings volatility resulting from conversion and the remeasurement of net foreign currency balance sheet positions, and futu"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Raw Materials and Component Products"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our business, competitive position, results of operations or financial condition could be negatively impacted if supply is insufficient for our operations, if significant transportation delays interfere with deliveries,"
+    }
+  },
+  "overall_sentiment": -0.38,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for CAT (2025-12-31 10-Q): sentiment score of -0.38 with 2 expansionary signals and 5 cautious risk factors identified."
+}

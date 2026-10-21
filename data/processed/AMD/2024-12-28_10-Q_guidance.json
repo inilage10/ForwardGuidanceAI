@@ -1,0 +1,55 @@
+{
+  "ticker": "AMD",
+  "filing_date": "2024-12-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "The forward-looking statements relate to, among other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; AMD’s strategy and expected benefits; the gr"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "These aggressive activities have in the past resulted in lower unit sales and a lower average selling price for many of our products and adversely affected our margins and profitability"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "The forward-looking statements relate to, among other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; AMD’s strategy and expected benefits; the gr"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "The forward-looking statements relate to, among other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; AMD’s strategy and expected benefits; the gr"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "These forward-looking statements are based on current expectations and beliefs and involve numerous risks and uncertainties that could cause actual results to differ materially from expectations"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "The forward-looking statements relate to, among other things: possible impact of future accounting rules on AMD’s consolidated financial statements; demand for AMD’s products; AMD’s strategy and expected benefits; the gr"
+    }
+  },
+  "overall_sentiment": 0.42,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for AMD (2024-12-28 10-Q): sentiment score of +0.42 with 8 expansionary signals and 3 cautious risk factors identified."
+}

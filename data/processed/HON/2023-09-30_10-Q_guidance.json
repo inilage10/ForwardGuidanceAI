@@ -1,0 +1,55 @@
+{
+  "ticker": "HON",
+  "filing_date": "2023-09-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": ", which requires contract assets and contract liabilities acquired in a business combination to be recognized and measured by the acquirer on the acquisition date in accordance with ASC 606, Revenue from Contracts with C"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Segment profit increased $18 million and segment margin percentage increased 110 basis points to 25.2% compared to 24.1% for the same period of 2022."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In addition to our normal operating cash requirements, we expect our principal future cash requirements will be to fund capital expenditures, share repurchases, dividends, strategic acquisitions, and debt repayments"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "On December 8, 2022, the Bankruptcy Court issued an order that (A) approved the Amended Buyout Agreement, and (B) declared that the Channeling Injunction will remain in full force and effect without modification, dissolu"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This reclassification had no impact on the Company's net income, earnings per share, cash flows, segment reporting, or financial position"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Such discussions contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act)"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.67,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HON (2023-09-30 10-Q): sentiment score of +0.67 with 2 expansionary signals and 0 cautious risk factors identified."
+}

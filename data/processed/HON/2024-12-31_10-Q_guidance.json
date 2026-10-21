@@ -1,0 +1,55 @@
+{
+  "ticker": "HON",
+  "filing_date": "2024-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "In 2024, we delivered sales growth of 5%, achieving sales of $38.5 billion, with increases in three of our four reportable business segments, led by double-digit growth in our Aerospace Technologies business segment."
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "as we remain focused on increasing operating cash flows through revenue growth, margin expansion, and improved working capital turnover"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "During the year, we deployed $14.6 billion to capital expenditures, dividends, share repurchases, and mergers and acquisitions"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "as of year-end, demonstrating continued strong demand in our end markets and positioning us well to convert for future growth"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Beyond our compliance requirements with environmental regulations, compliance with other government regulations has not had, and based on laws and regulations currently in effect, is not expected to have a material effec"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Certain information required by Part III is incorporated by reference from the Registrant's definitive proxy statement for the Annual Meeting of Shareowners, or an amendment to this Form 10-K, which the Registrant intend"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Beyond our compliance requirements with environmental regulations, compliance with other government regulations has not had, and based on laws and regulations currently in effect, is not expected to have a material effec"
+    }
+  },
+  "overall_sentiment": 0.9,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HON (2024-12-31 10-Q): sentiment score of +0.90 with 9 expansionary signals and 0 cautious risk factors identified."
+}

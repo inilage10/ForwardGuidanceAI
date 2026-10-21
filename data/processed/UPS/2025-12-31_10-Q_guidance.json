@@ -1,0 +1,55 @@
+{
+  "ticker": "UPS",
+  "filing_date": "2025-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Even if we can offset changes in fuel costs with surcharges, high fuel surcharges have in the past, and may in the future, result in customers shifting from our higher-yielding products to lower-yielding products or an o"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "If we do not appropriately respond to competitive pressures, including retaining or replacing volume lost to competitors or maintaining our profitability, we could be materially adversely affected."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "and international postal services, various motor carriers, express companies, freight forwarders, air couriers, large transportation companies, e-commerce companies and other retailers that continue to make significant i"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Our industry continues to rapidly evolve, including demands for faster deliveries, increased visibility into shipments and development of other services"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This report and our other filings with the Securities and Exchange Commission (\"SEC\") contain and in the future may contain \"forward-looking statements.\" Statements other than those of current or historical fact, and all"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "To assist with employee recruitment and retention, we continue to review the competitiveness of our employee value proposition, including benefits and pay, training, talent development and advancement opportunities"
+    }
+  },
+  "overall_sentiment": -0.22,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UPS (2025-12-31 10-Q): sentiment score of -0.22 with 3 expansionary signals and 5 cautious risk factors identified."
+}

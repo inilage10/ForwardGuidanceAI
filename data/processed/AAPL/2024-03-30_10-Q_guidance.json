@@ -1,0 +1,55 @@
+{
+  "ticker": "AAPL",
+  "filing_date": "2024-03-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "If the Commission concludes that there has been a violation, it can issue a cease and desist order and may impose fines up to 10% of the Company’s annual worldwide net sales"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Services gross margin and Services gross margin percentage increased during the second quarter and first six months of 2024 compared to the same periods in 2023 due primarily to a different Services mix."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The following tables show the Company’s cash, cash equivalents and marketable securities by significant investment category as of March 30, 2024 and September 30, 2023 (in millions):"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "If the Commission concludes that there has been a violation, it can issue a cease and desist order and may impose fines up to 10% of the Company’s annual worldwide net sales"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Shares used in computing earnings per share:"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company designates these instruments as either cash flow or fair value hedges"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Changes to the Company’s business practices to comply with new laws and regulations or in connection with other legal proceedings can negatively impact the reputation of the Company’s products for privacy and security an"
+    }
+  },
+  "overall_sentiment": -0.17,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for AAPL (2024-03-30 10-Q): sentiment score of -0.17 with 2 expansionary signals and 3 cautious risk factors identified."
+}

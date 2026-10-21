@@ -1,0 +1,55 @@
+{
+  "ticker": "NKE",
+  "filing_date": "2024-11-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The increase in the Company's effective tax rate was primarily due to one-time benefits recognized in the first six months of fiscal 2024 including the impact of temporary relief provided by the Internal Revenue Service"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "As we continue to take actions to reposition our business over the next several quarters, we expect a negative impact on our Revenues and gross margin as well as higher Demand creation expense"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Increasing investment in demand creation including brand marketing and sports marketing to support key product launches and sports moments."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Increasing investment in demand creation including brand marketing and sports marketing to support key product launches and sports moments."
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Other prior year one-time benefits included a reduction in accrued withholding taxes on undistributed foreign earnings recognized in the second quarter of fiscal 2024."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "On July 21, 2023, the IRS issued Notice 2023-55 which specifically delayed the application of certain U.S"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NKE (2024-11-30 10-Q): sentiment score of +0.00 with 2 expansionary signals and 2 cautious risk factors identified."
+}

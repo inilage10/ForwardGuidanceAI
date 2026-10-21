@@ -1,0 +1,55 @@
+{
+  "ticker": "DE",
+  "filing_date": "2024-07-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We invoice in advance of recognizing the sale of certain products and the revenue for certain services"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Customers seek to improve profitability, productivity, and sustainability through technology"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Marketable securities – The portfolio of investments is valued on a market approach (matrix pricing model) in which all significant inputs are observable or can be derived from or corroborated by observable market data s"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Production volumes are expected to continue to decline during the remainder of 2024 due to reduced demand amid challenges in the global agricultural and turf sectors and construction industry coupled with inventory manag"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "We are forecasting lower operating cash flows from equipment operations in 2024 compared with 2023 driven by a decrease in net income adjusted for non-cash provisions and a reduction in accounts payable and accrued expen"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": ", Income Taxes (Topic 740): Improvements to Income Tax Disclosures, which expands disclosures in an entity’s income tax rate reconciliation table and cash income taxes paid both in the U.S"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "workforce reductions impact on employee retention, morale, and institutional knowledge,"
+    }
+  },
+  "overall_sentiment": -0.3,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for DE (2024-07-28 10-Q): sentiment score of -0.30 with 3 expansionary signals and 6 cautious risk factors identified."
+}

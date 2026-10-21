@@ -1,0 +1,55 @@
+{
+  "ticker": "SBUX",
+  "filing_date": "2025-09-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "To be successful in the future, we believe we must preserve, grow, and leverage the value of our brands across all sales channels."
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Given coffee’s central role in our operations and our limited ability to fully hedge against price increases, rising costs or supply shortages could materially impact our profitability and ability to meet customer demand"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "• the impact of our brand, marketing, promotional, advertising and pricing strategies, platforms, reformulations, innovations, or customer experience initiatives or investments;"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We also utilize forward contracts, futures contracts, and collars to hedge “C” price exposure under our price-to-be-fixed green coffee contracts and our long-term forecasted coffee demand where underlying fixed-price and"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "They often include words such as “believes,” “expects,” “anticipates,” “estimates,” “intends,” “plans,” “seeks,” or words of similar meaning, or future or conditional verbs, such as “will,” “should,” “could,” “may,” “aim"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Starbucks programs and benefits are open to every partner and designed to strengthen a culture of inclusion that values diverse perspectives and experiences – from strong partner networks to a focus on hiring internally"
+    }
+  },
+  "overall_sentiment": 0.5,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for SBUX (2025-09-28 10-Q): sentiment score of +0.50 with 4 expansionary signals and 1 cautious risk factors identified."
+}

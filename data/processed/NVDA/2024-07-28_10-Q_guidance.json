@@ -1,0 +1,55 @@
+{
+  "ticker": "NVDA",
+  "filing_date": "2024-07-28",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Revenue growth in the second quarter of fiscal year 2025 was driven by data center compute platforms and networking for accelerated computing and AI solutions"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our gross margins in the second quarter of fiscal year 2025 were negatively impacted by inventory provisions for low-yielding Blackwell material and they may continue to be impacted in the future."
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Gains on investments in non-affiliated entities and publicly-held equity securities, net"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Hopper architecture demand is strong, and shipments are expected to increase in the second half of fiscal 2025"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Given our current and anticipated future earnings, we believe that we may release the valuation allowance associated with certain state deferred tax assets in the near term, which would decrease our income tax expense fo"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In the opinion of management, all adjustments, consisting only of normal recurring adjustments considered necessary for a fair presentation of results of operations and financial position, have been included"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our competitive position has been harmed, and our competitive position and future results may be further harmed in the long term, if there are further changes in the USG’s export controls"
+    }
+  },
+  "overall_sentiment": 0.55,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NVDA (2024-07-28 10-Q): sentiment score of +0.55 with 8 expansionary signals and 2 cautious risk factors identified."
+}

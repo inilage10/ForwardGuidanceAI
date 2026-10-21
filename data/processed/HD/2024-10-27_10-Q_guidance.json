@@ -1,0 +1,55 @@
+{
+  "ticker": "HD",
+  "filing_date": "2024-10-27",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions; net sales growth; comparable sales; the effects of competition; o"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions; net sales growth; comparable sales; the effects of competition; o"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions; net sales growth; comparable sales; the effects of competition; o"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, the demand for our products and services, including as a result of macroeconomic conditions; net sales growth; comparable sales; the effects of competition; o"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Certain statements contained herein, as well as in other filings we make with the SEC and other written and oral information we release, regarding our performance or other events or developments in the future constitute"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.19,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HD (2024-10-27 10-Q): sentiment score of +0.19 with 12 expansionary signals and 8 cautious risk factors identified."
+}

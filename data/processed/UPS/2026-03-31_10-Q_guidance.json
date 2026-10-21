@@ -1,0 +1,55 @@
+{
+  "ticker": "UPS",
+  "filing_date": "2026-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The preparation of the accompanying unaudited, consolidated financial statements requires management to make estimates and judgments that affect the reported amounts of assets and liabilities and the disclosure of contin"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "For the three months ended March 31, 2026, consolidated revenue was $21.2 billion, consolidated operating profit was $1.3 billion, and operating margin was 6.0%"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "or internationally, including as a result of changes in global trade policy, new or increased tariffs, government shutdowns, or geopolitical uncertainty, tensions and/or conflicts in or arising from various countries and"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "From time to time, we act as an intermediary for cross‑border shipments and, in certain circumstances, may pay customs tariffs, duties, taxes or other governmental charges on behalf of customers"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "During the first quarter of 2026, we took several steps in furtherance of this strategy, including continued targeted volume reduction from our largest customer, the deliberate shift in our business to increase our focus"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This report, our Annual Report on Form 10-K for the year ended December 31, 2025 and our other filings with the Securities and Exchange Commission contain and in the future may contain \"forward-looking statements.\" State"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Various circumstances precipitated these initiatives, including identification and prioritization of certain investments, developments and changes in competitive landscapes, inflationary pressures, consumer behaviors, an"
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UPS (2026-03-31 10-Q): sentiment score of +0.00 with 4 expansionary signals and 4 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "CAT",
+  "filing_date": "2023-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Finished parts are ready to assemble components, which are made either to Caterpillar specifications or to supplier developed specifications.  We machine and assemble some of the components used in our machines, engines"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This matched funding reduces the volatility of margins between interest-bearing assets and interest-bearing liabilities, regardless of which direction interest rates move"
+    },
+    "capex_plans": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.94,
+      "direct_quote": "Our results of operations are materially affected by economic conditions globally and regionally and in the particular industries we serve.  The demand for our products and services tends to be cyclical and can be signif"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "We also purchase various goods and services used in production, logistics, offices and product development processes.  We maintain global strategic sourcing models to meet our global facilities’ production needs while bu"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In managing foreign currency risk for Cat Financial’s operations, the objective is to minimize earnings volatility resulting from conversion and the remeasurement of net foreign currency balance sheet positions, and futu"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "For more information regarding match funding, please see Note 4 — “Derivative financial instruments and risk management” of Part II, Item 8 \"Financial Statements and Supplementary Data.\"  See also the risk factors associ"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our business, competitive position, results of operations or financial condition could be negatively impacted if supply is insufficient for our operations, if significant transportation delays interfere with deliveries,"
+    }
+  },
+  "overall_sentiment": -0.29,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for CAT (2023-12-31 10-Q): sentiment score of -0.29 with 2 expansionary signals and 4 cautious risk factors identified."
+}

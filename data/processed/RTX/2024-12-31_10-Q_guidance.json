@@ -1,0 +1,55 @@
+{
+  "ticker": "RTX",
+  "filing_date": "2024-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Backlog, which is equivalent to our remaining performance obligations (RPO) for our sales contracts, represents the aggregate dollar value of firm orders for which products have not been provided or service has not been"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Changes in environmental and climate-related laws or regulations, including regulations on greenhouse gas emissions, carbon pricing, energy taxes, product efficiency standards, global chemical regulations, and mandatory"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Raytheon has experienced increased global demand for the combat-proven Coyote system, a low-cost, expendable, unmanned aircraft system with the capability of operating in autonomous swarms."
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Forward-looking statements may include, among other things, statements relating to future sales, earnings, cash flow, results of operations, uses of cash, share repurchases, tax payments and rates, research and developme"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "In 2024, Raytheon achieved key advancements in, or received contract awards for, the following programs: Global Patriot program; LTAMDS program; SM-3 program; AIM-9X and the AMRAAM programs; and certain advanced technolo"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "In addition, the competitive landscape in the defense industry continues to evolve with trends such as the continued increase in commercial competitors, new entrants with different technology approaches and business mode"
+    }
+  },
+  "overall_sentiment": 0.31,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for RTX (2024-12-31 10-Q): sentiment score of +0.31 with 8 expansionary signals and 4 cautious risk factors identified."
+}

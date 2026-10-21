@@ -1,0 +1,55 @@
+{
+  "ticker": "MCD",
+  "filing_date": "2024-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The information in this Form 10-K contains forward-looking statements about future events and circumstances and their effects upon revenues, expenses and business opportunities"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company expects 2025 operating margin percent to be in the mid-to-high 40% range."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company believes that ownership of real estate, combined with the co-investment by franchisees, enables it to achieve restaurant performance levels that are among the highest in the industry."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "menu by tapping into customer demand for the familiar and focusing on serving our iconic products that are beloved by customers around the world such as our World Famous Fries, Big Mac, Quarter Pounder and Chicken McNugg"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Consistent with prior years, the Company expects existing domestic cash and equivalents, domestic cash flows from operations, the ability to issue domestic debt and repatriation of a portion of foreign earnings to contin"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The information in this Form 10-K contains forward-looking statements about future events and circumstances and their effects upon revenues, expenses and business opportunities"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company follows Global Pay Principles to ensure that fair pay practices are understood and consistently implemented for all Company employees; these principles enforce its understanding that pay should be competitive"
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for MCD (2024-12-31 10-Q): sentiment score of +0.00 with 0 expansionary signals and 0 cautious risk factors identified."
+}

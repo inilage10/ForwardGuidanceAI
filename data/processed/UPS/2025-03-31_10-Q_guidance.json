@@ -1,0 +1,55 @@
+{
+  "ticker": "UPS",
+  "filing_date": "2025-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The preparation of the accompanying unaudited, consolidated financial statements requires management to make estimates and judgments that affect the reported amounts of assets and liabilities and the disclosure of contin"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Operating profit and operating margin increased for the quarter, as growth in the U.S"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "or internationally, including as a result of changes in the global trade policy and new or increased tariffs; significant competition on a local, regional, national and international basis; changes in our relationships w"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "As a result of the reduction in air volumes, as of March 31, 2025, we had three aircraft temporarily idled for an average period of approximately eight months in order to better match capacity with current demand"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "During the first quarter of 2025, we took several steps in furtherance of this strategy, including deliberately shifting our business to increase our focus on higher yielding volume"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This report, our Annual Report on Form 10-K for the year ended December 31, 2024 and our other filings with the Securities and Exchange Commission contain and in the future may contain \"forward-looking statements.\" State"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Based on a number of factors including evaluating efficiencies previously gained, and in connection with changes in our executive leadership in 2020, we identified and reprioritized certain then-current and future invest"
+    }
+  },
+  "overall_sentiment": 0.58,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UPS (2025-03-31 10-Q): sentiment score of +0.58 with 9 expansionary signals and 2 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "RTX",
+  "filing_date": "2026-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Due to the nature of the work required to be performed on many of the Company’s performance obligations, the estimation of total revenue and cost at completion is complex, subject to many inputs, and requires significant"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "A significant change in one or more of these estimates could affect the profitability of one or more of our performance obligations"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "These agreements may also be satisfied through our use of cash for activities such as subcontracting with local partners, purchasing supplies from in-country vendors, providing financial support for in-country projects,"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We typically do not commit to offset agreements until orders for our products or services are definitive"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Less: Noncontrolling interest in subsidiaries’ earnings"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "The risks and opportunities relate to management’s judgment about the ability and cost to achieve the schedule, consideration of customer-directed delays or reductions in scheduled deliveries, technical requirements, cus"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": -0.75,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for RTX (2026-06-30 10-Q): sentiment score of -0.75 with 0 expansionary signals and 3 cautious risk factors identified."
+}

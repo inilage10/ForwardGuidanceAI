@@ -1,0 +1,55 @@
+{
+  "ticker": "AMZN",
+  "filing_date": "2026-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "If possible, we may elect the normal purchases and normal sales (NPNS) scope exemption from derivative guidance for energy contracts where we expect to consume substantially all committed quantities"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The investments in nonvoting preferred stock are initially recorded at their estimated fair value at the time of each conversion and are accounted for as a component of our equity investments in private companies not acc"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We may make or receive net cash payments, rather than take delivery of electricity, when our consumption is less than committed quantities due to operational variability"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Our CODM regularly reviews consolidated net sales, consolidated operating expenses, and consolidated operating income (loss) by segment"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Derivative instruments are measured at fair value each reporting period"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for AMZN (2026-03-31 10-Q): sentiment score of +0.00 with 1 expansionary signals and 1 cautious risk factors identified."
+}

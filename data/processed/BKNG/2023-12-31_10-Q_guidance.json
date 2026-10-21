@@ -1,0 +1,55 @@
+{
+  "ticker": "BKNG",
+  "filing_date": "2023-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The revenues earned on a mobile transaction may be less than a typical desktop transaction due to different consumer purchasing patterns"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Conversely, in periods where our gross bookings growth rate substantially decelerates, our operating margins typically benefit; and"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Additionally, our ability to achieve our long-term strategy to build the Connected Trip will require increased financial and personnel investments that could have an adverse impact on our results of operations until we a"
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We believe they benefit from participating in our services by increasing their distribution channels, demand, profile and reputation, and inventory utilization in an efficient and cost-effective manner"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "This Annual Report on Form 10-K, including \"Management's Discussion and Analysis of Financial Condition and Results of Operation\" in Part II, Item 7, and the documents incorporated by reference contain forward-looking st"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The markets for the services we offer are intensely competitive and constantly evolving"
+    }
+  },
+  "overall_sentiment": 0.5,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BKNG (2023-12-31 10-Q): sentiment score of +0.50 with 4 expansionary signals and 1 cautious risk factors identified."
+}

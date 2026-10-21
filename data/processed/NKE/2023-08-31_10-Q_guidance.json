@@ -1,0 +1,55 @@
+{
+  "ticker": "NKE",
+  "filing_date": "2023-08-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "The decrease in the Company's effective tax rate was primarily due to the impact of temporary relief provided by the Internal Revenue Service (\"IRS\") relating to U.S"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "However, the operating environment could remain volatile in fiscal 2024 as the risk exists that worsening macroeconomic conditions could have a material adverse impact on our future revenue growth as well as overall prof"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Dollars for consolidated reporting, certain foreign subsidiaries use excess cash to purchase U.S. Dollar denominated available-for-sale investments"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We continue to invest in a new Enterprise Resource Planning Platform, data and analytics, demand sensing, insight gathering and other areas to create an end-to-end technology foundation, which we believe will further acc"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The primary financial measure used by the Company to evaluate performance of individual operating segments is earnings before interest and taxes (\"EBIT\"), which represents Net income before Interest expense (income), net"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Certain financial institutions offer voluntary supplier finance programs facilitated through a third-party platform that provide participating suppliers the option to finance valid payment obligations from the Company"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.4,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NKE (2023-08-31 10-Q): sentiment score of +0.40 with 3 expansionary signals and 1 cautious risk factors identified."
+}

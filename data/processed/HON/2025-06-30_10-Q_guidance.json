@@ -1,0 +1,55 @@
+{
+  "ticker": "HON",
+  "filing_date": "2025-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Backlog is equal to our remaining performance obligations under the contracts that meet the guidance on revenue from contracts with customers as discussed in Note 4"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "We also identify businesses that do not fit into our long-term strategic plan based on their market position, relative profitability, or growth potential"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "With millions of installed assets, Industrial Automation deploys outcome-based solutions to increase asset utilization; improve operational efficiency and labor productivity; reduce carbon emissions with less energy cons"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "With millions of installed assets, Industrial Automation deploys outcome-based solutions to increase asset utilization; improve operational efficiency and labor productivity; reduce carbon emissions with less energy cons"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Less: Net income (loss) attributable to noncontrolling interest"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Such discussions contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act), including statements related to the proposed spin-off of the Co"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.62,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HON (2025-06-30 10-Q): sentiment score of +0.62 with 6 expansionary signals and 1 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "UNP",
+  "filing_date": "2026-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements and information also include any other statements or information in this report (including information incorporated herein by reference) regarding: the merger agreement and the transactions con"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "We plan to continue to make investments to support our growth strategy, improve the safety, resiliency, and operational efficiency of the network, harden our infrastructure, and replace older assets, including modernizat"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on demand outlook remains in line with prior baseline."
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements and information also include any other statements or information in this report (including information incorporated herein by reference) regarding: the merger agreement and the transactions con"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": ", which details the criteria for capitalization of internal-use software costs"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We have several stock-based compensation plans where employees receive nonvested stock options, nonvested retention shares, and nonvested stock units"
+    }
+  },
+  "overall_sentiment": 0.42,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for UNP (2026-03-31 10-Q): sentiment score of +0.42 with 13 expansionary signals and 5 cautious risk factors identified."
+}

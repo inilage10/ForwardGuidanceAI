@@ -1,0 +1,55 @@
+{
+  "ticker": "RTX",
+  "filing_date": "2025-03-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "Changes in estimates of net sales, cost of sales, and the related impact to operating profit on contracts recognized over time are recognized on a cumulative catch-up basis, which recognizes the cumulative effect of the"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "A significant change in one or more of these estimates could affect the profitability of one or more of our performance obligations"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "These agreements may also be satisfied through our use of cash for activities such as subcontracting with local partners, purchasing supplies from in-country vendors, providing financial support for in-country projects,"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We typically do not commit to offset agreements until orders for our products or services are definitive"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "aircraft and engine utilization and estimated useful lives of components, among others"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "We are continuously evaluating our cost structure and implement restructuring actions in an effort to keep our cost structure competitive"
+    }
+  },
+  "overall_sentiment": -0.75,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for RTX (2025-03-31 10-Q): sentiment score of -0.75 with 0 expansionary signals and 3 cautious risk factors identified."
+}

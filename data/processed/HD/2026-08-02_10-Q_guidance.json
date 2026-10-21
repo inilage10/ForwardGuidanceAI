@@ -1,0 +1,55 @@
+{
+  "ticker": "HD",
+  "filing_date": "2026-08-02",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, our brand and reputation; the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and ex"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, our brand and reputation; the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and ex"
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, our brand and reputation; the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and ex"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, our brand and reputation; the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and ex"
+    },
+    "earnings_guidance": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, our brand and reputation; the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and ex"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Certain statements contained herein, as well as in other filings we make with the SEC and other written and oral information we release, including statements regarding our performance, estimates, expectations, beliefs, i"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Forward-looking statements may relate to, among other things, our brand and reputation; the demand for our products and services, including as a result of macroeconomic conditions and changing customer preferences and ex"
+    }
+  },
+  "overall_sentiment": 0.19,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HD (2026-08-02 10-Q): sentiment score of +0.19 with 18 expansionary signals and 12 cautious risk factors identified."
+}

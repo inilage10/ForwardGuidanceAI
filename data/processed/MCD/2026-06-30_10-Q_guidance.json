@@ -1,0 +1,55 @@
+{
+  "ticker": "MCD",
+  "filing_date": "2026-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "These investments, developed in collaboration with franchisees, are designed to cater to consumer preferences, improve local business performance and increase the value of the McDonald's brand through the development of"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company expects 2026 operating margin percent to be in the mid-to-high 40% range."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company believes that ownership of real estate, combined with the co-investment by franchisees, enables it to achieve restaurant performance levels that are among the highest in the industry."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.86,
+      "direct_quote": "Such interruptions and price increases could be caused by shortages, inflationary pressures, tariffs, unexpected increases in demand, transportation-related issues, labor-related issues, technology-related issues, weathe"
+    },
+    "earnings_guidance": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "It may be costly and time consuming to protect our intellectual property, particularly in rapidly evolving areas, and the steps we have taken to do so in the U.S"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The Company enters into cash flow hedges to reduce the exposure to variability in certain expected future cash flows"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Our ability to build upon our strengths and advantages also depends on the impact of pricing, promotional and marketing plans across the System, and the ability to adjust these plans to respond quickly and effectively to"
+    }
+  },
+  "overall_sentiment": 0.29,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for MCD (2026-06-30 10-Q): sentiment score of +0.29 with 4 expansionary signals and 2 cautious risk factors identified."
+}

@@ -1,0 +1,55 @@
+{
+  "ticker": "TJX",
+  "filing_date": "2026-08-01",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "% of the applicable pension liability (the Funding Target pursuant to the Internal Revenue Code section 430) or such other amount as is sufficient to avoid restrictions with respect to the funding of nonqualified plans u"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The cash outflows for both periods were driven by capital expenditures."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "These forward-looking statements address various matters that we intend, expect or believe may occur in the future, including, among others, some of the statements in this Form 10-Q under Item 1, “Consolidated Financial"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Cash generated from earnings in certain foreign subsidiaries in fiscal 2027 is not considered indefinitely reinvested"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We believe our existing cash and cash equivalents, internally generated funds and our credit facilities, under which facilities we have $1.5 billion available as of the period ended August 1, 2026, are adequate to meet o"
+    },
+    "competitive_position": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Applicable risks and uncertainties include, among others: execution of buying strategy and inventory management; customer trends and preferences; competition; various marketing efforts; operational and business expansion"
+    }
+  },
+  "overall_sentiment": -0.5,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for TJX (2026-08-01 10-Q): sentiment score of -0.50 with 1 expansionary signals and 4 cautious risk factors identified."
+}

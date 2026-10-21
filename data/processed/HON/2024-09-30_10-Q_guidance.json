@@ -1,0 +1,55 @@
+{
+  "ticker": "HON",
+  "filing_date": "2024-09-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Sales decreased $129 million due to lower organic sales of $96 million in Warehouse and Workflow Solutions driven by lower demand for projects and lower organic sales of $47 million in Sensing and Safety Technologies dri"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "Segment profit decreased $11 million and segment margin percentage increased 60 basis points to 20.3% compared to 19.7% for the same period in 2023."
+    },
+    "capex_plans": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "With millions of installed assets, Industrial Automation deploys outcome-based solutions to increase asset utilization; improve operational efficiency and labor productivity; reduce carbon emissions with less energy cons"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "With millions of installed assets, Industrial Automation deploys outcome-based solutions to increase asset utilization; improve operational efficiency and labor productivity; reduce carbon emissions with less energy cons"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Less: Net income attributable to noncontrolling interest"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Such discussions contain forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the Exchange Act)"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.08,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for HON (2024-09-30 10-Q): sentiment score of +0.08 with 6 expansionary signals and 5 cautious risk factors identified."
+}

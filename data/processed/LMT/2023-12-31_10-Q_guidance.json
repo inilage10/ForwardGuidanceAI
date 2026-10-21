@@ -1,0 +1,55 @@
+{
+  "ticker": "LMT",
+  "filing_date": "2023-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "Statements and assumptions with respect to future sales, income and cash flows, growth, program performance, the outcome of litigation, anticipated pension cost and funding, environmental remediation cost estimates, plan"
+    },
+    "margin_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "While we would expect to compete and be well positioned as the incumbent on existing programs, we may not be successful and, even if we are successful, the replacement programs may be funded at lower levels or result in"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Twenty-first Century Security is an overarching vision that guides our investment and strategy"
+    },
+    "demand_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "We have multiple programs of record from each business segment that are entering growth stages, including the F-35 sustainment activity (Aeronautics); increased Patriot Advanced Capability-3 (PAC-3) production rates and"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on earnings guidance remains in line with prior baseline."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "We are a global security and aerospace company principally engaged in the research, design, development, manufacture, integration and sustainment of advanced technology systems, products and services"
+    },
+    "competitive_position": {
+      "direction": "positive",
+      "magnitude": "moderate",
+      "confidence": 0.78,
+      "direct_quote": "We also are involved in numerous network-enabled activities that allow separate systems to work together to increase effectiveness and we continue to invest in new technologies to maintain and enhance competitiveness in"
+    }
+  },
+  "overall_sentiment": 0.55,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for LMT (2023-12-31 10-Q): sentiment score of +0.55 with 8 expansionary signals and 2 cautious risk factors identified."
+}

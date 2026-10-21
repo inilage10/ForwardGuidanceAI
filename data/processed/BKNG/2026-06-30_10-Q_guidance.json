@@ -1,0 +1,55 @@
+{
+  "ticker": "BKNG",
+  "filing_date": "2026-06-30",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Cash payments received from travelers in advance of the Company completing its performance obligations are included in \"Deferred merchant bookings\" in the Company's Consolidated Balance Sheets and are comprised principal"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Cash payments received from travelers in advance of the Company completing its performance obligations are included in \"Deferred merchant bookings\" in the Company's Consolidated Balance Sheets and are comprised principal"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "In the fourth quarter of 2024, the Company began the implementation of certain organizational changes as part of a transformation program and currently expects that the restructuring costs and accelerated investments rel"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The French Directorate General for Competition Policy, Consumer Affairs, and Fraud Control (\"DGCCRF\") issued a final order to Agoda to change certain of its business practices by October 2026 and additional discussions w"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "federal tax associated with our international earnings"
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "For example, the Company has previously made voluntary commitments related to showing prices inclusive of all mandatory taxes and charges, providing information about the effect of money earned on search result rankings,"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "If the Company were to be found liable, it could result in, among other things, payment of damages, commitments to change certain business practices, or reputational damage, any of which could harm the Company's business"
+    }
+  },
+  "overall_sentiment": 0.0,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for BKNG (2026-06-30 10-Q): sentiment score of +0.00 with 2 expansionary signals and 2 cautious risk factors identified."
+}

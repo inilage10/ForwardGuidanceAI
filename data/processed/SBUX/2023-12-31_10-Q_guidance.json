@@ -1,0 +1,55 @@
+{
+  "ticker": "SBUX",
+  "filing_date": "2023-12-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.95,
+      "direct_quote": "Consolidated net revenues increased 8% to $9.4 billion in the first quarter of fiscal 2024 compared to $8.7 billion in the first quarter of fiscal 2023, primarily driven by growth in our North America business and our In"
+    },
+    "margin_outlook": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.86,
+      "direct_quote": "Consolidated operating margin increased 140 basis points from the prior year to 15.8%, primarily driven by sales leverage and in-store operational efficiencies"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Additionally, specific disclosures related to unrecognized tax benefits and indefinite reinvestment assertions were removed"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Inventories, or our longer-dated forecasted coffee demand where underlying fixed price and price-to-be-fixed contracts are not yet available"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The resulting gains and losses are recorded in AOCI and are subsequently reclassified to product and distribution costs when the hedged exposure affects net earnings."
+    },
+    "innovation_pipeline": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The amendments require enhanced disclosure for certain segment items and required disclosure on how management uses reported measures to assess segment performance"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on competitive position remains in line with prior baseline."
+    }
+  },
+  "overall_sentiment": 0.55,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for SBUX (2023-12-31 10-Q): sentiment score of +0.55 with 8 expansionary signals and 2 cautious risk factors identified."
+}

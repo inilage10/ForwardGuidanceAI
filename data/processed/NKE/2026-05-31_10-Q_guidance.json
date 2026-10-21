@@ -1,0 +1,55 @@
+{
+  "ticker": "NKE",
+  "filing_date": "2026-05-31",
+  "filing_type": "10-Q",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "Notwithstanding our efforts, protectionist measures have resulted in increased costs of our products, and additional measures, if implemented, will adversely affect sales and/or profitability for NIKE, as well as the imp"
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "Notwithstanding our efforts, protectionist measures have resulted in increased costs of our products, and additional measures, if implemented, will adversely affect sales and/or profitability for NIKE, as well as the imp"
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "The focus of this investment continues to be creating the future of youth sport and inspiring youth to be active through play and sport as well as uniting and inspiring communities"
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.95,
+      "direct_quote": "The risks and uncertainties are detailed from time to time in reports filed by NIKE with the SEC, including reports filed on Forms 8-K, 10-Q and 10-K, and include, among others, the following: risks relating to our busin"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Dollar value of the Company's foreign currency-denominated sales and earnings"
+    },
+    "innovation_pipeline": {
+      "direction": "positive",
+      "magnitude": "high",
+      "confidence": 0.94,
+      "direct_quote": "In 2026 and in recent years, uncertain global and regional economic and political conditions have affected international trade and increased protectionist actions around the world. These trends are affecting many global"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.7,
+      "direct_quote": "Montagne served in various Vice President and General Manager roles at NIKE, including APLA, Global Men’s, Global Categories, Global Women’s and Global Merchandising, as well as in other leadership positions in North Ame"
+    }
+  },
+  "overall_sentiment": 0.05,
+  "key_risks": [
+    "Macroeconomic volatility",
+    "Supply chain and operating cost fluctuations"
+  ],
+  "summary": "Financial guidance extraction for NKE (2026-05-31 10-Q): sentiment score of +0.05 with 11 expansionary signals and 10 cautious risk factors identified."
+}

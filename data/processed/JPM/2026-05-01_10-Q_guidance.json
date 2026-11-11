@@ -1,0 +1,57 @@
+{
+  "ticker": "JPM",
+  "filing_date": "2026-05-01",
+  "filing_type": "10-Q",
+  "source": "sec_edgar",
+  "analysis_engine": "nlp_local",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on revenue growth remains in line with prior baseline."
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.66,
+      "direct_quote": "The baseline reflects certain assumptions relating to the Federal Reserve’s balance sheet policy (e.g., quantitative tightening and usage at the Reverse Repurchase Facility) that require management judgment."
+    },
+    "demand_outlook": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.66,
+      "direct_quote": "The Firm makes markets in derivatives in order to meet these needs and uses derivatives to manage certain risks associated with net open risk positions from its market-making activities, including the counterparty"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.74,
+      "direct_quote": "Model & data changes refer to material movements in levels of RWA as a result of revised methodologies and/or treatment per regulatory guidance (exclusive of rule changes) including the completion of the necessary modeling steps required for the Apple Card transaction and other m"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.89,
+      "direct_quote": "Upon acceptance by Visa of the Firm’s tender, the Visa C shares received by the Firm would be recognized at fair value, which is expected to result in a gain that may be recorded as early as the second quarter of 2026."
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.66,
+      "direct_quote": "financial markets activity, the geopolitical environment, the competitive environment, client and customer activity levels, and regulatory and legislative developments in the U.S."
+    }
+  },
+  "overall_sentiment": -0.2,
+  "key_risks": [
+    "Macroeconomic volatility and demand elasticity",
+    "Operating margin, supply chain, and regulatory cost pressures"
+  ],
+  "summary": "Financial guidance extraction for JPM (2026-05-01 10-Q): sentiment score of -0.20 with 1 expansionary signals and 2 cautious risk factors identified across MD&A excerpts."
+}

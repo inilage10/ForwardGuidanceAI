@@ -14,6 +14,10 @@ data/raw/
 
 # Environment secrets
 .env
+.streamlit/secrets.toml
+
+# Cached SEC ticker directory (re-fetched cleanly in <1s on demand)
+data/sec_company_tickers.json
 
 # OS files
 .DS_Store

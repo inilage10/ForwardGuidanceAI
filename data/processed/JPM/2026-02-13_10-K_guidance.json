@@ -1,0 +1,57 @@
+{
+  "ticker": "JPM",
+  "filing_date": "2026-02-13",
+  "filing_type": "10-K",
+  "source": "sec_edgar",
+  "analysis_engine": "nlp_local",
+  "guidance": {
+    "revenue_growth": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.66,
+      "direct_quote": "Furthermore, concerns regarding the effectiveness of JPMorganChase’s measures to safeguard personal information, or the perception that those measures are inadequate, could cause JPMorganChase to lose clients, customers or employees, and thereby reduce JPMorganChase’s revenues."
+    },
+    "margin_outlook": {
+      "direction": "stable",
+      "magnitude": "low",
+      "confidence": 0.5,
+      "direct_quote": "Management guidance on margin outlook remains in line with prior baseline."
+    },
+    "capex_plans": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.66,
+      "direct_quote": "Similar requirements have also been established in the European Union (“EU”) under the European Market Infrastructure Regulation (“EMIR”) and the Markets in Financial Instruments Directive (“MiFID II”), as well as in the U.K."
+    },
+    "demand_outlook": {
+      "direction": "negative",
+      "magnitude": "moderate",
+      "confidence": 0.84,
+      "direct_quote": "These instances of misconduct have resulted and could in the future result in litigation and resolutions of investigations or enforcement actions by governmental authorities involving consent orders, deferred prosecution agreements, non-prosecution agreements and other civil or c"
+    },
+    "earnings_guidance": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.76,
+      "direct_quote": "The values and growth prospects of JPMorganChase’s businesses could suffer and its earnings could decline if management makes strategic choices that prove to be incorrect, are based on incomplete, inaccurate or fraudulent information, do not accurately assess the competitive land"
+    },
+    "innovation_pipeline": {
+      "direction": "negative",
+      "magnitude": "high",
+      "confidence": 0.96,
+      "direct_quote": "Similarly, JPMorganChase establishes an allowance for expected losses related to its credit exposures which requires significant judgments, including forecasts of how macroeconomic conditions might impair the ability of JPMorganChase’s clients and customers to repay their loans o"
+    },
+    "competitive_position": {
+      "direction": "stable",
+      "magnitude": "moderate",
+      "confidence": 0.84,
+      "direct_quote": "The values and growth prospects of JPMorganChase’s businesses could suffer and its earnings could decline if management makes strategic choices that prove to be incorrect, are based on incomplete, inaccurate or fraudulent information, do not accurately assess the competitive land"
+    }
+  },
+  "overall_sentiment": -0.33,
+  "key_risks": [
+    "Macroeconomic volatility and demand elasticity",
+    "Operating margin, supply chain, and regulatory cost pressures"
+  ],
+  "summary": "Financial guidance extraction for JPM (2026-02-13 10-K): sentiment score of -0.33 with 4 expansionary signals and 9 cautious risk factors identified across MD&A excerpts."
+}

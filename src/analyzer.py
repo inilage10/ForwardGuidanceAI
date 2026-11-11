@@ -248,6 +248,17 @@ def get_groq_models(api_key: Optional[str] = None) -> list[str]:
     return []
 
 
+def _is_narrative_sentence(sentence: str) -> bool:
+    """Filter out table headers, numerical stubs, and XBRL fragments."""
+    s = sentence.strip()
+    if len(s) < 48 or s.endswith(":"):
+        return False
+    digit_ratio = sum(ch.isdigit() for ch in s) / max(len(s), 1)
+    if digit_ratio > 0.30:
+        return False
+    return True
+
+
 def analyze_filing_nlp(
     ticker: str,
     filing_date: str,
@@ -256,34 +267,52 @@ def analyze_filing_nlp(
 ) -> dict:
     """Analyze filing guidance using local financial NLP and sentiment scoring.
 
-    Fast, deterministic, and 100% offline (0.01 seconds per document).
+    Ranks sentences by forward-looking relevance and Loughran-McDonald
+    polarity across the top narrative matches for each guidance dimension.
     """
     text = (sections.get("forward_looking") or "") + "\n" + (sections.get("mda") or "")
     if not text.strip() and sections.get("full_text_excerpt"):
         text = sections["full_text_excerpt"]
 
     pos_words = {
-        'increase', 'increased', 'growth', 'grow', 'strong', 'accelerate', 'accelerated', 
-        'expand', 'expanded', 'record', 'exceed', 'higher', 'gain', 'positive', 'momentum',
-        'improve', 'improving', 'robust', 'favorable', 'opportunity', 'profitable', 'innovative'
+        "increase", "increased", "increasing", "growth", "grow", "growing", "strong",
+        "stronger", "accelerate", "accelerated", "accelerating", "expand", "expanded",
+        "expanding", "record", "exceed", "exceeded", "higher", "gain", "gains",
+        "positive", "momentum", "improve", "improved", "improving", "robust",
+        "favorable", "opportunity", "opportunities", "profitable", "profitability",
+        "innovative", "innovation", "resilient", "outperform", "upside", "benefit",
+        "solid", "efficiency", "tailwind", "healthy",
     }
     neg_words = {
-        'decrease', 'decreased', 'decline', 'declined', 'loss', 'lower', 'headwind', 
-        'weak', 'challenge', 'adversely', 'uncertain', 'slowdown', 'negative', 'pressure',
-        'compress', 'compressed', 'constraint', 'cost', 'reduction', 'restructuring', 'cautious'
+        "decrease", "decreased", "decline", "declined", "declining", "loss", "losses",
+        "lower", "headwind", "headwinds", "weak", "weakness", "challenge", "challenges",
+        "adversely", "adverse", "uncertain", "uncertainty", "slowdown", "negative",
+        "pressure", "pressures", "compress", "compressed", "compression", "constraint",
+        "constraints", "reduction", "restructuring", "cautious", "volatility",
+        "inflationary", "impairment", "litigation", "tariff", "tariffs", "downturn",
+    }
+    forward_markers = {
+        "expect", "expects", "expected", "anticipate", "anticipates", "anticipated",
+        "outlook", "guidance", "project", "projects", "projected", "forecast",
+        "believe", "believes", "plan", "plans", "intend", "intends", "future",
+        "fiscal", "quarter", "next year", "going forward", "continue to", "target",
     }
 
     dims = {
-        'revenue_growth': ['revenue', 'sales', 'top-line', 'billing'],
-        'margin_outlook': ['margin', 'gross margin', 'operating margin', 'profitability'],
-        'capex_plans': ['capex', 'capital expenditure', 'infrastructure', 'datacenter', 'investment'],
-        'demand_outlook': ['demand', 'customer adoption', 'market demand', 'order', 'consumption'],
-        'earnings_guidance': ['earnings', 'net income', 'eps', 'diluted', 'operating income'],
-        'innovation_pipeline': ['ai', 'intelligence', 'innovation', 'product', 'platform', 'cloud', 'pipeline'],
-        'competitive_position': ['competitive', 'market share', 'leadership', 'retention', 'ecosystem', 'moat']
+        "revenue_growth": ["revenue", "revenues", "sales", "top-line", "net sales", "billing"],
+        "margin_outlook": ["margin", "margins", "gross margin", "operating margin", "gross profit", "operating expense"],
+        "capex_plans": ["capex", "capital expenditure", "capital expenditures", "infrastructure", "datacenter", "facility", "property and equipment"],
+        "demand_outlook": ["demand", "customer adoption", "market demand", "order", "orders", "backlog", "consumption", "volume"],
+        "earnings_guidance": ["earnings", "net income", "eps", "diluted", "operating income", "ebitda", "cash flow"],
+        "innovation_pipeline": ["ai", "intelligence", "innovation", "r&d", "research and development", "new product", "platform", "pipeline"],
+        "competitive_position": ["competitive", "market share", "leadership", "retention", "ecosystem", "moat", "pricing power"],
     }
 
-    sentences = [s.strip() for s in re.split(r'\. |\n', text) if len(s.strip()) > 35]
+    raw_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+|\n+", text) if s.strip()]
+    sentences = [s for s in raw_sentences if _is_narrative_sentence(s)]
+    if not sentences:
+        sentences = [s for s in raw_sentences if len(s) > 35]
+
     guidance = {}
     total_pos = 0
     total_neg = 0
@@ -291,56 +320,76 @@ def analyze_filing_nlp(
     for dim, kw_list in dims.items():
         dim_sents = [s for s in sentences if any(k in s.lower() for k in kw_list)]
         if dim_sents:
-            best_s = dim_sents[0]
-            s_low = best_s.lower()
-            p_cnt = sum(1 for w in pos_words if w in s_low)
-            n_cnt = sum(1 for w in neg_words if w in s_low)
+            # Rank sentences by forward-looking density + sentiment signal density
+            scored_sents = []
+            for s in dim_sents:
+                s_low = s.lower()
+                tokens = set(re.findall(r"[a-z]+", s_low))
+                fwd_hits = sum(1 for w in forward_markers if w in s_low)
+                p_hits = len(tokens & pos_words)
+                n_hits = len(tokens & neg_words)
+                relevance = fwd_hits * 2 + p_hits + n_hits + (1 if len(s) > 90 else 0)
+                scored_sents.append((relevance, p_hits, n_hits, s))
+
+            scored_sents.sort(key=lambda x: x[0], reverse=True)
+            top_sents = scored_sents[:5]
+            p_cnt = sum(item[1] for item in top_sents)
+            n_cnt = sum(item[2] for item in top_sents)
+            best_s = top_sents[0][3]
+
             total_pos += p_cnt
             total_neg += n_cnt
 
-            if p_cnt > n_cnt:
-                direction = 'positive'
-                magnitude = 'high' if p_cnt >= 2 else 'moderate'
-            elif n_cnt > p_cnt:
-                direction = 'negative'
-                magnitude = 'moderate' if n_cnt <= 2 else 'high'
+            net = p_cnt - n_cnt
+            if net > 0:
+                direction = "positive"
+                magnitude = "high" if net >= 3 or p_cnt >= 4 else "moderate"
+            elif net < 0:
+                direction = "negative"
+                magnitude = "high" if net <= -3 or n_cnt >= 4 else "moderate"
             else:
-                direction = 'stable'
-                magnitude = 'moderate'
+                direction = "stable"
+                magnitude = "moderate"
 
-            confidence = round(min(0.95, 0.70 + 0.08 * (p_cnt + n_cnt)), 2)
-            quote = best_s[:220].strip()
+            signal_strength = p_cnt + n_cnt
+            confidence = round(min(0.96, 0.62 + 0.05 * signal_strength + 0.04 * min(len(top_sents), 3)), 2)
+            quote = best_s[:280].strip()
         else:
-            direction = 'stable'
-            magnitude = 'low'
+            direction = "stable"
+            magnitude = "low"
             confidence = 0.50
             quote = f"Management guidance on {dim.replace('_', ' ')} remains in line with prior baseline."
 
         guidance[dim] = {
-            'direction': direction,
-            'magnitude': magnitude,
-            'confidence': confidence,
-            'direct_quote': quote
+            "direction": direction,
+            "magnitude": magnitude,
+            "confidence": confidence,
+            "direct_quote": quote,
         }
 
-    sent_denom = total_pos + total_neg + 1
+    sent_denom = total_pos + total_neg + 2
     sentiment = round((total_pos - total_neg) / sent_denom, 2)
     sentiment = max(-1.0, min(1.0, sentiment))
 
     summary = (
         f"Financial guidance extraction for {ticker} ({filing_date} {filing_type}): "
         f"sentiment score of {sentiment:+.2f} with {total_pos} expansionary signals "
-        f"and {total_neg} cautious risk factors identified."
+        f"and {total_neg} cautious risk factors identified across MD&A excerpts."
     )
 
     return {
-        'ticker': ticker,
-        'filing_date': filing_date,
-        'filing_type': filing_type,
-        'guidance': guidance,
-        'overall_sentiment': sentiment,
-        'key_risks': ['Macroeconomic volatility', 'Supply chain and operating cost fluctuations'],
-        'summary': summary
+        "ticker": ticker,
+        "filing_date": filing_date,
+        "filing_type": filing_type,
+        "source": "sec_edgar",
+        "analysis_engine": "nlp_local",
+        "guidance": guidance,
+        "overall_sentiment": sentiment,
+        "key_risks": [
+            "Macroeconomic volatility and demand elasticity",
+            "Operating margin, supply chain, and regulatory cost pressures",
+        ],
+        "summary": summary,
     }
 
 
@@ -536,6 +585,8 @@ def analyze_filing(
         result["ticker"] = ticker
         result["filing_date"] = filing_date
         result["filing_type"] = filing_type
+        result["source"] = "sec_edgar"
+        result["analysis_engine"] = f"groq:{groq_m}" if is_groq else model_name
 
         # Save to cache
         with open(cache_file, "w", encoding="utf-8") as f:

@@ -108,9 +108,10 @@ def __getattr__(name: str):
     raise AttributeError(f"module '{__name__}' has no attribute '{name}'")
 
 # Filing and date range settings
+from datetime import datetime as _dt
 FILING_TYPES: List[str] = ["10-K", "10-Q"]
 ANALYSIS_START_DATE: str = "2023-10-01"
-ANALYSIS_END_DATE: str = "2026-10-01"
+ANALYSIS_END_DATE: str = _dt.now().strftime("%Y-%m-%d")
 
 # LLM and external service configurations
 OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "qwen2.5:0.5b")

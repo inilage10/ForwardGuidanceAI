@@ -52,6 +52,7 @@ from src.ui_theme import (
     build_score_evolution_chart,
     build_tradingview_chart,
     render_company_quote_banner_html,
+    render_pvalue_metric_html,
     render_ticker_tape_html,
 )
 
@@ -949,12 +950,20 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
             if "error" in bt_data:
                 st.warning(bt_data["error"])
             elif bt_data:
-                bm1, bm2, bm3, bm4, bm5 = st.columns(5)
+                bm1, bm2, bm3, bm4, bm5, bm6 = st.columns([0.13, 0.16, 0.22, 0.16, 0.17, 0.16])
                 bm1.metric("Eventos (Filings)", f"{bt_data['sample_size']}")
                 bm2.metric("Information Coeff (IC)", f"{bt_data['ic']:+.3f}")
-                bm3.metric(f"Retorno Medio ({bt_horizon}d)", f"{bt_data['avg_return']*100:+.2f}%")
-                bm4.metric(f"Alpha vs S&P 500", f"{bt_data['avg_alpha']*100:+.2f}%")
-                bm5.metric("Spread Alto vs Bajo", f"{bt_data['high_low_spread']*100:+.2f}%")
+                with bm3:
+                    st.markdown(
+                        render_pvalue_metric_html(
+                            bt_data.get("p_value"),
+                            sample_size=bt_data.get("sample_size"),
+                        ),
+                        unsafe_allow_html=True,
+                    )
+                bm4.metric(f"Retorno Medio ({bt_horizon}d)", f"{bt_data['avg_return']*100:+.2f}%")
+                bm5.metric("Alpha vs S&P 500", f"{bt_data['avg_alpha']*100:+.2f}%")
+                bm6.metric("Spread Alto vs Bajo", f"{bt_data['high_low_spread']*100:+.2f}%")
 
                 ev_df = bt_data["events_df"]
                 ret_col = f"return_{bt_horizon}d"
@@ -1061,9 +1070,16 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
                 if sec_res.get("missing_peers"):
                     st.caption(f"Peers pendientes en caché: `{', '.join(sec_res['missing_peers'])}` (puedes descargarlos arriba en 1 clic)")
 
-                sm1, sm2, sm3, sm4 = st.columns(4)
+                sm1, sm2, sm3, sm4 = st.columns([0.23, 0.27, 0.25, 0.25])
                 sm1.metric("IC Global (Spearman)", f"{ic_i['ic']:+.3f}")
-                sm2.metric("p-value", f"{ic_i['p_value']:.4f}")
+                with sm2:
+                    st.markdown(
+                        render_pvalue_metric_html(
+                            ic_i.get("p_value"),
+                            sample_size=ic_i.get("sample_size"),
+                        ),
+                        unsafe_allow_html=True,
+                    )
                 sm3.metric("Long-Short Spread", f"{ls_i['long_short_spread']*100:+.2f}%")
                 sm4.metric("Hit Rate", f"{ls_i['hit_rate']*100:.1f}%")
 

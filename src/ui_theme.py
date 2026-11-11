@@ -477,6 +477,47 @@ def render_company_quote_banner_html(
     )
 
 
+def render_pvalue_metric_html(
+    p_value: Optional[float],
+    sample_size: Optional[int] = None,
+    alpha: float = 0.05,
+) -> str:
+    """Render dark institutional KPI card highlighting statistical significance above small p-value."""
+    insufficient = sample_size is not None and sample_size < 4
+    valid_p = p_value is not None and not np.isnan(p_value)
+
+    if insufficient or not valid_p:
+        is_sig = False
+        p_str = f"p-value = {float(p_value):.4f} (muestra < 4)" if valid_p else "p-value = N/D"
+    else:
+        p_num = float(p_value)
+        is_sig = p_num < alpha
+        p_val_fmt = "< 0.0001" if p_num < 0.0001 else f"= {p_num:.4f}"
+        cmp_hint = f"< {alpha:.2f}" if is_sig else f"≥ {alpha:.2f}"
+        p_str = f"p-value {p_val_fmt} ({cmp_hint})"
+
+    status_text = "Significativo" if is_sig else "No significativo"
+    status_color = TEXT_PRIMARY if is_sig else ACCENT_SLATE
+    border_accent = f"border-left:3px solid {ACCENT_BLUE};" if is_sig else ""
+    dot_html = (
+        f'<span style="color:{ACCENT_BLUE};font-size:0.85rem;margin-right:5px;">●</span>'
+        if is_sig
+        else ""
+    )
+
+    return (
+        f'<div style="background-color:{BG_ELEVATED};border:1px solid {BORDER_HAIRLINE};{border_accent}'
+        f'border-radius:5px;padding:0.50rem 0.75rem;display:flex;flex-direction:column;justify-content:center;">'
+        f'<div style="color:{TEXT_MUTED};font-size:0.74rem;text-transform:uppercase;letter-spacing:0.04em;'
+        f'line-height:1.25;margin-bottom:2px;">SIGNIFICATIVIDAD</div>'
+        f'<div style="color:{status_color};font-size:1.18rem;font-weight:700;line-height:1.25;">'
+        f'{dot_html}{status_text}</div>'
+        f'<div style="color:{TEXT_MUTED};font-family:\'JetBrains Mono\',\'Consolas\',monospace;'
+        f'font-variant-numeric:tabular-nums;font-size:0.74rem;margin-top:2px;">{html.escape(p_str)}</div>'
+        f'</div>'
+    )
+
+
 def build_tradingview_chart(
     df: pd.DataFrame,
     title: str = "",

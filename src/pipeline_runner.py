@@ -61,7 +61,11 @@ def find_company_sector_peers(ticker: str) -> Tuple[str, Dict[str, str]]:
         comp = DEFAULT_SECTORS["Tecnología (Big Tech - Dataset Base)"]
         return "Tecnología (Big Tech - Dataset Base)", {t: info["name"] for t, info in comp.items()}
 
-    return "Universo S&P 500 Analizado", {}
+    if tk.endswith(".MC") and "IBEX 35 (Bolsa de Madrid)" in DEFAULT_SECTORS:
+        ibex = DEFAULT_SECTORS["IBEX 35 (Bolsa de Madrid)"]
+        return "IBEX 35 (Bolsa de Madrid)", {t: info["name"] for t, info in ibex.items()}
+
+    return "Universo Global Analizado", {}
 
 
 def inspect_ticker_pipeline_state(ticker: str) -> Dict:
@@ -143,6 +147,331 @@ def _infer_filing_date_and_type(filepath: Path, meta_by_acc: Dict[str, dict]) ->
     return filing_date, form_type
 
 
+def _select_market_benchmark(ticker: str) -> Tuple[str, str]:
+    """Select the appropriate regional market benchmark index for Alpha calculation."""
+    tk_up = ticker.upper().strip()
+    if tk_up.endswith(".MC"):
+        return "^IBEX", "IBEX 35"
+    if tk_up.endswith((".PA", ".DE", ".AS", ".MI", ".BR", ".LS")):
+        return "^STOXX50E", "Euro Stoxx 50"
+    if tk_up.endswith(".L"):
+        return "^FTSE", "FTSE 100"
+    return "^GSPC", "S&P 500"
+
+
+def _extract_stmt_val(df: Optional[pd.DataFrame], row_names: List[str], col) -> Optional[float]:
+    """Safely extract numeric value from yfinance financial statement row candidates."""
+    if df is None or df.empty or col not in df.columns:
+        return None
+    for nm in row_names:
+        if nm in df.index:
+            val = df.loc[nm, col]
+            if pd.notna(val):
+                try:
+                    return float(val)
+                except Exception:
+                    continue
+    return None
+
+
+def _match_earnings_release_date(period_dt: pd.Timestamp, past_earnings: List[pd.Timestamp]) -> str:
+    """Match fiscal period end date to actual historical earnings release date."""
+    p_naive = period_dt.tz_localize(None) if getattr(period_dt, "tzinfo", None) is not None else period_dt
+    candidates = [
+        ed for ed in past_earnings
+        if 7 <= (ed - p_naive).days <= 95
+    ]
+    if candidates:
+        best = min(candidates, key=lambda d: (d - p_naive).days)
+        return best.strftime("%Y-%m-%d")
+    est = p_naive + pd.Timedelta(days=38)
+    today = pd.Timestamp.now().normalize()
+    return min(est, today).strftime("%Y-%m-%d")
+
+
+def _signal_from_delta(delta_val: Optional[float], thresh_strong: float = 0.10, thresh_mod: float = 0.025) -> Tuple[str, str, float]:
+    """Convert numeric YoY/sequential financial delta into structured guidance fields."""
+    if delta_val is None or np.isnan(delta_val):
+        return "maintained", "weak", 0.55
+    if delta_val >= thresh_strong:
+        return "raised", "strong", 0.85
+    if delta_val >= thresh_mod:
+        return "positive", "moderate", 0.78
+    if delta_val <= -thresh_strong:
+        return "lowered", "strong", 0.85
+    if delta_val <= -thresh_mod:
+        return "negative", "moderate", 0.78
+    return "maintained", "moderate", 0.65
+
+
+def _run_global_quarterly_guidance(
+    ticker: str,
+    company_name: str,
+    engine: str,
+    api_key: Optional[str],
+    force_reanalyze: bool,
+    max_periods: int,
+    log_fn: Optional[Callable[[str], None]],
+) -> List[dict]:
+    """Build quarterly Forward Guidance records for non-SEC global stocks (Bolsa de Madrid, Europe, etc.)."""
+    tk = ticker.upper().strip()
+    display_name = company_name or tk
+    _emit(log_fn, f"[2/4] Descargando estados financieros trimestrales y consenso global de {tk}...")
+
+    try:
+        yf_tk = yf.Ticker(tk)
+        info = yf_tk.info or {}
+        qi = yf_tk.quarterly_income_stmt
+        ai = yf_tk.income_stmt
+        qc = yf_tk.quarterly_cashflow
+        ed_df = yf_tk.get_earnings_dates(limit=16)
+    except Exception as e:
+        _emit(log_fn, f"      ⚠ Error consultando fundamentales globales para {tk}: {e}")
+        return []
+
+    now_ts = pd.Timestamp.now().normalize()
+    past_earnings: List[pd.Timestamp] = []
+    if ed_df is not None and not ed_df.empty:
+        for dt_idx in ed_df.index:
+            d_naive = dt_idx.tz_localize(None) if getattr(dt_idx, "tzinfo", None) is not None else dt_idx
+            if d_naive <= now_ts:
+                past_earnings.append(d_naive)
+
+    # Combine quarterly columns first, supplement with annual fiscal dates if fewer than 4 quarters
+    period_entries: List[Tuple[pd.Timestamp, pd.DataFrame, str]] = []
+    if qi is not None and not qi.empty:
+        for c in sorted(qi.columns):
+            c_dt = pd.Timestamp(c)
+            if c_dt <= now_ts:
+                period_entries.append((c_dt, qi, "QTR"))
+
+    if len(period_entries) < 4 and ai is not None and not ai.empty:
+        existing_dates = {p[0].strftime("%Y-%m-%d") for p in period_entries}
+        for c in sorted(ai.columns):
+            c_dt = pd.Timestamp(c)
+            if c_dt <= now_ts and c_dt.strftime("%Y-%m-%d") not in existing_dates:
+                period_entries.append((c_dt, ai, "FY"))
+
+    period_entries.sort(key=lambda x: x[0])
+    if len(period_entries) > max_periods:
+        period_entries = period_entries[-max_periods:]
+
+    if not period_entries:
+        _emit(log_fn, f"      ⚠ Sin series trimestrales publicadas en mercado global para {tk}.")
+        return []
+
+    _emit(log_fn, f"      • Detectados {len(period_entries)} cierres financieros oficiales ({tk})")
+    _emit(log_fn, f"[3/4] Analizando fundamentales, márgenes y narrativa con motor '{engine}'...")
+
+    rec_key = str(info.get("recommendationKey", "") or "").lower()
+    target_px = info.get("targetMeanPrice")
+    curr_px = info.get("currentPrice") or info.get("regularMarketPrice")
+    upside = ((float(target_px) - float(curr_px)) / float(curr_px)) if (target_px and curr_px and float(curr_px) > 0) else None
+    biz_summary = str(info.get("longBusinessSummary", "") or "")[:650]
+    currency = str(info.get("currency", "EUR" if tk.endswith(".MC") else "USD"))
+
+    analyzed_records: List[dict] = []
+    proc_dir = config.PROCESSED_DIR / tk
+    proc_dir.mkdir(parents=True, exist_ok=True)
+
+    for idx, (p_dt, stmt_df, f_type) in enumerate(period_entries, start=1):
+        rel_date = _match_earnings_release_date(p_dt, past_earnings)
+        cache_file = proc_dir / f"{rel_date}_{f_type}_guidance.json"
+        if cache_file.exists() and not force_reanalyze:
+            try:
+                cached = json.loads(cache_file.read_text(encoding="utf-8"))
+                analyzed_records.append(cached)
+                _emit(log_fn, f"      • [{idx}/{len(period_entries)}] {rel_date} ({f_type}) cargado desde caché")
+                continue
+            except Exception:
+                pass
+
+        rev = _extract_stmt_val(stmt_df, ["Total Revenue", "Operating Revenue"], p_dt)
+        op_inc = _extract_stmt_val(stmt_df, ["Operating Income", "EBIT"], p_dt)
+        ebitda = _extract_stmt_val(stmt_df, ["EBITDA", "Normalized EBITDA"], p_dt)
+        net_inc = _extract_stmt_val(stmt_df, ["Net Income", "Net Income From Continuing Operation Net Minority Interest"], p_dt)
+        gross_p = _extract_stmt_val(stmt_df, ["Gross Profit"], p_dt)
+        capex = _extract_stmt_val(qc, ["Capital Expenditure", "Purchase Of PPE"], p_dt) if f_type == "QTR" else None
+
+        # Look back for same-quarter prior year (~1 year ago) or previous period comparison
+        prev_col = None
+        for prev_dt, prev_df, prev_t in period_entries[: idx - 1]:
+            if prev_t == f_type and abs((p_dt - prev_dt).days - 365) <= 45:
+                prev_col = (prev_dt, prev_df)
+                break
+        if prev_col is None and idx >= 2:
+            prev_col = (period_entries[idx - 2][0], period_entries[idx - 2][1])
+
+        rev_growth = None
+        eps_growth = None
+        margin_delta = None
+        op_margin = (op_inc / rev) if (op_inc is not None and rev and rev != 0) else None
+
+        if prev_col is not None:
+            p_prev, df_prev = prev_col
+            prev_rev = _extract_stmt_val(df_prev, ["Total Revenue", "Operating Revenue"], p_prev)
+            prev_op = _extract_stmt_val(df_prev, ["Operating Income", "EBIT"], p_prev)
+            prev_net = _extract_stmt_val(df_prev, ["Net Income", "Net Income From Continuing Operation Net Minority Interest"], p_prev)
+            if rev is not None and prev_rev and abs(prev_rev) > 0:
+                rev_growth = (rev - prev_rev) / abs(prev_rev)
+            if net_inc is not None and prev_net and abs(prev_net) > 0:
+                eps_growth = (net_inc - prev_net) / abs(prev_net)
+            if op_margin is not None and prev_op is not None and prev_rev and prev_rev != 0:
+                margin_delta = op_margin - (prev_op / prev_rev)
+
+        # Fallback to latest yfinance consensus growth metrics on most recent period
+        if idx == len(period_entries):
+            if rev_growth is None and info.get("revenueGrowth") is not None:
+                rev_growth = float(info["revenueGrowth"])
+            if eps_growth is None and info.get("earningsGrowth") is not None:
+                eps_growth = float(info["earningsGrowth"])
+
+        rev_dir, rev_mag, rev_conf = _signal_from_delta(rev_growth, thresh_strong=0.10, thresh_mod=0.02)
+        mar_dir, mar_mag, mar_conf = _signal_from_delta(margin_delta, thresh_strong=0.025, thresh_mod=0.006)
+        earn_dir, earn_mag, earn_conf = _signal_from_delta(eps_growth, thresh_strong=0.12, thresh_mod=0.03)
+
+        capex_ratio = (abs(capex) / rev) if (capex is not None and rev and rev > 0) else None
+        cap_dir, cap_mag, cap_conf = (
+            ("raised", "moderate", 0.72)
+            if (capex_ratio is not None and capex_ratio >= 0.06)
+            else ("maintained", "moderate", 0.62)
+        )
+
+        # Demand & competitive position incorporate market/consensus strength
+        consensus_score = 0.0
+        if rec_key in ("strong_buy", "buy"):
+            consensus_score += 0.08
+        elif rec_key in ("underperform", "sell"):
+            consensus_score -= 0.08
+        if upside is not None:
+            consensus_score += max(-0.08, min(0.08, upside * 0.4))
+
+        demand_val = (rev_growth or 0.0) + consensus_score
+        dem_dir, dem_mag, dem_conf = _signal_from_delta(demand_val, thresh_strong=0.12, thresh_mod=0.03)
+        comp_val = (op_margin - 0.12 if op_margin is not None else 0.0) + consensus_score
+        comp_dir, comp_mag, comp_conf = _signal_from_delta(comp_val, thresh_strong=0.10, thresh_mod=0.02)
+        innov_dir, innov_mag, innov_conf = _signal_from_delta(rev_growth, thresh_strong=0.15, thresh_mod=0.04)
+
+        rev_txt = f"{rev / 1e6:,.1f}M {currency}" if rev is not None else "N/D"
+        op_txt = f"{op_margin * 100:.1f}%" if op_margin is not None else "N/D"
+        gr_txt = f"{rev_growth * 100:+.1f}%" if rev_growth is not None else "N/D"
+        eg_txt = f"{eps_growth * 100:+.1f}%" if eps_growth is not None else "N/D"
+        md_txt = f"{margin_delta * 100:+.2f} pp" if margin_delta is not None else "estables"
+
+        brief_narrative = (
+            f"Resultados financieros de {display_name} ({tk}) correspondientes al cierre {p_dt.strftime('%Y-%m-%d')} "
+            f"(publicado {rel_date}, {f_type}). "
+            f"Ingresos reportados de {rev_txt} (variación interanual/comparativa {gr_txt}). "
+            f"Margen operativo de {op_txt} (variación {md_txt}). "
+            f"Beneficio neto variación {eg_txt}. "
+            f"Perfil operativo: {biz_summary}"
+        )
+
+        sections = {
+            "mda": brief_narrative,
+            "forward_looking": (
+                f"Consensus rating: {rec_key or 'hold'}. "
+                + (f"Target upside {upside * 100:+.1f}% vs market price. " if upside is not None else "")
+                + f"Revenue trend {gr_txt}, operating margin {op_txt}, net income momentum {eg_txt}."
+            ),
+            "risk_factors": "",
+        }
+
+        nlp_base = analyze_filing(
+            ticker=tk,
+            filing_date=rel_date,
+            filing_type=f_type,
+            sections=sections,
+            model=engine,
+            api_key=api_key,
+            force_reanalyze=True,
+        )
+        if nlp_base is None and "nlp" not in engine.lower():
+            nlp_base = analyze_filing(
+                ticker=tk,
+                filing_date=rel_date,
+                filing_type=f_type,
+                sections=sections,
+                model="nlp_local",
+                force_reanalyze=True,
+            )
+
+        # Anchor quantitative financial dimensions cleanly using reported figures while keeping LLM/NLP narrative
+        guidance_dict = {
+            "revenue_growth": {
+                "direction": rev_dir,
+                "magnitude": rev_mag,
+                "confidence": rev_conf,
+                "direct_quote": f"Ingresos de {rev_txt} con variación comparativa de {gr_txt} en el cierre {p_dt.strftime('%Y-%m-%d')}.",
+            },
+            "margin_outlook": {
+                "direction": mar_dir,
+                "magnitude": mar_mag,
+                "confidence": mar_conf,
+                "direct_quote": f"Margen operativo situado en {op_txt} (cambio {md_txt}).",
+            },
+            "capex_plans": {
+                "direction": cap_dir,
+                "magnitude": cap_mag,
+                "confidence": cap_conf,
+                "direct_quote": f"Inversión en CapEx / activos del {capex_ratio * 100:.1f}% sobre ingresos." if capex_ratio is not None else "Asignación de capital disciplinada según flujo operativo trimestral.",
+            },
+            "demand_outlook": {
+                "direction": dem_dir,
+                "magnitude": dem_mag,
+                "confidence": dem_conf,
+                "direct_quote": f"Demanda e impulso comercial reflejados en ventas ({gr_txt}) y consenso de analistas ({rec_key or 'neutral'}).",
+            },
+            "earnings_guidance": {
+                "direction": earn_dir,
+                "magnitude": earn_mag,
+                "confidence": earn_conf,
+                "direct_quote": f"Evolución del resultado neto atribuible de {eg_txt} en el periodo {p_dt.strftime('%Y-%m-%d')}.",
+            },
+            "innovation_pipeline": {
+                "direction": innov_dir,
+                "magnitude": innov_mag,
+                "confidence": innov_conf,
+                "direct_quote": (nlp_base or {}).get("guidance", {}).get("innovation_pipeline", {}).get("direct_quote")
+                or f"Posicionamiento sectorial en {info.get('industry') or info.get('sector') or 'su segmento principal'}.",
+            },
+            "competitive_position": {
+                "direction": comp_dir,
+                "magnitude": comp_mag,
+                "confidence": comp_conf,
+                "direct_quote": (f"Potencial objetivo de consenso de {upside * 100:+.1f}% ({rec_key.upper()})" if upside is not None else f"Rentabilidad operativa de {op_txt} dentro del sector."),
+            },
+        }
+
+        dir_vals = []
+        map_v = {"raised": 1.0, "positive": 0.6, "maintained": 0.0, "negative": -0.6, "lowered": -1.0}
+        for d_val in guidance_dict.values():
+            dir_vals.append(map_v.get(d_val["direction"], 0.0))
+        quant_sent = float(np.mean(dir_vals)) if dir_vals else 0.0
+        nlp_sent = float((nlp_base or {}).get("overall_sentiment", 0.0))
+        overall_sent = float(round(0.75 * quant_sent + 0.25 * nlp_sent, 4))
+
+        record = {
+            "ticker": tk,
+            "filing_date": rel_date,
+            "filing_type": f_type,
+            "guidance": guidance_dict,
+            "overall_sentiment": overall_sent,
+            "key_risks": (nlp_base or {}).get("key_risks") or ["Sensibilidad macroeconómica, divisas y evolución de márgenes operativos"],
+            "summary": (
+                f"{display_name} ({tk}): ingresos de {rev_txt} ({gr_txt}), margen operativo de {op_txt} ({md_txt}) "
+                f"y variación de beneficio neto de {eg_txt}."
+            ),
+            "source": "global_fundamentals",
+            "analysis_engine": f"{engine} · Fundamentales Globales",
+        }
+        cache_file.write_text(json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8")
+        analyzed_records.append(record)
+        _emit(log_fn, f"      ✓ [{idx}/{len(period_entries)}] {rel_date} ({f_type}) analizado · Sentiment: {overall_sent:+.2f}")
+
+    return analyzed_records
+
+
 def run_company_guidance_pipeline(
     ticker: str,
     company_name: str = "",
@@ -153,19 +482,18 @@ def run_company_guidance_pipeline(
     max_filings: int = 10,
     log_fn: Optional[Callable[[str], None]] = None,
 ) -> Dict:
-    """Execute visible end-to-end SEC EDGAR -> MD&A Parser -> NLP/LLM -> Scorer pipeline."""
+    """Execute visible SEC EDGAR -> MD&A -> NLP/LLM pipeline, with global quarterly fundamentals fallback."""
     tk = ticker.upper().strip()
     display_name = company_name or tk
 
-    # Step 1: Resolve CIK & fetch filing list from SEC EDGAR if raw files missing or forcing refresh
-    _emit(log_fn, f"[1/4] Verificando identidad regulatoria SEC EDGAR para {tk}...")
+    # Step 1: Resolve CIK & fetch filing list from SEC EDGAR when applicable
+    _emit(log_fn, f"[1/4] Verificando cobertura regulatoria para {tk}...")
     resolved_cik = str(cik).zfill(10) if cik else ""
-    if not resolved_cik:
+    if not resolved_cik and "." not in tk:
         try:
             resolved_cik = get_cik(tk)
             _emit(log_fn, f"      CIK resuelto en SEC EDGAR: {resolved_cik}")
-        except Exception as e:
-            _emit(log_fn, f"      No se pudo obtener CIK desde SEC EDGAR ({e}).")
+        except Exception:
             resolved_cik = ""
 
     raw_dir = config.RAW_DIR / tk
@@ -178,14 +506,20 @@ def run_company_guidance_pipeline(
     )
 
     if (len(existing_raw) == 0 or not meta_by_acc or force_reanalyze) and resolved_cik:
-        _emit(log_fn, f"[2/4] Consultando informes 10-K y 10-Q en SEC EDGAR ({config.ANALYSIS_START_DATE} -> {config.ANALYSIS_END_DATE})...")
+        _emit(log_fn, f"[2/4] Consultando informes 10-K / 10-Q / 20-F en SEC EDGAR ({config.ANALYSIS_START_DATE} -> {config.ANALYSIS_END_DATE})...")
         all_filings_meta: List[dict] = []
         for ft in config.FILING_TYPES:
             found = get_filings_list(resolved_cik, ft)
             all_filings_meta.extend(found)
             _emit(log_fn, f"      • Detectados {len(found)} informes {ft} oficiales")
 
-        # Keep most recent max_filings chronologically
+        # Support SEC Foreign Private Issuers (20-F) when 10-K/10-Q absent
+        if not all_filings_meta:
+            found_20f = get_filings_list(resolved_cik, "20-F")
+            if found_20f:
+                all_filings_meta.extend(found_20f)
+                _emit(log_fn, f"      • Detectados {len(found_20f)} informes anuales 20-F (emisor extranjero SEC)")
+
         all_filings_meta.sort(key=lambda x: x.get("filing_date", ""), reverse=True)
         selected_meta = all_filings_meta[:max_filings]
 
@@ -213,22 +547,22 @@ def run_company_guidance_pipeline(
             f for f in raw_dir.rglob("*")
             if f.is_file() and f.suffix.lower() in (".htm", ".html", ".txt")
         )
-    else:
+    elif existing_raw:
         _emit(log_fn, f"[2/4] Reutilizando {len(existing_raw)} informes SEC en caché local para {tk}")
+    else:
+        _emit(log_fn, f"      • {tk} cotiza en bolsa internacional fuera de SEC EDGAR · activando motor global.")
 
-    # Step 3: Parse MD&A + Forward Looking & Run Sentiment Engine
-    _emit(log_fn, f"[3/4] Extrayendo MD&A y ejecutando motor '{engine}'...")
+    # Step 3: Parse SEC MD&A OR execute Global Quarterly Fundamentals + Consensus Pipeline
     analyzed_records: List[dict] = []
 
     if existing_raw:
-        # Sort by inferred filing_date ascending
+        _emit(log_fn, f"[3/4] Extrayendo MD&A y ejecutando motor '{engine}'...")
         file_entries = []
         for fp in existing_raw:
             f_date, f_type = _infer_filing_date_and_type(fp, meta_by_acc)
             file_entries.append((f_date, f_type, fp))
         file_entries.sort(key=lambda x: x[0])
 
-        # Cap to most recent max_filings if raw has many historical docs
         if len(file_entries) > max_filings:
             file_entries = file_entries[-max_filings:]
 
@@ -254,7 +588,6 @@ def run_company_guidance_pipeline(
                 force_reanalyze=force_reanalyze,
             )
 
-            # Fallback to local NLP engine if Groq/Ollama fails (e.g. missing key / timeout)
             if res is None and "nlp" not in engine.lower():
                 _emit(log_fn, f"      ⚠ Fallback a motor NLP financiero local para {f_date} ({f_type})")
                 res = analyze_filing(
@@ -274,8 +607,15 @@ def run_company_guidance_pipeline(
             if "groq" in engine.lower():
                 time.sleep(0.25)
     else:
-        _emit(log_fn, f"      ⚠ No se encontraron filings descargables para {tk}; verificando registros procesados...")
-        analyzed_records = load_ticker_guidance(tk)
+        analyzed_records = _run_global_quarterly_guidance(
+            ticker=tk,
+            company_name=display_name,
+            engine=engine,
+            api_key=api_key,
+            force_reanalyze=force_reanalyze,
+            max_periods=min(max_filings, 8),
+            log_fn=log_fn,
+        )
 
     # Step 4: Score computation & Market price synchronization
     _emit(log_fn, f"[4/4] Calculando Guidance Score compuesto y sincronizando cotizaciones de {tk}...")
@@ -285,7 +625,7 @@ def run_company_guidance_pipeline(
     except Exception as pe:
         logger.debug(f"Price cache update skipped for {tk}: {pe}")
 
-    _emit(log_fn, f"      ✓ Pipeline completado: {len(analyzed_records)} informes analizados y puntuados.")
+    _emit(log_fn, f"      ✓ Pipeline completado: {len(analyzed_records)} periodos analizados y puntuados.")
 
     return {
         "ticker": tk,
@@ -329,9 +669,10 @@ def run_company_event_backtest(
     if ret_df.empty:
         return {"error": f"No hay ventanas de retorno suficientes posteriores a los filings de {tk}."}
 
-    # Fetch S&P 500 (^GSPC) benchmark over identical period for Alpha vs Market
+    # Fetch regional market benchmark (^IBEX for Madrid, ^STOXX50E for Eurozone, ^GSPC for US/Global)
+    bench_sym, bench_name = _select_market_benchmark(tk)
     try:
-        sp_raw = yf.download("^GSPC", start="2023-09-01", progress=False, auto_adjust=False)
+        sp_raw = yf.download(bench_sym, start="2023-09-01", progress=False, auto_adjust=False)
         if isinstance(sp_raw.columns, pd.MultiIndex):
             sp_raw.columns = [c[0] for c in sp_raw.columns]
         sp_df = sp_raw.reset_index()
@@ -390,6 +731,8 @@ def run_company_event_backtest(
         "ticker": tk,
         "horizon_days": horizon_days,
         "score_col": score_col,
+        "benchmark_symbol": bench_sym,
+        "benchmark_name": bench_name,
         "sample_size": len(valid),
         "ic": ic,
         "p_value": p_val,

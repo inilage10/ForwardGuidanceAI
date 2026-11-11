@@ -163,6 +163,20 @@ DEFAULT_SECTORS: Dict[str, Dict[str, dict]] = {
         "DD": {"name": "DuPont de Nemours", "cik": "0001666700", "cap": "34B"},
         "NUE": {"name": "Nucor Corp", "cik": "0000073309", "cap": "35B"},
     },
+    "IBEX 35 (Bolsa de Madrid)": {
+        "ITX.MC": {"name": "Inditex", "cik": "", "cap": "187B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "IBE.MC": {"name": "Iberdrola", "cik": "", "cap": "154B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "SAN.MC": {"name": "Banco Santander", "cik": "", "cap": "163B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "BBVA.MC": {"name": "BBVA", "cik": "", "cap": "129B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "CABK.MC": {"name": "CaixaBank", "cik": "", "cap": "62B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "AMS.MC": {"name": "Amadeus IT Group", "cik": "", "cap": "31B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "AENA.MC": {"name": "Aena", "cik": "", "cap": "33B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "FER.MC": {"name": "Ferrovial", "cik": "", "cap": "30B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "TEF.MC": {"name": "Telefónica", "cik": "", "cap": "20B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "REP.MC": {"name": "Repsol", "cik": "", "cap": "16B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "IDR.MC": {"name": "Indra Sistemas", "cik": "", "cap": "4B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+        "ACS.MC": {"name": "ACS", "cik": "", "cap": "13B", "currency": "EUR", "exchange": "Bolsa de Madrid"},
+    },
 }
 
 

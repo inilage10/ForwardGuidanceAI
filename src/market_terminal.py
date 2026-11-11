@@ -14,6 +14,7 @@ import json
 import logging
 import re
 import sys
+import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -65,6 +66,145 @@ PERIOD_MAP: Dict[str, Tuple[str, str]] = {
 }
 
 SEC_TICKERS_CACHE = config.DATA_DIR / "sec_company_tickers.json"
+MADRID_TICKERS_CACHE = config.DATA_DIR / "madrid_company_tickers.json"
+
+EXCHANGE_LABELS: Dict[str, str] = {
+    "MCE": "Bolsa de Madrid",
+    "BME": "Bolsa de Madrid",
+    "NYQ": "NYSE",
+    "NMS": "NASDAQ",
+    "NGM": "NASDAQ",
+    "NCM": "NASDAQ",
+    "ASE": "NYSE American",
+    "PCX": "NYSE Arca",
+    "LSE": "London SE",
+    "PAR": "Euronext Paris",
+    "GER": "XETRA",
+    "FRA": "Frankfurt",
+    "AMS": "Euronext Amsterdam",
+    "MIL": "Borsa Italiana",
+    "BRU": "Euronext Brussels",
+    "LIS": "Euronext Lisbon",
+    "EBS": "SIX Swiss",
+    "TOR": "TSX Toronto",
+    "TYO": "Tokyo SE",
+    "HKG": "HKEX Hong Kong",
+    "ASX": "ASX Australia",
+    "SAO": "B3 Brasil",
+    "MEX": "BMV México",
+    "CPH": "Nasdaq Copenhagen",
+    "STO": "Nasdaq Stockholm",
+    "OSL": "Oslo Børs",
+    "PNK": "OTC USA",
+    "OQX": "OTC USA",
+    "OBB": "OTC USA",
+}
+
+PRIMARY_EXCHANGES = {
+    "NYQ", "NMS", "NGM", "NCM", "ASE", "MCE", "BME", "LSE", "PAR", "GER",
+    "AMS", "MIL", "BRU", "LIS", "EBS", "TOR", "TYO", "HKG", "ASX", "CPH",
+    "STO", "OSL", "SAO", "MEX", "KRX", "NSI", "BOM",
+}
+
+SECONDARY_EXCHANGE_SUFFIXES = (".NE", ".TI", ".HM", ".DU", ".HA", ".SG", ".BE", ".MU", ".F", ".VI", ".PR")
+SECONDARY_EXCHANGES = {"PNK", "OQX", "OBB", "NEO", "TLO", "HAN", "DUS", "HAM", "STU", "BER", "MUN"}
+
+CURRENCY_SYMBOLS: Dict[str, str] = {
+    "USD": "$",
+    "EUR": "€",
+    "GBP": "£",
+    "GBp": "p",
+    "JPY": "¥",
+    "CHF": "CHF ",
+    "CAD": "C$",
+    "HKD": "HK$",
+    "AUD": "A$",
+    "BRL": "R$",
+    "MXN": "MX$",
+    "DKK": "kr ",
+    "SEK": "kr ",
+    "NOK": "kr ",
+}
+
+SUFFIX_CURRENCY_HINTS: Dict[str, Tuple[str, str]] = {
+    ".MC": ("Bolsa de Madrid", "EUR"),
+    ".PA": ("Euronext Paris", "EUR"),
+    ".DE": ("XETRA", "EUR"),
+    ".AS": ("Euronext Amsterdam", "EUR"),
+    ".MI": ("Borsa Italiana", "EUR"),
+    ".BR": ("Euronext Brussels", "EUR"),
+    ".LS": ("Euronext Lisbon", "EUR"),
+    ".L": ("London SE", "GBP"),
+    ".SW": ("SIX Swiss", "CHF"),
+    ".TO": ("TSX Toronto", "CAD"),
+    ".T": ("Tokyo SE", "JPY"),
+    ".HK": ("HKEX", "HKD"),
+    ".AX": ("ASX Australia", "AUD"),
+    ".SA": ("B3 Brasil", "BRL"),
+    ".MX": ("BMV México", "MXN"),
+    ".CO": ("Nasdaq Copenhagen", "DKK"),
+    ".ST": ("Nasdaq Stockholm", "SEK"),
+    ".OL": ("Oslo Børs", "NOK"),
+}
+
+MADRID_SEARCH_ALIASES: Dict[str, str] = {
+    "ITX.MC": "inditex zara pull bear massimo dutti bershka stradivarius",
+    "IBE.MC": "iberdrola",
+    "SAN.MC": "santander banco santander",
+    "BBVA.MC": "bbva banco bilbao vizcaya argentaria",
+    "CABK.MC": "caixabank caixa la caixa",
+    "AMS.MC": "amadeus it group",
+    "AENA.MC": "aena aeropuertos",
+    "FER.MC": "ferrovial",
+    "TEF.MC": "telefonica movistar",
+    "REP.MC": "repsol",
+    "IDR.MC": "indra sistemas",
+    "ACS.MC": "acs actividades construccion servicios",
+    "NTGY.MC": "naturgy gas natural fenosa",
+    "ELE.MC": "endesa",
+    "ENG.MC": "enagas",
+    "RED.MC": "redeia red electrica",
+    "CLNX.MC": "cellnex telecom",
+    "MRL.MC": "merlin properties",
+    "COL.MC": "inmobiliaria colonial",
+    "ANA.MC": "acciona",
+    "ANE.MC": "acciona energia",
+    "GRF.MC": "grifols",
+    "MTS.MC": "arcelormittal arcelor",
+    "BKT.MC": "bankinter",
+    "SAB.MC": "sabadell banco sabadell",
+    "UNI.MC": "unicaja banco",
+    "MAP.MC": "mapfre",
+    "FDR.MC": "fluidra",
+    "ACX.MC": "acerinox",
+    "ROVI.MC": "rovi laboratorios farmaceuticos",
+    "SLR.MC": "solaria energia medio ambiente",
+    "SCYR.MC": "sacyr",
+    "LOG.MC": "logista integral",
+    "PUIG.MC": "puig brands",
+    "IAG.MC": "iag iberia british airways international airlines",
+    "VID.MC": "vidrala",
+    "VIS.MC": "viscofan",
+    "EBRO.MC": "ebro foods",
+    "PHM.MC": "pharmamar pharma mar",
+    "CAF.MC": "caf construcciones auxiliar ferrocarriles",
+    "GEST.MC": "gestamp automocion",
+    "CIE.MC": "cie automotive",
+    "ALM.MC": "almirall",
+    "FAE.MC": "faes farma",
+    "PSG.MC": "prosegur",
+    "TUB.MC": "tubacex",
+    "TLGO.MC": "talgo",
+    "A3M.MC": "atresmedia",
+    "GRE.MC": "grenergy renovables",
+    "TRE.MC": "tecnicas reunidas",
+    "DOM.MC": "global dominion",
+    "ENC.MC": "ence energia celulosa",
+    "LDA.MC": "linea directa aseguradora",
+    "MVC.MC": "metrovacesa",
+    "HOME.MC": "neinor homes",
+    "AEDAS.MC": "aedas homes",
+}
 
 _POS_NEWS_WORDS = {
     "beat", "beats", "surge", "surges", "rally", "rallies", "upgrade", "upgraded",
@@ -72,6 +212,11 @@ _POS_NEWS_WORDS = {
     "outperform", "raises", "raised", "boost", "strong", "breakout", "approve",
     "cleared", "clearing", "milestone", "expand", "wins", "partner", "partnership",
     "buyback", "dividend", "top", "tops",
+    # Spanish financial news lexicon
+    "sube", "subida", "suben", "gana", "ganancias", "beneficio", "beneficios",
+    "dividendo", "dividendos", "recompra", "crece", "crecimiento", "supera",
+    "mejora", "alcista", "repunta", "repunte", "dispara", "lidera", "expansion",
+    "contrato", "adjudica", "aprobado", "objetivo",
 }
 _NEG_NEWS_WORDS = {
     "miss", "misses", "drop", "drops", "plunge", "plunges", "downgrade", "downgraded",
@@ -79,12 +224,63 @@ _NEG_NEWS_WORDS = {
     "bearish", "loss", "losses", "fall", "falls", "decline", "declines", "investigation",
     "recall", "fine", "fined", "delay", "delays", "layoff", "layoffs", "risk",
     "concern", "concerns", "tumble", "selloff",
+    # Spanish financial news lexicon
+    "cae", "caida", "caen", "baja", "bajan", "pierde", "perdida", "perdidas",
+    "recorte", "recorta", "rebaja", "alerta", "multa", "investigacion", "demanda",
+    "desplome", "desploma", "despidos", "huelga", "riesgo", "deuda", "penaliza",
 }
 
 
-# ── Curated S&P 500 + SEC EDGAR Company Directory ───────────────────
+def _fold_text(text: str) -> str:
+    """Normalize unicode accents so Spanish/European names match cleanly with or without tildes."""
+    if not text:
+        return ""
+    norm = unicodedata.normalize("NFKD", str(text))
+    return "".join(ch for ch in norm if not unicodedata.combining(ch)).lower().strip()
+
+
+def format_exchange_label(raw_exchange: Optional[str], ticker: str = "") -> str:
+    """Convert raw Yahoo/exchange codes (MCE, NMS, NYQ, etc.) into readable market names."""
+    code = str(raw_exchange or "").upper().strip()
+    if code in EXCHANGE_LABELS:
+        return EXCHANGE_LABELS[code]
+    tk_up = str(ticker or "").upper()
+    for suf, (ex_lbl, _) in SUFFIX_CURRENCY_HINTS.items():
+        if tk_up.endswith(suf):
+            return ex_lbl
+    if code:
+        return code
+    return "Mercado USA" if "." not in tk_up else "Bolsa Global"
+
+
+def infer_currency_for_ticker(ticker: str, raw_currency: Optional[str] = None) -> str:
+    """Infer trading currency code (EUR, USD, GBP, JPY, etc.) from quote metadata or ticker suffix."""
+    if raw_currency and str(raw_currency).strip():
+        return str(raw_currency).strip()
+    tk_up = str(ticker or "").upper()
+    for suf, (_, curr) in SUFFIX_CURRENCY_HINTS.items():
+        if tk_up.endswith(suf):
+            return curr
+    return "USD"
+
+
+def format_currency_price(value: Optional[float], currency: str = "USD") -> str:
+    """Format a price float with the appropriate currency symbol (€, $, £, ¥, etc.)."""
+    if value is None:
+        return "--"
+    sym = CURRENCY_SYMBOLS.get(currency, f"{currency} ")
+    if currency in {"JPY", "KRW"}:
+        return f"{sym}{value:,.0f}"
+    if sym.endswith(" "):
+        return f"{sym}{value:,.2f}"
+    if currency == "GBp":
+        return f"{value:,.2f}p"
+    return f"{sym}{value:,.2f}"
+
+
+# ── Curated S&P 500 + IBEX 35 + Global Company Directory ────────────
 def get_curated_companies_map() -> Dict[str, Dict[str, str]]:
-    """Build dictionary of ticker -> metadata from the 11 GICS S&P 500 sectors."""
+    """Build dictionary of ticker -> metadata from the 11 GICS S&P 500 sectors & IBEX 35."""
     directory: Dict[str, Dict[str, str]] = {}
     for sector_name, companies in DEFAULT_SECTORS.items():
         if "Big Tech" in sector_name:
@@ -94,20 +290,112 @@ def get_curated_companies_map() -> Dict[str, Dict[str, str]]:
 
         for ticker, info in companies.items():
             if ticker not in directory or "Big Tech" not in sector_name:
+                ex_name = info.get("exchange") or format_exchange_label("", ticker)
+                curr = info.get("currency") or infer_currency_for_ticker(ticker)
+                aliases = MADRID_SEARCH_ALIASES.get(ticker, "")
                 directory[ticker] = {
                     "ticker": ticker,
                     "name": info["name"],
                     "cik": info.get("cik", ""),
                     "cap": info.get("cap", ""),
                     "sector": display_sector,
+                    "exchange": ex_name,
+                    "currency": curr,
+                    "aliases": aliases,
                     "curated": "true",
                 }
     return directory
 
 
 @st.cache_data(ttl=86400, show_spinner=False)
+def load_madrid_company_directory() -> List[Dict[str, str]]:
+    """Load all listed companies on Bolsa de Madrid / BME (MCE) via Yahoo Finance screener."""
+    raw_quotes: Optional[List[dict]] = None
+
+    if MADRID_TICKERS_CACHE.exists():
+        try:
+            age_sec = datetime.now().timestamp() - MADRID_TICKERS_CACHE.stat().st_mtime
+            if age_sec < 7 * 86400:
+                cached = json.loads(MADRID_TICKERS_CACHE.read_text(encoding="utf-8"))
+                if isinstance(cached, list) and cached:
+                    raw_quotes = cached
+        except Exception:
+            raw_quotes = None
+
+    if raw_quotes is None:
+        try:
+            q = yf.EquityQuery("eq", ["exchange", "MCE"])
+            res = yf.screen(q, size=250, offset=0)
+            quotes = res.get("quotes", []) if isinstance(res, dict) else []
+            # Also fetch page 2 if total ever exceeds 250
+            total = int(res.get("total", len(quotes)) or len(quotes)) if isinstance(res, dict) else len(quotes)
+            if total > len(quotes):
+                res2 = yf.screen(q, size=250, offset=len(quotes))
+                quotes.extend(res2.get("quotes", []) if isinstance(res2, dict) else [])
+
+            raw_quotes = [
+                {
+                    "symbol": str(item.get("symbol", "")).upper().strip(),
+                    "longName": item.get("longName") or item.get("shortName") or "",
+                    "shortName": item.get("shortName") or "",
+                    "sector": item.get("sector") or "Bolsa de Madrid",
+                    "marketCap": item.get("marketCap"),
+                }
+                for item in quotes
+                if item.get("symbol")
+            ]
+            if raw_quotes:
+                MADRID_TICKERS_CACHE.parent.mkdir(parents=True, exist_ok=True)
+                MADRID_TICKERS_CACHE.write_text(json.dumps(raw_quotes, ensure_ascii=False), encoding="utf-8")
+        except Exception as e:
+            logger.warning(f"Could not fetch Bolsa de Madrid (MCE) screener: {e}")
+            if MADRID_TICKERS_CACHE.exists():
+                try:
+                    raw_quotes = json.loads(MADRID_TICKERS_CACHE.read_text(encoding="utf-8"))
+                except Exception:
+                    raw_quotes = []
+            else:
+                raw_quotes = []
+
+    curated = get_curated_companies_map()
+    entries: List[Dict[str, str]] = []
+    seen = set()
+
+    # Keep curated IBEX 35 entries first
+    for tk, info in curated.items():
+        if tk.endswith(".MC"):
+            seen.add(tk)
+            entries.append(info)
+
+    for item in raw_quotes or []:
+        tk = str(item.get("symbol", "")).upper().strip()
+        if not tk or tk in seen:
+            continue
+        seen.add(tk)
+        raw_nm = str(item.get("longName") or item.get("shortName") or tk).strip()
+        clean_nm = raw_nm.title() if raw_nm.isupper() else raw_nm
+        cap_val = item.get("marketCap")
+        cap_str = ""
+        if isinstance(cap_val, (int, float)) and cap_val > 0:
+            cap_str = f"{cap_val / 1e9:.1f}B" if cap_val >= 1e9 else f"{cap_val / 1e6:.0f}M"
+        entries.append({
+            "ticker": tk,
+            "name": clean_nm,
+            "cik": "",
+            "cap": cap_str,
+            "sector": item.get("sector") or "Bolsa de Madrid",
+            "exchange": "Bolsa de Madrid",
+            "currency": "EUR",
+            "aliases": MADRID_SEARCH_ALIASES.get(tk, ""),
+            "curated": "false",
+        })
+
+    return entries
+
+
+@st.cache_data(ttl=86400, show_spinner=False)
 def load_sec_company_directory() -> List[Dict[str, str]]:
-    """Load the full SEC EDGAR public company directory (~10,400 US issuers)."""
+    """Load the full SEC EDGAR public company directory (~10,400 US issuers) + curated S&P 500."""
     raw_data = None
 
     # Use local disk cache if fresh (< 7 days)
@@ -144,10 +432,11 @@ def load_sec_company_directory() -> List[Dict[str, str]]:
     entries: List[Dict[str, str]] = []
     seen = set()
 
-    # Keep curated companies first with crisp display names & sectors
+    # Keep curated US companies first with crisp display names & sectors
     for tk, info in curated.items():
-        seen.add(tk)
-        entries.append(info)
+        if not tk.endswith(".MC"):
+            seen.add(tk)
+            entries.append(info)
 
     if isinstance(raw_data, dict):
         for item in raw_data.values():
@@ -156,7 +445,6 @@ def load_sec_company_directory() -> List[Dict[str, str]]:
                 continue
             seen.add(tk)
             title = str(item.get("title", tk)).strip()
-            # Format overly ALL-CAPS corporate titles cleanly
             clean_title = title.title() if title.isupper() else title
             entries.append({
                 "ticker": tk,
@@ -164,122 +452,274 @@ def load_sec_company_directory() -> List[Dict[str, str]]:
                 "cik": str(item.get("cik_str", "")).zfill(10),
                 "cap": "",
                 "sector": "Mercado USA (SEC EDGAR)",
+                "exchange": "Mercado USA",
+                "currency": "USD",
+                "aliases": "",
                 "curated": "false",
             })
 
     return entries
 
 
+@st.cache_data(ttl=3600, show_spinner=False)
+def _fetch_yf_company_profile(ticker: str) -> Dict[str, str]:
+    """Fetch live metadata (name, exchange, currency, sector, marketCap) for any global public equity."""
+    tk_up = ticker.upper().strip()
+    try:
+        info = yf.Ticker(tk_up).info or {}
+        if not info or (not info.get("shortName") and not info.get("longName") and info.get("regularMarketPrice") is None):
+            return {}
+        raw_nm = str(info.get("longName") or info.get("shortName") or tk_up).strip()
+        clean_nm = raw_nm.title() if raw_nm.isupper() else raw_nm
+        ex_lbl = format_exchange_label(info.get("exchange") or info.get("fullExchangeName"), tk_up)
+        curr = infer_currency_for_ticker(tk_up, info.get("currency"))
+        mcap = info.get("marketCap")
+        cap_str = ""
+        if isinstance(mcap, (int, float)) and mcap > 0:
+            cap_str = f"{mcap / 1e9:.1f}B" if mcap >= 1e9 else f"{mcap / 1e6:.0f}M"
+        return {
+            "ticker": tk_up,
+            "name": clean_nm,
+            "cik": "",
+            "cap": cap_str,
+            "sector": info.get("sector") or ex_lbl,
+            "exchange": ex_lbl,
+            "currency": curr,
+            "aliases": "",
+            "curated": "false",
+        }
+    except Exception as e:
+        logger.debug(f"Could not fetch live yf profile for {tk_up}: {e}")
+        return {}
+
+
 def get_company_info(ticker: str) -> Dict[str, str]:
-    """Return metadata dict for a ticker (name, cik, sector, cap)."""
+    """Return enriched metadata dict for any global ticker (name, cik, sector, exchange, currency)."""
     tk_up = ticker.upper().strip()
     curated = get_curated_companies_map()
     if tk_up in curated:
         return curated[tk_up]
 
+    for item in load_madrid_company_directory():
+        if item["ticker"] == tk_up:
+            return item
+
     for item in load_sec_company_directory():
         if item["ticker"] == tk_up:
             return item
+
+    yf_prof = _fetch_yf_company_profile(tk_up)
+    if yf_prof:
+        return yf_prof
 
     return {
         "ticker": tk_up,
         "name": tk_up,
         "cik": "",
         "cap": "",
-        "sector": "Renta Variable",
+        "sector": "Renta Variable Global",
+        "exchange": format_exchange_label("", tk_up),
+        "currency": infer_currency_for_ticker(tk_up),
+        "aliases": "",
         "curated": "false",
     }
 
 
-def resolve_company_search(query: str) -> Tuple[Optional[Dict[str, str]], List[Dict[str, str]]]:
-    """Resolve user search text into (best_match, candidates).
+def _yahoo_global_search(query: str, max_results: int = 15) -> List[Dict[str, str]]:
+    """Search global equities across all international exchanges via Yahoo Finance."""
+    results: List[Dict[str, str]] = []
+    seen = set()
+    try:
+        search = yf.Search(query, max_results=max_results)
+        quotes = getattr(search, "quotes", []) or []
+        for qt in quotes:
+            sym = str(qt.get("symbol", "")).upper().strip()
+            qtype = str(qt.get("quoteType", "")).upper()
+            if not sym or sym in seen or qtype not in ("EQUITY", "ETF", ""):
+                continue
+            seen.add(sym)
+            raw_ex = str(qt.get("exchange", "")).upper().strip()
+            ex_label = format_exchange_label(raw_ex, sym)
+            curr = infer_currency_for_ticker(sym)
+            raw_nm = str(qt.get("longname") or qt.get("shortname") or sym).strip()
+            clean_nm = raw_nm.title() if raw_nm.isupper() else raw_nm
+            results.append({
+                "ticker": sym,
+                "name": clean_nm,
+                "cik": "",
+                "cap": "",
+                "sector": qt.get("sector") or ex_label,
+                "exchange": ex_label,
+                "raw_exchange": raw_ex,
+                "currency": curr,
+                "aliases": "",
+                "curated": "false",
+            })
+    except Exception as e:
+        logger.debug(f"yf.Search failed for '{query}': {e}")
+    return results
 
-    Prioritizes:
-    1) Exact ticker match (e.g. 'AAPL', 'PLTR', 'NVDA')
-    2) Curated S&P 500 company name match (e.g. 'Apple', 'Microsoft', 'JPMorgan')
-    3) SEC EDGAR prefix / company title match
-    4) Yahoo Finance Search fallback
-    """
+
+def _score_global_candidate(item: Dict[str, str], q_upper: str, q_fold: str) -> Tuple[int, int, str]:
+    """Rank search candidates combining text match quality and primary exchange quality."""
+    tk = item["ticker"].upper()
+    tk_base = tk.split(".", 1)[0]
+    nm_fold = _fold_text(item.get("name", ""))
+    alias_fold = _fold_text(item.get("aliases", ""))
+    raw_ex = item.get("raw_exchange", "").upper()
+    is_curated = item.get("curated") == "true"
+    is_madrid = tk.endswith(".MC") or item.get("exchange") == "Bolsa de Madrid"
+
+    # Match quality tier
+    if tk == q_upper:
+        match_rank = 0
+    elif tk_base == q_upper and is_madrid:
+        match_rank = 1
+    elif nm_fold == q_fold or f" {q_fold} " in f" {alias_fold} ":
+        match_rank = 2
+    elif is_curated and (q_fold in nm_fold or q_fold in alias_fold):
+        match_rank = 3
+    elif tk_base == q_upper:
+        match_rank = 4
+    elif tk.startswith(q_upper) or nm_fold.startswith(q_fold) or alias_fold.startswith(q_fold):
+        match_rank = 5
+    elif re.search(rf"\b{re.escape(q_fold)}\b", nm_fold) or re.search(rf"\b{re.escape(q_fold)}\b", alias_fold):
+        match_rank = 6
+    else:
+        match_rank = 8
+
+    # Prefer primary exchanges over OTC/regional duplicates
+    if is_madrid or (raw_ex in PRIMARY_EXCHANGES) or (not raw_ex and "." not in tk):
+        ex_penalty = 0
+    elif tk.endswith(SECONDARY_EXCHANGE_SUFFIXES) or raw_ex in SECONDARY_EXCHANGES:
+        ex_penalty = 5
+    else:
+        ex_penalty = 2
+
+    # Slight boost for curated flagship companies
+    curated_bonus = 0 if is_curated else 1
+    return (match_rank + ex_penalty, curated_bonus, len(item.get("name", "")))
+
+
+def resolve_company_search(query: str) -> Tuple[Optional[Dict[str, str]], List[Dict[str, str]]]:
+    """Resolve any US, Spanish (Bolsa de Madrid), or global public equity query."""
     q = (query or "").strip()
     if not q:
         return None, []
 
-    q_upper = q.upper()
-    q_lower = q.lower()
-    directory = load_sec_company_directory()
-
-    # Support strings like "AAPL - Apple"
     if " - " in q:
-        maybe_tk = q.split(" - ", 1)[0].strip().upper()
-        for item in directory:
-            if item["ticker"] == maybe_tk:
+        q = q.split(" - ", 1)[0].strip()
+
+    q_upper = q.upper()
+    q_fold = _fold_text(q)
+
+    madrid_dir = load_madrid_company_directory()
+    sec_dir = load_sec_company_directory()
+    combined_local = madrid_dir + sec_dir
+
+    # Fast exact shortcut when user explicitly typed an exchange-suffixed ticker (e.g. ITX.MC, SAP.DE, MC.PA)
+    if "." in q_upper:
+        for item in combined_local:
+            if item["ticker"] == q_upper:
                 return item, [item]
+        yf_cands = _yahoo_global_search(q_upper, max_results=8)
+        for item in yf_cands:
+            if item["ticker"] == q_upper:
+                return item, [item]
+        prof = _fetch_yf_company_profile(q_upper)
+        if prof:
+            return prof, [prof]
+        if yf_cands:
+            return yf_cands[0], yf_cands
+        return None, []
 
-    # 1. Exact ticker match
-    for item in directory:
-        if item["ticker"] == q_upper:
-            return item, [item]
+    # Check local Madrid + SEC matches
+    local_matches: List[Dict[str, str]] = []
+    seen_tk = set()
 
-    # 2. Curated exact/substring company name match
-    curated_matches = [
-        item for item in directory
-        if item.get("curated") == "true"
-        and (q_lower in item["name"].lower() or item["ticker"].startswith(q_upper))
-    ]
-    if curated_matches:
-        curated_matches.sort(
-            key=lambda x: (
-                0 if x["name"].lower() == q_lower else (1 if x["name"].lower().startswith(q_lower) else 2),
-                len(x["name"]),
-            )
-        )
-        return curated_matches[0], curated_matches[:8]
-
-    # 3. Full SEC EDGAR directory match
-    sec_matches = []
-    for item in directory:
+    for item in combined_local:
         tk = item["ticker"]
-        nm = item["name"].lower()
-        if tk.startswith(q_upper) or q_lower in nm:
-            score = 0
-            if tk.startswith(q_upper):
-                score = 1
-            elif nm.startswith(q_lower):
-                score = 2
-            elif re.search(rf"\b{re.escape(q_lower)}\b", nm):
-                score = 3
+        tk_base = tk.split(".", 1)[0]
+        nm_fold = _fold_text(item.get("name", ""))
+        al_fold = _fold_text(item.get("aliases", ""))
+        if (
+            tk == q_upper
+            or tk_base == q_upper
+            or tk.startswith(q_upper)
+            or q_fold in nm_fold
+            or q_fold in al_fold
+        ):
+            if tk not in seen_tk:
+                seen_tk.add(tk)
+                local_matches.append(item)
+
+    # Check whether query already resolves cleanly without network latency:
+    # Fast-path only when exact single curated ticker/name has zero cross-exchange ambiguity
+    has_madrid_match = any(m["ticker"].endswith(".MC") for m in local_matches)
+    exact_curated_us = [
+        m for m in local_matches
+        if m.get("curated") == "true"
+        and not m["ticker"].endswith(".MC")
+        and (m["ticker"] == q_upper or _fold_text(m["name"]) == q_fold)
+    ]
+    exact_madrid_primary = [
+        m for m in local_matches
+        if m["ticker"].endswith(".MC")
+        and (
+            m["ticker"].split(".")[0] == q_upper
+            or _fold_text(m["name"]) == q_fold
+            or f" {q_fold} " in f" {_fold_text(m.get('aliases', ''))} "
+        )
+    ]
+
+    if exact_curated_us and not has_madrid_match:
+        return exact_curated_us[0], [exact_curated_us[0]]
+
+    if len(exact_madrid_primary) == 1 and len(exact_curated_us) == 0:
+        # Check if there is also an exact NYSE/SEC ticker collision (e.g. SAN, BBVA, TEF, FER, IAG)
+        sec_exact = [m for m in local_matches if not m["ticker"].endswith(".MC") and m["ticker"] == q_upper]
+        if not sec_exact:
+            # Verify whether SEC name ALSO explicitly matches (e.g. Santander/BBVA/Telefonica ADRs)
+            sec_name_exact = [
+                m for m in local_matches
+                if not m["ticker"].endswith(".MC") and q_fold in _fold_text(m.get("name", ""))
+            ]
+            if not sec_name_exact:
+                return exact_madrid_primary[0], [exact_madrid_primary[0]]
+
+    # For international / dual-listed / partial queries, merge live Yahoo global search
+    merged_pool = list(local_matches)
+    should_call_yf = (
+        not local_matches
+        or has_madrid_match
+        or len(q_fold) >= 3
+    )
+    if should_call_yf:
+        for y_item in _yahoo_global_search(q, max_results=15):
+            if y_item["ticker"] not in seen_tk:
+                seen_tk.add(y_item["ticker"])
+                merged_pool.append(y_item)
             else:
-                score = 4
-            sec_matches.append((score, len(item["name"]), item))
+                # Propagate raw_exchange tag to local SEC match when helpful
+                for existing in merged_pool:
+                    if existing["ticker"] == y_item["ticker"] and not existing.get("raw_exchange"):
+                        existing["raw_exchange"] = y_item.get("raw_exchange", "")
 
-    if sec_matches:
-        sec_matches.sort(key=lambda t: (t[0], t[1]))
-        candidates = [t[2] for t in sec_matches[:10]]
-        return candidates[0], candidates
+    if not merged_pool:
+        return None, []
 
-    # 4. Fallback via Yahoo Finance Search
-    try:
-        search = yf.Search(q, max_results=6)
-        quotes = getattr(search, "quotes", []) or []
-        yf_candidates = []
-        for qt in quotes:
-            sym = str(qt.get("symbol", "")).upper().strip()
-            qtype = qt.get("quoteType", "")
-            if sym and qtype in ("EQUITY", "ETF", ""):
-                yf_candidates.append({
-                    "ticker": sym,
-                    "name": qt.get("shortname") or qt.get("longname") or sym,
-                    "cik": "",
-                    "cap": "",
-                    "sector": qt.get("sector") or "Mercado Global",
-                    "curated": "false",
-                })
-        if yf_candidates:
-            return yf_candidates[0], yf_candidates
-    except Exception as e:
-        logger.debug(f"yf.Search fallback failed for '{q}': {e}")
+    merged_pool.sort(key=lambda item: _score_global_candidate(item, q_upper, q_fold))
 
-    return None, []
+    # Filter out obvious secondary/OTC duplicates if strong primary matches exist
+    primary_candidates = [
+        item for item in merged_pool
+        if not (
+            item["ticker"].endswith(SECONDARY_EXCHANGE_SUFFIXES)
+            or item.get("raw_exchange", "") in SECONDARY_EXCHANGES
+        )
+    ]
+    final_list = primary_candidates[:8] if primary_candidates else merged_pool[:8]
+    return final_list[0], final_list
 
 
 # ── Ticker Tape & Market Quotes ─────────────────────────────────────
@@ -477,8 +917,8 @@ def get_chart_ohlcv(symbol: str, period_key: str = "1A") -> Tuple[pd.DataFrame, 
 
 # ── News & Regulatory Filings Aggregator ────────────────────────────
 def _classify_headline_sentiment(title: str) -> str:
-    """Classify financial headline sentiment using domain keyword lexicons."""
-    tokens = set(re.findall(r"[a-z]+", title.lower()))
+    """Classify financial headline sentiment using domain keyword lexicons (EN + ES)."""
+    tokens = set(re.findall(r"[a-z]+", _fold_text(title)))
     pos_hits = len(tokens & _POS_NEWS_WORDS)
     neg_hits = len(tokens & _NEG_NEWS_WORDS)
     if pos_hits > neg_hits:
@@ -522,18 +962,58 @@ def _parse_rss_datetime(pub_str: str) -> Tuple[float, str]:
         return 0.0, pub_str[:16]
 
 
+def _fetch_google_rss_feed(g_url: str, seen_prefixes: set, headers: dict) -> List[Dict]:
+    """Parse a Google News RSS feed while deduplicating seen headlines."""
+    out: List[Dict] = []
+    try:
+        resp = requests.get(g_url, headers=headers, timeout=8)
+        if not resp.ok:
+            return out
+        root = ET.fromstring(resp.content)
+        for item in root.findall(".//item"):
+            raw_title = (item.findtext("title") or "").strip()
+            link = (item.findtext("link") or "").strip()
+            pub_raw = (item.findtext("pubDate") or "").strip()
+            source_el = item.findtext("source") or "Google News"
+
+            if " - " in raw_title and raw_title.endswith(source_el):
+                title = raw_title[: -(len(source_el) + 3)].strip()
+            else:
+                title = raw_title
+
+            if not title:
+                continue
+            norm_key = re.sub(r"[^a-z0-9]", "", _fold_text(title))[:45]
+            if norm_key in seen_prefixes:
+                continue
+            seen_prefixes.add(norm_key)
+            ts, rel_time = _parse_rss_datetime(pub_raw)
+            out.append({
+                "title": title,
+                "link": link,
+                "source": source_el,
+                "published_ts": ts,
+                "published_rel": rel_time,
+                "summary": "",
+                "sentiment": _classify_headline_sentiment(title),
+            })
+    except Exception as e:
+        logger.debug(f"Google RSS feed error ({g_url}): {e}")
+    return out
+
+
 @st.cache_data(ttl=300, show_spinner=False)
 def get_company_news(ticker: str, company_name: str = "", limit: int = 18) -> List[Dict]:
-    """Fetch & deduplicate real-time financial news from Yahoo Finance RSS and Google News RSS."""
+    """Fetch & deduplicate real-time global/Spanish financial news from Yahoo & Google RSS."""
     tk = ticker.upper().strip()
     articles: List[Dict] = []
     seen_prefixes = set()
 
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) ForwardGuidanceAI/2.0"}
 
-    # Source 1: Yahoo Finance RSS
+    # Source 1: Yahoo Finance RSS (supports both US and international suffixed tickers like ITX.MC)
     try:
-        y_url = f"https://feeds.finance.yahoo.com/rss/2.0/headline?s={tk}&region=US&lang=en-US"
+        y_url = f"https://feeds.finance.yahoo.com/rss/2.0/headline?s={requests.utils.quote(tk)}&region=US&lang=en-US"
         r = requests.get(y_url, headers=headers, timeout=8)
         if r.ok:
             root = ET.fromstring(r.content)
@@ -544,7 +1024,7 @@ def get_company_news(ticker: str, company_name: str = "", limit: int = 18) -> Li
                 desc = _clean_rss_summary(item.findtext("description") or "")
                 if not title:
                     continue
-                norm_key = re.sub(r"[^a-z0-9]", "", title.lower())[:45]
+                norm_key = re.sub(r"[^a-z0-9]", "", _fold_text(title))[:45]
                 if norm_key in seen_prefixes:
                     continue
                 seen_prefixes.add(norm_key)
@@ -561,44 +1041,32 @@ def get_company_news(ticker: str, company_name: str = "", limit: int = 18) -> Li
     except Exception as e:
         logger.debug(f"Yahoo RSS error for {tk}: {e}")
 
-    # Source 2: Google News Financial RSS
-    try:
-        clean_name = re.sub(r"\b(Inc\.?|Corp\.?|Corporation|plc|Co\.?|Holdings)\b", "", company_name, flags=re.I).strip()
-        q_str = f"{tk} {clean_name} stock".strip() if clean_name and clean_name.upper() != tk else f"{tk} stock"
-        g_url = f"https://news.google.com/rss/search?q={requests.utils.quote(q_str)}+when:14d&hl=en-US&gl=US&ceid=US:en"
-        r2 = requests.get(g_url, headers=headers, timeout=8)
-        if r2.ok:
-            root2 = ET.fromstring(r2.content)
-            for item in root2.findall(".//item"):
-                raw_title = (item.findtext("title") or "").strip()
-                link = (item.findtext("link") or "").strip()
-                pub_raw = (item.findtext("pubDate") or "").strip()
-                source_el = item.findtext("source") or "Google News"
+    # Clean corporate suffixes for Google News queries
+    clean_name = re.sub(
+        r"\b(Inc\.?|Corp\.?|Corporation|plc|Co\.?|Holdings|S\.?A\.?|S\.?L\.?|SE|N\.?V\.?|AG)\b",
+        "",
+        company_name,
+        flags=re.I,
+    ).strip(" ,.-")
+    tk_base = tk.split(".", 1)[0]
+    search_label = clean_name if clean_name and clean_name.upper() != tk_base else tk_base
 
-                # Google News appends " - SourceName" at the end of title
-                if " - " in raw_title and raw_title.endswith(source_el):
-                    title = raw_title[: -(len(source_el) + 3)].strip()
-                else:
-                    title = raw_title
+    # Source 2A: Spanish financial news feed when Bolsa de Madrid (.MC)
+    if tk.endswith(".MC"):
+        q_es = f'"{search_label}" (bolsa OR acciones OR resultados OR dividendo)'
+        g_es_url = (
+            f"https://news.google.com/rss/search?q={requests.utils.quote(q_es)}+when:21d"
+            "&hl=es&gl=ES&ceid=ES:es"
+        )
+        articles.extend(_fetch_google_rss_feed(g_es_url, seen_prefixes, headers))
 
-                if not title:
-                    continue
-                norm_key = re.sub(r"[^a-z0-9]", "", title.lower())[:45]
-                if norm_key in seen_prefixes:
-                    continue
-                seen_prefixes.add(norm_key)
-                ts, rel_time = _parse_rss_datetime(pub_raw)
-                articles.append({
-                    "title": title,
-                    "link": link,
-                    "source": source_el,
-                    "published_ts": ts,
-                    "published_rel": rel_time,
-                    "summary": "",
-                    "sentiment": _classify_headline_sentiment(title),
-                })
-    except Exception as e:
-        logger.debug(f"Google News RSS error for {tk}: {e}")
+    # Source 2B: Global English financial news feed
+    q_en = f"{tk} {search_label} stock".strip() if clean_name else f"{tk} stock"
+    g_en_url = (
+        f"https://news.google.com/rss/search?q={requests.utils.quote(q_en)}+when:14d"
+        "&hl=en-US&gl=US&ceid=US:en"
+    )
+    articles.extend(_fetch_google_rss_feed(g_en_url, seen_prefixes, headers))
 
     articles.sort(key=lambda x: x["published_ts"], reverse=True)
     return articles[:limit]
@@ -610,3 +1078,37 @@ def get_recent_sec_events_cached(cik: str, limit: int = 12) -> List[Dict]:
     if not cik:
         return []
     return get_recent_sec_events(cik, limit=limit)
+
+
+@st.cache_data(ttl=1800, show_spinner=False)
+def get_global_corporate_events_cached(ticker: str, limit: int = 12) -> List[Dict]:
+    """Fetch earnings calendar / results dates and market links for non-SEC international issuers."""
+    tk = ticker.upper().strip()
+    events: List[Dict] = []
+    now_ts = pd.Timestamp.now()
+    try:
+        t = yf.Ticker(tk)
+        ed = t.get_earnings_dates(limit=max(12, limit))
+        if ed is not None and not ed.empty:
+            for dt_idx, row in ed.iterrows():
+                dt_naive = dt_idx.tz_localize(None) if getattr(dt_idx, "tzinfo", None) is not None else dt_idx
+                is_future = dt_naive > now_ts
+                eps_est = row.get("EPS Estimate")
+                eps_rep = row.get("Reported EPS")
+                surp = row.get("Surprise(%)")
+                parts = []
+                if pd.notna(eps_est):
+                    parts.append(f"Est. EPS: {float(eps_est):.2f}")
+                if pd.notna(eps_rep):
+                    parts.append(f"EPS Real: {float(eps_rep):.2f}")
+                if pd.notna(surp):
+                    parts.append(f"Sorpresa: {float(surp):+.1f}%")
+                events.append({
+                    "date": dt_naive.strftime("%Y-%m-%d"),
+                    "kind": "Próximos Resultados" if is_future else "Publicación de Resultados",
+                    "detail": " · ".join(parts) if parts else "Presentación trimestral / semestral",
+                    "url": f"https://finance.yahoo.com/quote/{requests.utils.quote(tk)}/financials",
+                })
+    except Exception as e:
+        logger.debug(f"Global earnings events unavailable for {tk}: {e}")
+    return events[:limit]

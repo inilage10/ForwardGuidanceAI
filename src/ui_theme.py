@@ -481,17 +481,31 @@ def render_company_quote_banner_html(
     name: str,
     sector: str,
     snapshot: Dict,
+    currency: str = "USD",
+    exchange: str = "",
 ) -> str:
-    """Render sleek Bloomberg-style header strip for the active searched company."""
+    """Render sleek Bloomberg-style header strip for any US or global company."""
     price = snapshot.get("price")
     pct = snapshot.get("pct", 0.0)
     delta = snapshot.get("delta", 0.0)
+
+    sym_map = {
+        "USD": "$", "EUR": "€", "GBP": "£", "GBp": "p", "JPY": "¥",
+        "CHF": "CHF ", "CAD": "C$", "HKD": "HK$", "AUD": "A$", "BRL": "R$", "MXN": "MX$",
+    }
+    curr_sym = sym_map.get(currency, f"{currency} ")
 
     if price is None:
         price_html = '<span style="color:#848e9c;">--</span>'
         delta_html = ""
     else:
-        price_str = f"${price:,.2f}"
+        if currency == "GBp":
+            price_str = f"{price:,.2f}p"
+        elif currency in {"JPY", "KRW"}:
+            price_str = f"{curr_sym}{price:,.0f}"
+        else:
+            price_str = f"{curr_sym}{price:,.2f}"
+
         if pct > 0.005:
             color = COLOR_UP
             arrow = "▲"
@@ -510,13 +524,21 @@ def render_company_quote_banner_html(
             f'{arrow} {sign}{delta:,.2f} ({sign}{pct:.2f}%)</span>'
         )
 
+    ex_badge = (
+        f'<span style="font-size:0.72rem;color:{ACCENT_SLATE};background:#151b28;border:1px solid {BORDER_HAIRLINE};'
+        f'padding:2px 7px;border-radius:4px;">{html.escape(exchange)} · {html.escape(currency)}</span>'
+        if exchange
+        else ""
+    )
+
     return (
-        f'<div style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:4px 2px;">'
+        f'<div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:4px 2px;">'
         f'<span style="font-family:Consolas,monospace;font-size:1.15rem;font-weight:800;'
         f'background:#1a1f2e;border:1px solid #2e374b;padding:3px 9px;border-radius:4px;color:{TEXT_PRIMARY};">{html.escape(ticker)}</span>'
         f'<span style="font-size:1.08rem;font-weight:600;color:{TEXT_PRIMARY};">{html.escape(name)}</span>'
         f'<span style="font-size:0.74rem;color:{TEXT_MUTED};background:#131722;border:1px solid {BORDER_HAIRLINE};'
         f'padding:2px 8px;border-radius:4px;">{html.escape(sector)}</span>'
+        f'{ex_badge}'
         f'<div style="margin-left:auto;display:flex;align-items:baseline;">{price_html}{delta_html}</div>'
         f'</div>'
     )

@@ -21,9 +21,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import config
 from src.market_terminal import (
     HOME_CHART_ASSETS,
+    format_currency_price,
     get_chart_ohlcv,
     get_company_info,
     get_company_news,
+    get_global_corporate_events_cached,
     get_market_tape_quotes,
     get_recent_sec_events_cached,
     get_ticker_snapshot,
@@ -59,14 +61,14 @@ from src.ui_theme import (
 logger = logging.getLogger(__name__)
 
 QUICK_PICK_TICKERS = [
-    ("AAPL", "Apple"),
-    ("NVDA", "NVIDIA"),
-    ("MSFT", "Microsoft"),
-    ("GOOGL", "Alphabet"),
-    ("AMZN", "Amazon"),
-    ("TSLA", "Tesla"),
-    ("JPM", "JPMorgan Chase"),
-    ("LLY", "Eli Lilly"),
+    ("AAPL", "Apple (NASDAQ)"),
+    ("NVDA", "NVIDIA (NASDAQ)"),
+    ("MSFT", "Microsoft (NASDAQ)"),
+    ("GOOGL", "Alphabet (NASDAQ)"),
+    ("AMZN", "Amazon (NASDAQ)"),
+    ("JPM", "JPMorgan (NYSE)"),
+    ("ITX.MC", "Inditex (Bolsa de Madrid)"),
+    ("SAN.MC", "Santander (Bolsa de Madrid)"),
 ]
 
 
@@ -110,18 +112,46 @@ def _handle_search_submit(query: str) -> None:
 
     best, candidates = resolve_company_search(q)
     if not best:
-        st.session_state["search_error"] = f"No se encontraron resultados para '{q}'. Prueba con el ticker bursátil exacto (ej. AAPL, NVDA, JPM)."
+        st.session_state["search_error"] = (
+            f"No se encontraron resultados para '{q}'. Prueba con el nombre completo "
+            "o el ticker con sufijo de bolsa (ej. AAPL, ITX.MC, SAN.MC, MC.PA, SAP.DE)."
+        )
         st.session_state["search_candidates"] = []
         return
 
     q_up = q.upper()
-    # Exact match or single unambiguous result jumps immediately to dashboard
-    if best["ticker"] == q_up or len(candidates) == 1:
+
+    def _is_secondary_listing(cand: Dict[str, str]) -> bool:
+        t = cand["ticker"].upper()
+        raw_ex = cand.get("raw_exchange", "").upper()
+        nm_u = cand.get("name", "").upper()
+        if t.endswith((".DE", ".F", ".MU", ".DU", ".HM", ".HA", ".BE", ".SG", ".TI", ".NE")):
+            return True
+        if raw_ex in {"PNK", "OQX", "OBB", "OTC", "BER", "DUS", "MUN", "STU", "HAN", "FRA", "HAM"}:
+            return True
+        if len(t) == 5 and "." not in t and t.endswith(("F", "Y")):
+            return True
+        return "/ADR" in nm_u or " ADR" in nm_u or "-" in t
+
+    primary_cands = [c for c in candidates if not _is_secondary_listing(c)]
+    has_madrid = any(c["ticker"].endswith(".MC") for c in primary_cands)
+    has_us_primary_dual = any(
+        "." not in c["ticker"] and (bool(c.get("cik")) or c.get("curated") == "true")
+        for c in primary_cands
+    )
+    has_genuine_dual = has_madrid and has_us_primary_dual
+
+    # Immediate jump when unambiguous, explicit exchange suffix, or only 1 primary listing (ignoring OTC ADRs/XETRA wrappers)
+    if "." in q_up or len(candidates) == 1 or len(primary_cands) == 1:
+        target = primary_cands[0]["ticker"] if len(primary_cands) == 1 else best["ticker"]
+        select_company(target)
+        return
+
+    if best["ticker"] == q_up and not has_genuine_dual:
         select_company(best["ticker"])
         return
 
-    # If exact curated company name match, jump straight away
-    if best["name"].lower() == q.lower() or best.get("curated") == "true":
+    if best.get("curated") == "true" and not has_genuine_dual:
         select_company(best["ticker"])
         return
 
@@ -129,7 +159,7 @@ def _handle_search_submit(query: str) -> None:
     st.session_state["search_candidates"] = candidates
 
 
-# ── Collapsible Sidebar: Terminal Controls & S&P 500 Directory ──────
+# ── Collapsible Sidebar: Terminal Controls & Market Directory ───────
 def render_sidebar_controls() -> None:
     with st.sidebar:
         st.markdown("### TERMINAL · CONFIGURACIÓN")
@@ -157,9 +187,9 @@ def render_sidebar_controls() -> None:
             st.session_state["groq_api_key"] = key_val
 
         st.divider()
-        st.markdown("### DIRECTORIO S&P 500 (GICS)")
+        st.markdown("### DIRECTORIO (S&P 500 & IBEX 35)")
         sectors = [s for s in get_available_sectors() if "Big Tech" not in s]
-        chosen_sec = st.selectbox("Sector GICS", options=sectors, key="sidebar_dir_sector")
+        chosen_sec = st.selectbox("Índice / Sector", options=sectors, key="sidebar_dir_sector")
 
         peers = DEFAULT_SECTORS.get(chosen_sec, {})
         for tk, info in peers.items():
@@ -225,7 +255,7 @@ def render_home_view() -> None:
             with s_col1:
                 query_text = st.text_input(
                     "Buscador de empresas o tickers",
-                    placeholder="Buscar empresa o ticker (ej. AAPL, NVIDIA, Microsoft, JPM, TSLA, PLTR)...",
+                    placeholder="Buscar empresa o ticker global (ej. AAPL, Inditex, ITX.MC, Santander, Iberdrola, LVMH)...",
                     label_visibility="collapsed",
                     key="central_search_input",
                 )
@@ -240,14 +270,15 @@ def render_home_view() -> None:
         if st.session_state.get("search_error"):
             st.warning(st.session_state["search_error"])
 
-        # Candidate disambiguation if user entered partial name
+        # Candidate disambiguation if user entered partial name or dual-listed equity
         cands = st.session_state.get("search_candidates", [])
         if cands:
-            st.caption("Coincidencias encontradas — selecciona la empresa exacta:")
+            st.caption("Coincidencias encontradas — selecciona mercado y empresa exacta:")
             cand_cols = st.columns(min(len(cands), 4))
             for i, c in enumerate(cands[:4]):
                 with cand_cols[i]:
-                    btn_lbl = f"{c['ticker']} · {c['name'][:20]}"
+                    ex_tag = f" · {c['exchange']}" if c.get("exchange") else ""
+                    btn_lbl = f"{c['ticker']} · {c['name'][:18]}{ex_tag}"
                     if st.button(btn_lbl, key=f"cand_{c['ticker']}_{i}", use_container_width=True):
                         select_company(c["ticker"])
                         st.rerun()
@@ -371,6 +402,8 @@ def render_company_header(company_info: Dict[str, str], snapshot: Dict) -> None:
                 company_info["name"],
                 company_info["sector"],
                 snapshot,
+                currency=company_info.get("currency", "USD"),
+                exchange=company_info.get("exchange", ""),
             ),
             unsafe_allow_html=True,
         )
@@ -381,7 +414,7 @@ def render_company_header(company_info: Dict[str, str], snapshot: Dict) -> None:
             with ts1:
                 new_q = st.text_input(
                     "Cambiar empresa",
-                    placeholder="Cambiar ticker/empresa...",
+                    placeholder="Ticker o empresa (AAPL, Inditex, ITX.MC)...",
                     label_visibility="collapsed",
                     key="topbar_search_input",
                 )
@@ -398,7 +431,8 @@ def render_company_header(company_info: Dict[str, str], snapshot: Dict) -> None:
         cand_cols = st.columns(min(len(cands), 5))
         for i, c in enumerate(cands[:5]):
             with cand_cols[i]:
-                if st.button(f"{c['ticker']} · {c['name'][:16]}", key=f"top_cand_{c['ticker']}_{i}", use_container_width=True):
+                ex_tag = f" ({c['exchange']})" if c.get("exchange") else ""
+                if st.button(f"{c['ticker']} · {c['name'][:14]}{ex_tag}", key=f"top_cand_{c['ticker']}_{i}", use_container_width=True):
                     select_company(c["ticker"])
                     st.rerun()
 
@@ -466,6 +500,32 @@ def _render_sec_events_table(sec_events: List[Dict]) -> None:
         )
 
 
+def _render_global_events_table(events: List[Dict], ticker: str) -> None:
+    if not events:
+        st.info(f"No hay calendario de resultados disponible en Yahoo Finance para {ticker}.")
+        return
+
+    for ev in events:
+        kind = html.escape(ev.get("kind", "Resultados"))
+        fdate = html.escape(ev.get("date", ""))
+        detail = html.escape(ev.get("detail", ""))
+        url = html.escape(ev.get("url", "#"), quote=True)
+        st.markdown(
+            f"""
+            <div class="news-card">
+                <div class="news-meta">
+                    <span>{kind.upper()}</span>
+                    <span>{fdate}</span>
+                </div>
+                <div class="news-title">
+                    <a href="{url}" target="_blank" rel="noopener noreferrer">{html.escape(ticker)} · {detail} ↗</a>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+
 # ── Module B: Automatic Visible Pipeline Runner & Compact View ──────
 def _ensure_and_render_guidance_pipeline(company_info: Dict[str, str], compact: bool = True) -> List[dict]:
     tk = company_info["ticker"]
@@ -502,13 +562,13 @@ def _ensure_and_render_guidance_pipeline(company_info: Dict[str, str], compact: 
             n_recs = len(run_res.get("guidance_records", []))
             if n_recs > 0:
                 status_box.update(
-                    label=f"Pipeline completado · {n_recs} filings SEC analizados ({tk})",
+                    label=f"Pipeline completado · {n_recs} periodos analizados ({tk})",
                     state="complete",
                     expanded=False,
                 )
             else:
                 status_box.update(
-                    label=f"Sin filings 10-K/10-Q corporativos disponibles para {tk}",
+                    label=f"Sin datos financieros suficientes disponibles para {tk}",
                     state="error",
                     expanded=True,
                 )
@@ -517,7 +577,7 @@ def _ensure_and_render_guidance_pipeline(company_info: Dict[str, str], compact: 
     # Cached records exist -> ensure score CSV sync & show clean pipeline badge
     records = load_ticker_guidance(tk)
     if tk in st.session_state["last_pipeline_logs"] and compact:
-        with st.expander(f"✓ Pipeline ejecutado ({len(records)} filings SEC procesados)", expanded=False):
+        with st.expander(f"✓ Pipeline ejecutado ({len(records)} periodos procesados)", expanded=False):
             st.code("\n".join(st.session_state["last_pipeline_logs"][tk]), language="text")
     return records
 
@@ -572,8 +632,7 @@ def _render_module_b_compact(company_info: Dict[str, str]) -> List[dict]:
     records = _ensure_and_render_guidance_pipeline(company_info, compact=True)
     if not records:
         st.warning(
-            f"No se encontraron informes 10-K/10-Q en SEC EDGAR para **{tk}**. "
-            "Verifica que corresponde a una cotizada estadounidense operativa."
+            f"No se encontraron datos regulatorios ni estados trimestrales suficientes para **{tk}**."
         )
         return []
 
@@ -585,11 +644,12 @@ def _render_module_b_compact(company_info: Dict[str, str]) -> List[dict]:
     score_100 = (comp_score + 1.0) * 50.0
     f_date = latest.get("filing_date", "N/A")
     f_type = latest.get("filing_type", "10-Q")
-    engine_used = latest.get("analysis_engine", "SEC NLP")
+    engine_used = latest.get("analysis_engine", "NLP")
+    src_tag = "FUNDAMENTALES" if latest.get("source") == "global_fundamentals" else "FILINGS SEC"
 
     st.markdown(
         f'<div style="font-size:0.71rem;color:{TEXT_MUTED};margin-bottom:6px;font-family:Consolas,monospace;">'
-        f'<span style="color:{COLOR_UP};">●</span> PIPELINE OK · {len(records)} FILINGS · ÚLTIMO {html.escape(f_type)} ({html.escape(f_date)}) · {html.escape(engine_used)}'
+        f'<span style="color:{COLOR_UP};">●</span> {src_tag} · {len(records)} PERIODOS · ÚLTIMO {html.escape(f_type)} ({html.escape(f_date)}) · {html.escape(engine_used)}'
         f'</div>',
         unsafe_allow_html=True,
     )
@@ -647,13 +707,19 @@ def _render_modular_three_panel(company_info: Dict[str, str]) -> None:
                     st.session_state["focus_module"] = "news"
                     st.rerun()
 
-            tab_news, tab_sec = st.tabs(["Titulares de Mercado", "Eventos Regulatorios SEC"])
+            has_cik = bool(company_info.get("cik"))
+            sec_tab_label = "Eventos Regulatorios SEC" if has_cik else "Resultados y Eventos"
+            tab_news, tab_sec = st.tabs(["Titulares de Mercado", sec_tab_label])
             with tab_news:
                 news_items = get_company_news(tk, company_info["name"], limit=14)
                 _render_news_cards(news_items)
             with tab_sec:
-                sec_events = get_recent_sec_events_cached(company_info.get("cik", ""), limit=12)
-                _render_sec_events_table(sec_events)
+                if has_cik:
+                    sec_events = get_recent_sec_events_cached(company_info.get("cik", ""), limit=12)
+                    _render_sec_events_table(sec_events)
+                else:
+                    global_events = get_global_corporate_events_cached(tk, limit=12)
+                    _render_global_events_table(global_events, tk)
 
     # ─── COLUMNA DERECHA (25% Arriba + 25% Abajo) ───────────────────
     with col_right:
@@ -747,9 +813,11 @@ def _render_focus_bar(company_info: Dict[str, str], active_focus: str) -> None:
 def _render_focus_news(company_info: Dict[str, str]) -> None:
     tk = company_info["ticker"]
     with st.container(border=True):
+        has_cik = bool(company_info.get("cik"))
+        sub_news = "Yahoo Finance RSS + Google News + SEC EDGAR Filings" if has_cik else "Yahoo Finance RSS + Google News ES/EN + Calendario Corporativo"
         st.markdown(
             f'<div class="mod-header"><span class="mod-title">MODO ENFOQUE · MÓDULO A: NOTICIAS Y ACTUALIDAD ({tk})</span>'
-            f'<span class="mod-sub">Yahoo Finance RSS + Google News + SEC EDGAR Filings</span></div>',
+            f'<span class="mod-sub">{sub_news}</span></div>',
             unsafe_allow_html=True,
         )
 
@@ -777,7 +845,8 @@ def _render_focus_news(company_info: Dict[str, str]) -> None:
                 continue
             filtered.append(item)
 
-        t_news, t_sec = st.tabs([f"Titulares ({len(filtered)})", "Historial Regulatorio SEC (10-K / 10-Q / 8-K)"])
+        sec_tab_focus_label = "Historial Regulatorio SEC (10-K / 10-Q / 8-K)" if has_cik else "Calendario de Resultados y Dividendos"
+        t_news, t_sec = st.tabs([f"Titulares ({len(filtered)})", sec_tab_focus_label])
         with t_news:
             if not filtered:
                 st.info("No hay noticias que coincidan con el filtro seleccionado.")
@@ -789,18 +858,28 @@ def _render_focus_news(company_info: Dict[str, str]) -> None:
                 with c_n2:
                     _render_news_cards(filtered[half:])
         with t_sec:
-            sec_events = get_recent_sec_events_cached(company_info.get("cik", ""), limit=20)
-            _render_sec_events_table(sec_events)
+            if has_cik:
+                sec_events = get_recent_sec_events_cached(company_info.get("cik", ""), limit=20)
+                _render_sec_events_table(sec_events)
+            else:
+                global_events = get_global_corporate_events_cached(tk, limit=20)
+                _render_global_events_table(global_events, tk)
 
 
 def _render_focus_guidance(company_info: Dict[str, str]) -> None:
     tk = company_info["ticker"]
+    has_cik = bool(company_info.get("cik"))
+    sub_b = (
+        "Análisis dimensional SEC 10-K / 10-Q y validación bursátil aislada"
+        if has_cik
+        else "Análisis fundamental trimestral global, consenso analistas y backtesting regional"
+    )
     with st.container(border=True):
         top_l, top_r = st.columns([0.74, 0.26], gap="small")
         with top_l:
             st.markdown(
                 f'<div class="mod-header"><span class="mod-title">MODO ENFOQUE · MÓDULO B: FORWARD GUIDANCE Y BACKTESTING ({tk})</span>'
-                f'<span class="mod-sub">Análisis dimensional SEC 10-K / 10-Q y validación bursátil aislada</span></div>',
+                f'<span class="mod-sub">{sub_b}</span></div>',
                 unsafe_allow_html=True,
             )
         with top_r:
@@ -810,7 +889,7 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
 
         records = _ensure_and_render_guidance_pipeline(company_info, compact=False)
         if not records:
-            st.warning(f"No hay filings SEC disponibles para analizar {tk}.")
+            st.warning(f"No hay reportes SEC ni datos fundamentales trimestrales disponibles para analizar {tk}.")
             return
 
         tab_detail, tab_backtest = st.tabs([
@@ -865,7 +944,9 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
             m1.metric("Guidance Score Actual", f"{latest_eval['composite_score']:+.3f}")
             m2.metric("Escala 0 - 100", f"{(latest_eval['composite_score'] + 1.0) * 50.0:.1f} / 100")
             m3.metric("Sentiment NLP/LLM", f"{latest_eval['overall_sentiment']:+.2f}")
-            m4.metric("Filings SEC Analizados", f"{len(records)} ({latest_rec.get('filing_type', '10-Q')} {latest_rec.get('filing_date', '')})")
+            is_global_src = latest_rec.get("source") == "global_fundamentals"
+            cnt_label = "Periodos Analizados" if is_global_src else "Filings SEC Analizados"
+            m4.metric(cnt_label, f"{len(records)} ({latest_rec.get('filing_type', '10-Q')} {latest_rec.get('filing_date', '')})")
 
             ch1, ch2 = st.columns(2, gap="medium")
             with ch1:
@@ -881,7 +962,12 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
                     config={"displayModeBar": False},
                 )
 
-            st.markdown("#### Desglose Cronológico de Filings y Citas Directas (MD&A)")
+            breakdown_title = (
+                "#### Desglose Cronológico de Periodos y Fundamentales Globales"
+                if is_global_src
+                else "#### Desglose Cronológico de Filings y Citas Directas (MD&A)"
+            )
+            st.markdown(breakdown_title)
             for idx, r in enumerate(reversed(records)):
                 f_dt = r.get("filing_date", "N/A")
                 f_tp = r.get("filing_type", "10-Q")
@@ -937,7 +1023,7 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
             weights_sig = tuple(custom_weights.items())
             cache_key = f"{tk}_{bt_horizon}_{bt_signal}_{weights_sig}"
             if run_bt_clicked or st.session_state["ticker_bt_result"].get("key") != cache_key:
-                with st.spinner(f"Calculando retornos post-filing y Alpha vs S&P 500 para {tk}..."):
+                with st.spinner(f"Calculando retornos post-reporte y Alpha vs índice de referencia para {tk}..."):
                     bt_res = run_company_event_backtest(
                         tk,
                         horizon_days=bt_horizon,
@@ -950,8 +1036,9 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
             if "error" in bt_data:
                 st.warning(bt_data["error"])
             elif bt_data:
+                bench_name = bt_data.get("benchmark_name", "S&P 500")
                 bm1, bm2, bm3, bm4, bm5, bm6 = st.columns([0.13, 0.16, 0.22, 0.16, 0.17, 0.16])
-                bm1.metric("Eventos (Filings)", f"{bt_data['sample_size']}")
+                bm1.metric("Eventos (Reportes)", f"{bt_data['sample_size']}")
                 bm2.metric("Information Coeff (IC)", f"{bt_data['ic']:+.3f}")
                 with bm3:
                     st.markdown(
@@ -962,7 +1049,7 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
                         unsafe_allow_html=True,
                     )
                 bm4.metric(f"Retorno Medio ({bt_horizon}d)", f"{bt_data['avg_return']*100:+.2f}%")
-                bm5.metric("Alpha vs S&P 500", f"{bt_data['avg_alpha']*100:+.2f}%")
+                bm5.metric(f"Alpha vs {bench_name}", f"{bt_data['avg_alpha']*100:+.2f}%")
                 bm6.metric("Spread Alto vs Bajo", f"{bt_data['high_low_spread']*100:+.2f}%")
 
                 ev_df = bt_data["events_df"]
@@ -977,7 +1064,7 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
                             ev_df,
                             x_col=bt_signal,
                             y_col=y_plot_col,
-                            title=f"{tk}: Guidance Score vs Alpha S&P 500 ({bt_horizon}d)",
+                            title=f"{tk}: Guidance Score vs Alpha {bench_name} ({bt_horizon}d)",
                         ),
                         use_container_width=True,
                         config={"displayModeBar": False},
@@ -1002,8 +1089,11 @@ def _render_focus_guidance(company_info: Dict[str, str]) -> None:
                 for c in ["return_30d", "return_90d", "return_180d", f"alpha_{bt_horizon}d"]:
                     if c in disp_ev.columns:
                         disp_ev[c] = disp_ev[c].apply(lambda x: f"{x*100:+.2f}%" if pd.notna(x) else "N/A")
+                ccy_bt = company_info.get("currency", "USD")
                 if "start_price" in disp_ev.columns:
-                    disp_ev["start_price"] = disp_ev["start_price"].apply(lambda x: f"${x:,.2f}" if pd.notna(x) else "N/A")
+                    disp_ev["start_price"] = disp_ev["start_price"].apply(
+                        lambda x: format_currency_price(float(x), ccy_bt) if pd.notna(x) else "N/A"
+                    )
                 for c in ["composite_score", "overall_sentiment"]:
                     if c in disp_ev.columns:
                         disp_ev[c] = disp_ev[c].round(3)

@@ -45,9 +45,52 @@ def inject_terminal_css() -> None:
             font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
         }}
 
-        [data-testid="stHeader"] {{
-            background-color: rgba(11, 14, 20, 0.92) !important;
-            border-bottom: 1px solid {BORDER_HAIRLINE};
+        /* Remove persistent opaque top header panel; keep expand arrow cleanly clickable without overlapping content */
+        header[data-testid="stHeader"],
+        [data-testid="stHeader"],
+        [data-testid="stToolbar"],
+        .stAppHeader,
+        .stAppToolbar {{
+            background: transparent !important;
+            background-color: transparent !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            height: 2.75rem !important;
+            min-height: 2.75rem !important;
+            max-height: 2.75rem !important;
+            pointer-events: none !important;
+        }}
+        [data-testid="stDecoration"] {{
+            display: none !important;
+        }}
+        [data-testid="stHeader"] button,
+        [data-testid="stHeader"] a,
+        [data-testid="stToolbarActions"],
+        [data-testid="stHeaderActionElements"],
+        [data-testid="stExpandSidebarButton"],
+        [data-testid="stSidebarCollapsedControl"],
+        [data-testid="collapsedControl"] {{
+            pointer-events: auto !important;
+        }}
+        button[data-testid="stExpandSidebarButton"],
+        [data-testid="stExpandSidebarButton"],
+        [data-testid="stExpandSidebarButton"] button,
+        [data-testid="stSidebarCollapsedControl"] button,
+        [data-testid="collapsedControl"] button {{
+            color: {TEXT_MUTED} !important;
+            background: transparent !important;
+            border: 1px solid transparent !important;
+            border-radius: 4px !important;
+        }}
+        button[data-testid="stExpandSidebarButton"]:hover,
+        [data-testid="stExpandSidebarButton"]:hover,
+        [data-testid="stExpandSidebarButton"] button:hover,
+        [data-testid="stSidebarCollapsedControl"] button:hover,
+        [data-testid="collapsedControl"] button:hover {{
+            color: {TEXT_PRIMARY} !important;
+            background: {BG_PANEL} !important;
+            border-color: {BORDER_HAIRLINE} !important;
         }}
 
         [data-testid="stSidebar"] {{
@@ -55,8 +98,10 @@ def inject_terminal_css() -> None:
             border-right: 1px solid {BORDER_HAIRLINE} !important;
         }}
 
-        .block-container {{
-            padding-top: 1.15rem !important;
+        .block-container,
+        [data-testid="stMainBlockContainer"],
+        .stMainBlockContainer {{
+            padding-top: 3.45rem !important;
             padding-bottom: 1.5rem !important;
             padding-left: 1.6rem !important;
             padding-right: 1.6rem !important;

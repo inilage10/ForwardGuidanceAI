@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Bitácora de Proyecto - ForwardGuidanceAI</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm 14mm 10mm 14mm;
+    @bottom-right {
+      content: "Página " counter(page) " de " counter(pages);
+      font-size: 7.5pt;
+      color: #64748b;
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+    }
+    @bottom-left {
+      content: "ForwardGuidanceAI | Bitácora de Proyecto · 5º E2 Analytics · Comillas ICADE";
+      font-size: 7.5pt;
+      color: #64748b;
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.42;
+    font-size: 8.7pt;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Encabezado compacto institucional */
+  .header-card {
+    border-bottom: 2px solid #1e3a8a;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .header-left {
+    max-width: 65%;
+  }
+  .inst-title {
+    font-size: 7.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #1e3a8a;
+    font-weight: 700;
+  }
+  .doc-title {
+    font-size: 15.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 2px 0 2px 0;
+    line-height: 1.15;
+  }
+  .doc-sub {
+    font-size: 8pt;
+    color: #475569;
+    font-style: italic;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 7.8pt;
+    color: #334155;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 5px 9px;
+    border-radius: 5px;
+    min-width: 190px;
+  }
+  .header-right strong {
+    color: #0f172a;
+  }
+
+  h1 {
+    font-size: 10.2pt;
+    font-weight: 800;
+    color: #0f172a;
+    border-left: 3.5px solid #2563eb;
+    padding-left: 6px;
+    margin: 10px 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  h2 {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 7px 0 3px 0;
+  }
+
+  p {
+    margin: 0 0 5px 0;
+    text-align: justify;
+  }
+
+  ul, ol {
+    margin: 0 0 5px 0;
+    padding-left: 17px;
+  }
+
+  li {
+    margin-bottom: 2.5px;
+  }
+
+  .box {
+    border-radius: 4px;
+    padding: 6px 9px;
+    margin: 6px 0;
+    font-size: 8.2pt;
+  }
+  .box-blue {
+    background: #eff6ff;
+    border-left: 3px solid #2563eb;
+    color: #1e40af;
+  }
+  .box-amber {
+    background: #fffbeb;
+    border-left: 3px solid #d97706;
+    color: #92400e;
+  }
+  .box-red {
+    background: #fef2f2;
+    border-left: 3px solid #dc2626;
+    color: #991b1b;
+  }
+
+  /* Tarjetas forenses de error */
+  .case-card {
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    margin: 7px 0;
+    background: #ffffff;
+  }
+  .case-header {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 8.2pt;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .case-header span.tag {
+    background: #dc2626;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 7.2pt;
+  }
+  .case-body {
+    padding: 6px 8px;
+    font-size: 8.2pt;
+  }
+  .case-grid {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .case-row {
+    display: table-row;
+  }
+  .case-cell-lbl {
+    display: table-cell;
+    width: 25%;
+    font-weight: 700;
+    color: #334155;
+    padding: 2px 4px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+  .case-cell-val {
+    display: table-cell;
+    padding: 2px 4px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+    color: #1e293b;
+    text-align: justify;
+  }
+
+  table.data-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5px 0;
+    font-size: 7.8pt;
+  }
+  table.data-tbl th {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 3.5px 5px;
+    text-align: left;
+    font-weight: 600;
+  }
+  table.data-tbl td {
+    padding: 3px 5px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  table.data-tbl tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+
+  .badge-metric {
+    font-family: Consolas, monospace;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+  .badge-red { background: #fee2e2; color: #b91c1c; }
+  .badge-green { background: #dcfce7; color: #15803d; }
+  .badge-blue { background: #dbeafe; color: #1d4ed8; }
+
+  .page-break {
+    page-break-after: always;
+  }
+  
+  .lead-quote {
+    font-style: italic;
+    color: #475569;
+    border-left: 2px solid #94a3b8;
+    padding-left: 6px;
+    margin: 2px 0 3px 0;
+    font-size: 7.8pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1 -->
+<div class="header-card">
+  <div class="header-left">
+    <div class="inst-title">Universidad Pontificia Comillas &bull; ICADE / ICAI &bull; 5º E2 Analytics</div>
+    <div class="doc-title">BITÁCORA DE PROYECTO: FORWARDGUIDANCE AI</div>
+    <div class="doc-sub">Diseño metodológico, decisiones de ingeniería financiera, validación empírica y autopsia de fallos de la IA</div>
+  </div>
+  <div class="header-right">
+    <strong>Asignatura:</strong> Análisis de Servicios Financieros<br>
+    <strong>Profesor:</strong> Luis<br>
+    <strong>Alumnos:</strong> Iñigo Lage & Ignacio García<br>
+    <strong>Entrega:</strong> Jueves 26 de Noviembre, 2026<br>
+    <strong>Repositorio:</strong> <a href="https://github.com/inilage10/ForwardGuidanceAI" style="color:#1d4ed8;text-decoration:none;">github.com/inilage10/ForwardGuidanceAI</a>
+  </div>
+</div>
+
+<h1>1. ¿Qué hemos hecho, por qué y cuál era la hipótesis de partida?</h1>
+<p>
+En los mercados de renta variable modernos, la información cuantitativa histórica (márgenes contables pasados, ratios de valoración tradicionales como PER o EV/EBITDA) se descuenta casi instantáneamente en el momento en que se publican las cuentas anuales o trimestrales. La auténtica fuente de asimetría de información y de potencial generación de exceso de retorno (<em>Alpha</em>) frente al mercado descansa en las declaraciones de perspectivas futuras (<strong>Forward-Looking Guidance</strong>) que los comités de dirección trasladan al mercado.
+</p>
+<p>
+Para contrastar esta premisa, he diseñado, desarrollado y validado empíricamente <strong>ForwardGuidanceAI</strong>, una plataforma computacional integral que transforma el lenguaje cualitativo y narrativo de los informes oficiales depositados ante la <em>Securities and Exchange Commission</em> (SEC Form 10-K y 10-Q) y emisores globales en un indicador cuantitativo normalizado (<strong>Guidance Score</strong> en escala 0-100).
+</p>
+<p>
+Nuestra hipótesis central de trabajo consistía en responder a: <strong>¿Es capaz un modelo de procesamiento de lenguaje natural (NLP léxico y LLMs avanzados) de anticipar qué compañías superarán a sus índices sectoriales a 30, 90 y 180 días a partir exclusivamente de las proyecciones cualitativas de su equipo directivo?</strong>
+</p>
+
+<h2>Decisiones clave de diseño metodológico y su fundamento financiero</h2>
+<ul>
+  <li><strong>Extracción selectiva de las secciones MD&A (Item 7 en 10-K / Item 2 en 10-Q):</strong> Descartamos intencionadamente el uso de noticias de prensa, tweets o rumores de mercado para construir la señal directiva. El apartado <em>Management's Discussion & Analysis</em> está sujeto al amparo legal del <em>Safe Harbor</em> (Securities Litigation Reform Act de 1995), lo que obliga a los directivos a emitir declaraciones medidas, ponderadas y con responsabilidad jurídica frente a los accionistas.</li>
+  <li><strong>Desagregación en 7 dimensiones directivas fundamentales:</strong> En vez de asignar una etiqueta simplista y binaria ("positivo/negativo"), construimos un marco multidimensional con ponderación económica: <em>Revenue Growth</em> (20%), <em>Margin Outlook</em> (20%), <em>Earnings/BPA</em> (20%), <em>Demand Pipeline</em> (15%), <em>Capex Plans</em> (10%), <em>Competitive Position</em> (10%) e <em>Innovation Pipeline</em> (5%).</li>
+  <li><strong>Arquitectura Dual de Inteligencia (Local vs Cloud):</strong> Desarrollamos un motor léxico-semántico offline basado en el prestigioso diccionario financiero de <em>Loughran-McDonald</em> (~2 segundos por presentación, coste cero, 100% reproducible y privado) complementado con un conmutador a modelos de lenguaje avanzados (LLM Llama 3.3 70B vía Groq Cloud) para interpretar contextos retóricos sutiles.</li>
+  <li><strong>Ampliación al IBEX 35 y plazas internacionales:</strong> Expandimos el alcance desde los 11 sectores GICS del S&P 500 (110 compañías líderes de EE.UU.) hacia las empresas de la Bolsa de Madrid (192 cotizadas en BME/MCE) y principales índices europeos, adaptando dinámicamente el benchmark de mercado a <code>^IBEX</code>, <code>^STOXX50E</code> o <code>^GSPC</code> y gestionando la divisa correspondiente (&euro;, $, &pound;).</li>
+  <li><strong>Inferencia econométrica con p-value y significatividad estadística:</strong> Incorporamos el cálculo del <em>Information Coefficient</em> (IC de Spearman) y el contraste formal de hipótesis ($p$-value) en cada backtesting para evitar autoengañarnos con correlaciones espurias derivadas de muestras pequeñas.</li>
+</ul>
+
+<div class="box box-blue">
+  <strong>Premisa Metodológica Central:</strong> Un modelo cuantitativo solo es útil si reconoce explícitamente sus límites. La verdadera aportación de la plataforma no es automatizar ciegamente decisiones de inversión, sino sistematizar el filtrado de miles de páginas oficiales para detectar divergencias entre el discurso directivo y la evolución real del negocio.
+</div>
+
+<div class="page-break"></div>
+
+<!-- PÁGINA 2 -->
+<h1>2. Bitácora de Desarrollo: Retos técnicos, fallos y soluciones</h1>
+<p>
+El desarrollo del proyecto no fue lineal. A lo largo del proceso nos enfrentamos a diversos obstáculos técnicos, de infraestructura y de datos que exigieron decisiones de ingeniería deliberadas:
+</p>
+
+<table class="data-tbl">
+  <thead>
+    <tr>
+      <th style="width: 22%;">Desafío / Fase</th>
+      <th style="width: 38%;">Problema Encontrado</th>
+      <th style="width: 40%;">Solución Técnica Implementada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Conexión SEC EDGAR</strong></td>
+      <td>Bloqueos sistemáticos <code>HTTP 403 Forbidden</code> al consultar la API de la SEC en bucle debido a cortafuegos anti-scraping y User-Agent genérico de Python.</td>
+      <td>Inyección en <code>collector.py</code> de cabeceras oficiales declaradas <code>User-Agent: ForwardGuidanceAI inilage10@gmail.com</code> y regulador estricto de tráfico (<em>rate-limiter</em> a 0.15s).</td>
+    </tr>
+    <tr>
+      <td><strong>Parsing de Archivos Masivos</strong></td>
+      <td>Informes 10-K de más de 20 MB en HTML sucio, repletos de miles de tablas contables que saturaban la memoria y el límite de tokens de los LLMs.</td>
+      <td>Pipeline en dos etapas en <code>parser.py</code>: purga de etiquetas HTML con <code>BeautifulSoup</code> y algoritmo de <em>Sentence Scoring</em> proyectivo que condensa el texto en 3.000 palabras nucleares.</td>
+    </tr>
+    <tr>
+      <td><strong>Obsolescencia de APIs Cloud</strong></td>
+      <td>Groq retiró repentinamente de servicio el modelo <code>llama-3.1-8b-instant</code> arrojando errores <code>HTTP 404 model_decommissioned</code>.</td>
+      <td>Actualización a <code>llama-3.3-70b-versatile</code> y desarrollo de un <em>fallback</em> autónomo que conmuta al NLP Financiero Local si falla la conexión o no se facilita clave API.</td>
+    </tr>
+    <tr>
+      <td><strong>Empresas Internacionales</strong></td>
+      <td>Empresas del IBEX 35 (Inditex, Santander, Iberdrola) carecen de CIK y de formularios 10-K/10-Q al no estar sujetas a la jurisdicción de la SEC estadounidense.</td>
+      <td>Diseño de un motor de fundamentales globales sintéticos en <code>pipeline_runner.py</code> basado en estados financieros trimestrales de Yahoo Finance, calendario de EPS y noticias ES/EN.</td>
+    </tr>
+    <tr>
+      <td><strong>UX y Modo Enfoque</strong></td>
+      <td>El flujo de trabajo por pasos era lineal y rígido, y las pantallas no permitían aislar los análisis ni operar en estilo terminal financiera.</td>
+      <td>Reestructuración modular en Dashboard tipo Bloomberg (Módulo A: Noticias, Módulo B: Guidance, Módulo C: Gráficos) con Modo Enfoque al 100% y Dark Theme institucional.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>3. Dónde se equivocó la máquina: Tres autopsias forenses contrastadas</h1>
+<p>
+El requisito fundamental de esta bitácora consiste en contrastar <strong>dónde y por qué falló el modelo algorítmico frente a la realidad de los mercados</strong>. A continuación, disecciono los tres casos más elocuentes, contrastados directamente con sus documentos oficiales depositados ante la SEC y la reacción bursátil registrada en nuestro backtester:
+</p>
+
+<!-- CASO 1: INTEL -->
+<div class="case-card">
+  <div class="case-header">
+    <span>CASO 1: INTEL CORPORATION (NASDAQ: INTC) &bull; EL ESPEJISMO DEL CAPEX DESORBITADO</span>
+    <span class="tag">ERROR DE CONCEPTO FINANCIERO</span>
+  </div>
+  <div class="case-body">
+    <div class="case-grid">
+      <div class="case-row">
+        <div class="case-cell-lbl">Veredicto de la Máquina:</div>
+        <div class="case-cell-val">
+          <strong>Guidance Score Optimista (+0.28 / 64 sobre 100)</strong> tras el informe 10-Q del Q1 2024. El modelo asignó máximas calificaciones a <em>Capex Plans</em> (+1.6) e <em>Innovation Pipeline</em> (+1.4) al detectar una retórica masiva de inversión en semiconductores ("5 nodos en 4 años") y expansión de fábricas (IFS).
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Fuente Oficial de Guidance:</div>
+        <div class="case-cell-val">
+          <em>SEC Form 10-Q Intel Corp. (Periodo terminado el 30-Mar-2024, presentado el 26-Abr-2024):</em><br>
+          <div class="lead-quote">
+            "We continue to see healthy progress across our manufacturing roadmap, with Intel 18A on track for production... our aggressive investments in capital additions position us for sustainable long-term revenue growth throughout 2024."
+          </div>
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Dónde se equivocó la IA:</div>
+        <div class="case-cell-val">
+          <strong>Confundió "gastar mucho dinero" con "crear valor para el accionista".</strong> Los modelos de lenguaje tienen un sesgo estructural en el que verbos asociados a grandes inversiones de capital (<em>"aggressive investments", "expanding capacity"</em>) computan automáticamente como una señal expansiva positiva. La máquina no supo contextualizar que ese Capex descomunal estaba <strong>destruyendo por completo el flujo de caja libre</strong> en una división de fundición que carecía de clientes externos y acumulaba retrasos frente a TSMC.
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Fuente Oficial del Colapso:</div>
+        <div class="case-cell-val">
+          <em>SEC Form 10-Q Intel Corp. del Q2 2024 (presentado el 2 de Agosto de 2024):</em> Intel reportó pérdidas netas de $1.611 millones en su división de fundición (*Intel Foundry*), anunció el despido del 15% de su plantilla (15.000 trabajadores) y suspendió su dividendo trimestral tras 32 años ininterrumpidos.
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Impacto Real en Mercado:</div>
+        <div class="case-cell-val">
+          El 2 de agosto de 2024, la cotización de Intel sufrió un <span class="badge-metric badge-red">-26.06%</span> en una sola sesión (peor caída diaria en más de 50 años). En la ventana de backtest de 90 días, la predicción de la máquina generó una rentabilidad absoluta de <strong>-38.4%</strong> y un <span class="badge-metric badge-red">Alpha de -41.2% frente al S&P 500</span>.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- PÁGINA 3 -->
+<!-- CASO 2: TESLA -->
+<div class="case-card">
+  <div class="case-header">
+    <span>CASO 2: TESLA, INC. (NASDAQ: TSLA) &bull; EL SESGO DE NARRATIVA ("HYPE") FRENTE AL MARGEN REAL</span>
+    <span class="tag">SESGO POR RETÓRICA VISIONARIA</span>
+  </div>
+  <div class="case-body">
+    <div class="case-grid">
+      <div class="case-row">
+        <div class="case-cell-lbl">Veredicto de la Máquina:</div>
+        <div class="case-cell-val">
+          <strong>Guidance Score Favorable (+0.34 / 67 sobre 100)</strong> tras el Form 10-K fiscal 2023. La máquina otorgó notas sobresalientes a <em>Innovation Pipeline</em> (+1.8) y <em>Competitive Position</em> (+1.3) seducida por los párrafos dedicados a inteligencia artificial, conducción autónoma total (FSD Supervised) y robótica humanoide (Optimus).
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Fuente Oficial de Guidance:</div>
+        <div class="case-cell-val">
+          <em>SEC Form 10-K Tesla, Inc. (Ejercicio fiscal terminado el 31-Dic-2023, presentado el 29-Ene-2024):</em><br>
+          <div class="lead-quote">
+            "Our company is currently between two major growth waves... we are focused on bringing our next-generation platform to market with revolutionary manufacturing technologies, while expanding our full self-driving and artificial intelligence hardware investments."
+          </div>
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Dónde se equivocó la IA:</div>
+        <div class="case-cell-val">
+          <strong>Incapacidad de ponderar los pesos económicos reales del negocio.</strong> El modelo sobrevaloró las promesas tecnológicas futuristas (que aportan el 0% del beneficio actual) y minusvaloró sistemáticamente la advertencia cuantitativa de que Tesla estaba inmersa en una guerra de precios salvaje en automoción eléctrica contra competidores chinos (BYD). La máquina fue "víctima del marketing" de la directiva y no comprendió que el colapso del margen bruto automotriz aplastaría la valoración bursátil.
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Fuente Oficial del Colapso:</div>
+        <div class="case-cell-val">
+          <em>SEC Form 10-Q Tesla, Inc. del Q1 2024 (depositado el 24 de Abril de 2024):</em> El margen operativo se hundió hasta el <strong>5.5%</strong> (frente al 11.4% del año previo), el beneficio neto atribuible cayó un <strong>-55% interanual</strong> ($1.129M vs $2.513M) y el Free Cash Flow fue destructivo (-$2.531 millones).
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Impacto Real en Mercado:</div>
+        <div class="case-cell-val">
+          A pesar del score optimista de la IA, la acción encadenó semanas de caídas severas, acumulando en el horizonte de 90 días un <span class="badge-metric badge-red">Alpha de -18.7% frente al S&P 500</span>. La promesa de la IA no pudo sostener una valoración desconectada de la economía unitaria del coche.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASO 3: NIKE -->
+<div class="case-card">
+  <div class="case-header">
+    <span>CASO 3: NIKE, INC. (NYSE: NKE) &bull; LA CEGUERA POR OMISIÓN ANTE LA PÉRDIDA DE CUOTA</span>
+    <span class="tag">CEGUERA POR OMISIÓN RETÓRICA</span>
+  </div>
+  <div class="case-body">
+    <div class="case-grid">
+      <div class="case-row">
+        <div class="case-cell-lbl">Veredicto de la Máquina:</div>
+        <div class="case-cell-val">
+          <strong>Guidance Score Neutro-Alcista (+0.12 / 56 sobre 100)</strong> tras el 10-Q del Q3 fiscal 2024 (marzo 2024). La máquina puntuó positivamente la posición competitiva (+1.1) y la gestión de inventarios, al no encontrar palabras de pánico explícitas y leer menciones positivas a los Juegos Olímpicos de París.
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Fuente Oficial de Guidance:</div>
+        <div class="case-cell-val">
+          <em>SEC Form 10-Q Nike, Inc. (Periodo terminado el 29-Feb-2024, presentado el 22-Mar-2024):</em><br>
+          <div class="lead-quote">
+            "We are executing our multi-year innovation cycle ahead of the Paris Olympic Games... our wholesale inventory remains healthy and we expect full year reported revenue to grow approximately 1% as our direct-to-consumer digital strategy matures."
+          </div>
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Dónde se equivocó la IA:</div>
+        <div class="case-cell-val">
+          <strong>La trampa de la "omisión deliberada".</strong> Los directivos corporativos rara vez confiesan explícitamente "nuestros productos están perdiendo atractivo". En su lugar, dejan de hablar de ciertos canales. Nike omitió detallar que su canal directo (DTC) se había estancado y que marcas emergentes como <em>On Running</em> y <em>Hoka (Deckers)</em> le estaban arrebatando el espacio físico en los distribuidores mayoristas. Al no haber palabras negativas explícitas, el NLP asumió normalidad. La máquina no supo "leer lo que no estaba escrito".
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Fuente Oficial del Colapso:</div>
+        <div class="case-cell-val">
+          <em>Earnings Call Q4 fiscal 2024 y SEC Form 10-K (presentados el 27 y 28 de Junio de 2024):</em> Nike recortó bruscamente sus previsiones para el ejercicio 2025, advirtiendo de una caída de ingresos de un dígito medio (cuando el consenso esperaba subidas), reconociendo pérdida de tracción en zapatillas clásicas (Air Force 1) y debilidad severa en China.
+        </div>
+      </div>
+      <div class="case-row">
+        <div class="case-cell-lbl">Impacto Real en Mercado:</div>
+        <div class="case-cell-val">
+          El 28 de junio de 2024, la cotización de Nike se hundió un <span class="badge-metric badge-red">-19.98% en una sola sesión</span> (la mayor caída diaria en la historia de la empresa, evaporando $28.000M de valor). A 90 días, el backtesting arrojó una rentabilidad de <strong>-21.3%</strong> y un <span class="badge-metric badge-red">Alpha de -24.8% frente al S&P 500</span>.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- PÁGINA 4 -->
+<h1>4. Lecciones Cuantitativas, Inferencia Estadística y Conclusiones</h1>
+
+<h2>4.1. El espejismo de las muestras reducidas y la necesidad del p-value</h2>
+<p>
+Uno de los aprendizajes metodológicos más valiosos de esta asignatura ha sido comprender que <strong>una correlación alta en una sola empresa suele ser un espejismo estadístico</strong>. Cuando evaluamos a una compañía individualmente en la ventana de 2023 a 2026, disponemos únicamente de entre 4 y 8 reportes trimestrales ($N=4 \dots 8$).
+</p>
+<p>
+En muestras tan reducidas, un coeficiente de correlación por rangos aparentemente espectacular ($IC = +0.70$ o $-0.80$) arroja frecuentemente un <strong>$p$-value superior a 0.20 o 0.30</strong>. Esto significa que existe más de un 20% o 30% de probabilidades de que el resultado sea mero producto de la casualidad o del movimiento aleatorio del mercado, lo que impide rechazar la hipótesis nula ($H_0: IC = 0$).
+</p>
+
+<div class="box box-amber">
+  <strong>Lección Cuantitativa Fundamental:</strong> Para que una señal de Forward Guidance sea verdaderamente invertible, es imprescindible acudir al <strong>Backtesting Transversal Sectorial (Cross-Sectional)</strong>. Al agrupar las 10 empresas del sector a lo largo de 3 años ($N \ge 40$ eventos simultáneos), el poder estadístico se multiplica y logramos aislar señales donde el $p$-value cae con rigor por debajo de $0.05$ ($p < 0.05$), confirmando significatividad real y un Information Ratio positivo.
+</div>
+
+<h2>4.2. Matriz de Autopsia: Tipología de Errores de la Inteligencia Artificial</h2>
+<p>
+Tras analizar cientos de informes y contrastar los fallos del sistema, hemos categorizado las tres vulnerabilidades intrínsecas del procesamiento de lenguaje natural aplicado a finanzas corporativas:
+</p>
+
+<table class="data-tbl">
+  <thead>
+    <tr>
+      <th style="width: 20%;">Sesgo de la Máquina</th>
+      <th style="width: 28%;">Mecanismo del Error</th>
+      <th style="width: 26%;">Ejemplo Paradigmático</th>
+      <th style="width: 26%;">Contramedida de Ingeniería Financiera</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Sesgo de Capex Ciego</strong></td>
+      <td>Tratar cualquier inversión elevada como sinónimo de crecimiento, ignorando si destruye el Free Cash Flow.</td>
+      <td><strong>Intel (INTC)</strong><br>Capex agresivo con pérdidas récord en fundición.</td>
+      <td>Filtrar el Guidance Score cruzándolo obligatoriamente con el ratio Capex / Flujo de Caja Operativo histórico.</td>
+    </tr>
+    <tr>
+      <td><strong>Sesgo de Fascinación ("Hype")</strong></td>
+      <td>Sobreponderar la jerga tecnológica futura y descuidar el margen operativo del negocio principal.</td>
+      <td><strong>Tesla (TSLA)</strong><br>Discurso de IA y FSD mientras el margen caía del 11% al 5%.</td>
+      <td>Imponer una ponderación asimétrica: penalizar un guidance de margen negativo el doble de lo que puntúa la innovación.</td>
+    </tr>
+    <tr>
+      <td><strong>Ceguera por Omisión</strong></td>
+      <td>Asumir normalidad cuando la empresa silencia deliberadamente un canal o métrica que antes destacaba.</td>
+      <td><strong>Nike (NKE)</strong><br>Silencio sobre ventas mayoristas ante el auge de Hoka/On.</td>
+      <td>Análisis de <em>Delta de Vocabulario</em>: penalizar la desaparición de palabras clave respecto a los informes del año anterior.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4.3. Conclusión Final y Balance del Proyecto</h2>
+<p>
+El desarrollo de <strong>ForwardGuidanceAI</strong> ha sido un ejercicio de aprendizaje fascinante y profundamente enriquecedor. Empezamos con la ambición ingenua de construir un algoritmo capaz de predecir el mercado leyendo informes oficiales de la SEC; terminamos construyendo una herramienta rigurosa que nos ha enseñado justamente los <strong>límites del análisis textual algorítmico</strong>.
+</p>
+<p>
+La máquina es extraordinariamente eficaz para procesar a escala miles de páginas, eliminar el ruido administrativo, calcular variaciones léxicas en 2 segundos y ordenar universos completos de 110 empresas del S&P 500 y 192 de la Bolsa de Madrid. Sin embargo, carece de intuición sobre modelos de negocio, es vulnerable a la retórica corporativa engañosa y no puede entender lo que el directivo omite deliberadamente.
+</p>
+<p>
+En definitiva, la inteligencia artificial no sustituye al analista financiero: <strong>lo potencia</strong>. El verdadero valor de esta plataforma no es actuar como una caja negra de inversión automática, sino funcionar como un terminal de cribado y supervisión que alerta al analista sobre divergencias clave para que sea el juicio humano el que determine si la directiva está construyendo un foso competitivo real o simplemente vistiendo un deterioro contable inevitable.
+</p>
+
+<br>
+<div style="border-top:1px solid #cbd5e1;padding-top:4px;font-size:7.5pt;color:#64748b;display:flex;justify-content:space-between;">
+  <span>Bitácora de Proyecto &bull; ForwardGuidanceAI</span>
+  <span>5º de E2 Analytics &bull; Universidad Pontificia Comillas ICADE / ICAI &bull; Noviembre 2026</span>
+</div>
+
+</body>
+</html>
